@@ -31,7 +31,7 @@ const HeroSection = () => {
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-[1.05] mb-8 animate-fade-in tracking-tighter">
             Votre équipe design,
             <br />
-            <span className="font-serif-elegant text-gradient-animated">
+            <span className="text-gradient-animated">
               par abonnement.
             </span>
           </h1>
