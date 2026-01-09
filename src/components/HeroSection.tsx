@@ -28,7 +28,7 @@ const HeroSection = () => {
           </div>
 
           {/* Main Title with Typography Duo */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold leading-[1.05] mb-8 animate-fade-in tracking-tighter">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.05] mb-8 animate-fade-in tracking-tighter">
             Votre équipe design,
             <br />
             <span className="text-gradient-animated">

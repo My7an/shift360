@@ -138,7 +138,7 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`bento-card relative flex flex-col p-8 fade-in-up ${
+                className={`pricing-card bento-card relative flex flex-col p-8 fade-in-up ${
                   plan.popular ? 'ring-2 ring-red-500 glow-red' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}

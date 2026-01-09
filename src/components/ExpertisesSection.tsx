@@ -14,7 +14,7 @@ const categories = [
       'Iconographie',
       'Typographies',
       'Illustrations',
-      'Avatars',
+      'Mascotte',
       'Colorimétrie',
     ],
     copy: 'On crée une identité cohérente, mémorable et alignée avec votre vision. Du naming à la charte complète, on façonne une marque qui vous ressemble et qui marque les esprits.',
@@ -61,6 +61,9 @@ const categories = [
       'Audit UX',
       'Design de produits innovants',
       'Support créa récurrent',
+      'Supports visuels restaurant',
+      'Optimisation Uber Eats/Deliveroo',
+      'Menus digitaux',
     ],
     copy: 'On adore sortir du cadre. Un mix de design, conseil ou accompagnement long terme ? Dis-nous ce que tu as en tête, on le rend concret, beau et fonctionnel.',
   },
@@ -91,7 +94,9 @@ const ExpertisesSection = () => {
               className={`flex items-center gap-3 px-7 py-4 rounded-full font-semibold transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                 activeTab === category.id
                   ? 'bg-foreground text-background scale-105 shadow-lg'
-                  : 'bg-[hsl(0_0%_95%)] border border-[hsl(0_0%_90%)] hover:bg-[hsl(0_0%_92%)] hover:scale-[1.02]'
+                  : category.id === 'custom'
+                    ? 'bg-[hsl(0_0%_95%)] border-2 border-red-500 hover:bg-red-50 hover:scale-[1.02]'
+                    : 'bg-[hsl(0_0%_95%)] border border-[hsl(0_0%_90%)] hover:bg-[hsl(0_0%_92%)] hover:scale-[1.02]'
               }`}
             >
               <category.icon className="w-5 h-5" />
