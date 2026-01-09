@@ -61,6 +61,45 @@
   .dark {
     --background: 0 100% 7%; /* #220000 */
     --foreground: 0 0% 100%;
+
+    --card: 0 100% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 100% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 100% 7%;
+
+    --muted: 0 100% 12%;
+    --muted-foreground: 0 0% 100% / 0.6;
+
+    --accent: 0 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100% / 0.1;
+    --input: 0 0% 100% / 0.1;
+    --ring: 0 100% 50%;
+
+    /* Premium Bento Style - Dark */
+    --bento-bg: 0 100% 10%;
+    --bento-border: 0 0% 100% / 0.08;
+
+    /* Glassmorphism - Dark */
+    --glass-bg: 0 100% 7% / 0.8;
+    --glass-border: 0 0% 100% / 0.1;
+
+    /* Shadows - Dark */
+    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --shadow-bento: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-bento-hover: 0 12px 40px rgba(255, 0, 0, 0.15);
+    --shadow-glow: 0 0 60px rgba(255, 0, 0, 0.4);
   }
 }
 
@@ -121,18 +160,18 @@
 @layer components {
   /* Glassmorphism Card */
   .glass {
-    background: rgba(255, 255, 255, 0.12);
+    background: hsl(var(--glass-bg));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    @apply border border-white/30 rounded-2xl;
+    @apply border border-border rounded-2xl;
     box-shadow: var(--shadow-glass);
   }
 
   .glass-strong {
-    background: rgba(255, 255, 255, 0.2);
+    background: hsl(var(--glass-bg));
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
-    @apply border border-white/40 rounded-2xl;
+    @apply border border-border rounded-2xl;
     box-shadow: var(--shadow-glass);
   }
 
@@ -220,8 +259,8 @@
   /* Premium Bento Card - Sculpted & High-end */
   .bento-card {
     @apply p-8 cursor-pointer;
-    background: hsl(0 0% 95%);
-    border: 1px solid hsl(0 0% 90%);
+    background: hsl(var(--bento-bg));
+    border: 1px solid hsl(var(--bento-border));
     border-radius: var(--bento-radius);
     box-shadow: var(--shadow-bento);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -229,16 +268,14 @@
 
   .bento-card:hover {
     @apply scale-[1.015];
-    background: hsl(0 0% 97%);
     box-shadow: var(--shadow-bento-hover);
-    border-color: hsl(0 0% 85%);
   }
 
   /* Bento card with visual/image - full bleed internal radius */
   .bento-card-visual {
     @apply cursor-pointer overflow-hidden;
-    background: hsl(0 0% 95%);
-    border: 1px solid hsl(0 0% 90%);
+    background: hsl(var(--bento-bg));
+    border: 1px solid hsl(var(--bento-border));
     border-radius: var(--bento-radius);
     box-shadow: var(--shadow-bento);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -246,7 +283,6 @@
 
   .bento-card-visual:hover {
     @apply scale-[1.015];
-    background: hsl(0 0% 97%);
     box-shadow: var(--shadow-bento-hover);
   }
 

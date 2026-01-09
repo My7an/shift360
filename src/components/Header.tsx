@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Logo from '@/assets/logo.svg';
 import CalendlyModal from './CalendlyModal';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -70,7 +71,7 @@ const Header = () => {
                 className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
             ))}
             {/* Contact opens Calendly */}
@@ -79,8 +80,9 @@ const Header = () => {
               className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group"
             >
               Contact
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             </button>
+            <ThemeToggle />
           </nav>
 
           {/* CTA Button - Desktop */}
