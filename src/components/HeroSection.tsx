@@ -33,7 +33,7 @@ const HeroSection = () => {
         {/* Overlay pour lisibilité */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-background/60 via-background/40 to-background/80 pointer-events-none" />
         
-        <div className="container mx-auto text-center max-w-5xl relative z-10">
+        <div className="container mx-auto text-center max-w-5xl relative z-10 pointer-events-none">
           {/* Main Title with Typography Duo */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[1.05] mb-8 animate-fade-in tracking-tighter">
             Votre équipe design,
@@ -48,7 +48,7 @@ const HeroSection = () => {
             Vos designs professionnels et en illimité.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in pointer-events-auto" style={{ animationDelay: '0.4s' }}>
             <button
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-base px-10 py-5"
