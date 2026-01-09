@@ -52,7 +52,7 @@ const ProcessSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-600/0 group-hover:from-red-500/8 group-hover:to-red-600/5 transition-all duration-500 rounded-[28px]"></div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <span className="text-7xl md:text-8xl font-extrabold text-red-500/15 mb-6 leading-none transition-all duration-500 group-hover:text-red-500/30 group-hover:scale-105">
+                  <span className="text-7xl md:text-8xl font-extrabold text-red-500/15 mb-6 leading-none transition-all duration-200 group-hover:text-red-500 group-hover:scale-105">
                     {step.number}
                   </span>
                   <h3 className="text-xl font-extrabold mb-4">{step.title}</h3>
@@ -63,7 +63,7 @@ const ProcessSection = () => {
                     onClick={() => setIsCalendlyOpen(true)}
                     className="btn-liquid text-sm py-3 px-5 self-start"
                   >
-                    Parler à un spécialiste
+                    Parle à un spécialiste
                   </button>
                 </div>
               </div>

@@ -69,7 +69,7 @@ const PromiseSection = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-lg"
             >
-              Parler à un spécialiste
+              Parle à un spécialiste
             </button>
           </div>
         </div>
