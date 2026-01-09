@@ -63,7 +63,7 @@ const ProcessSection = () => {
                     onClick={() => setIsCalendlyOpen(true)}
                     className="btn-liquid text-sm py-3 px-5 self-start"
                   >
-                    Parler à un expert
+                    Parler à un spécialiste
                   </button>
                 </div>
               </div>

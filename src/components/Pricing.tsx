@@ -144,12 +144,12 @@ const Pricing = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-full flex items-center justify-center mb-6">
                     Plus populaire
                   </div>
                 )}
 
-                <div className="flex items-center gap-3 mb-4">
+                <div className={`flex items-center gap-3 ${plan.popular ? 'mt-4' : ''} mb-4`}>
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                     plan.popular 
                       ? 'bg-gradient-to-br from-red-500 to-red-600' 
@@ -164,11 +164,11 @@ const Pricing = () => {
                 </div>
 
                 <div className="mb-6">
-                  <div className="flex items-baseline gap-1 whitespace-nowrap">
+                  <div className="flex items-baseline gap-1 flex-wrap">
                     <span className="text-4xl md:text-5xl font-extrabold">
                       {getPrice(plan)}€
                     </span>
-                    <span className="text-base text-foreground/60">/mois</span>
+                    <span className="text-sm text-foreground/60">/mois</span>
                   </div>
                   {isQuarterly && (
                     <p className="text-sm text-foreground/50 mt-1">

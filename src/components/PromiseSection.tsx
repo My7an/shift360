@@ -7,16 +7,19 @@ const promises = [
     icon: Infinity,
     title: 'Designs illimités',
     description: 'Abonnez-vous et demandez autant de visuels que vous le souhaitez. Votre créativité n\'a plus de plafond.',
-  },
-  {
-    icon: RefreshCw,
-    title: 'Retouches illimitées',
-    description: 'Nous révisons vos visuels jusqu\'à ce que vous soyez 100% satisfait. La perfection est notre seul standard.',
+    highlight: false,
   },
   {
     icon: ShieldCheck,
     title: 'Garantie "Test & Go"',
     description: 'Vous n\'aimez pas après une semaine ? On vous rembourse 75%, sans poser de questions.',
+    highlight: true,
+  },
+  {
+    icon: RefreshCw,
+    title: 'Retouches illimitées',
+    description: 'Nous révisons vos visuels jusqu\'à ce que vous soyez 100% satisfait. La perfection est notre seul standard.',
+    highlight: false,
   },
 ];
 
@@ -37,11 +40,23 @@ const PromiseSection = () => {
             {promises.map((promise, index) => (
               <div
                 key={index}
-                className="bento-card group p-8 flex flex-col h-full min-h-[280px] fade-in-up"
+                className={`bento-card group p-8 flex flex-col h-full min-h-[280px] fade-in-up ${
+                  promise.highlight 
+                    ? 'shadow-lg shadow-red-500/10 border border-red-500/30' 
+                    : ''
+                }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/20 to-red-600/10 flex items-center justify-center mb-6 group-hover:from-red-500 group-hover:to-red-600 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                  <promise.icon className="w-7 h-7 text-red-500 group-hover:text-white transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]" />
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                  promise.highlight 
+                    ? 'bg-gradient-to-br from-red-500 to-red-600' 
+                    : 'bg-gradient-to-br from-red-500/20 to-red-600/10 group-hover:from-red-500 group-hover:to-red-600'
+                }`}>
+                  <promise.icon className={`w-7 h-7 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                    promise.highlight 
+                      ? 'text-white' 
+                      : 'text-red-500 group-hover:text-white'
+                  }`} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{promise.title}</h3>
                 <p className="text-base text-foreground/60 leading-relaxed flex-grow">{promise.description}</p>
@@ -54,7 +69,7 @@ const PromiseSection = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-lg"
             >
-              Parler à un expert
+              Parler à un spécialiste
             </button>
           </div>
         </div>
