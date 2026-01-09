@@ -136,71 +136,71 @@ const Pricing = () => {
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {plans.map((plan, index) => (
-              <div
-                key={index}
-                className={`pricing-card bento-card relative flex flex-col p-8 fade-in-up ${
-                  plan.popular ? 'ring-2 ring-red-500 glow-red' : ''
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+              <div key={index} className="relative overflow-visible fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
                 {plan.popular && (
-                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold rounded-full whitespace-nowrap z-20 shadow-xl border-2 border-white">
+                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold rounded-full whitespace-nowrap z-20 shadow-xl border-2 border-white flex items-center justify-center">
                     Plus populaire
                   </div>
                 )}
 
-                <div className={`flex items-center gap-3 ${plan.popular ? 'mt-8' : ''} mb-4`}>
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                    plan.popular 
-                      ? 'bg-gradient-to-br from-red-500 to-red-600' 
-                      : 'bg-gradient-to-br from-red-500/20 to-red-600/10'
-                  }`}>
-                    <plan.icon className={`w-6 h-6 ${plan.popular ? 'text-white' : 'text-red-500'}`} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-extrabold">{plan.name}</h3>
-                    <p className="text-sm text-foreground/60">{plan.description}</p>
-                  </div>
-                </div>
-
-                <div className="mb-6">
-                  <div className="flex items-baseline gap-1 flex-wrap">
-                    <span className="text-4xl md:text-5xl font-extrabold">
-                      {getPrice(plan)}€
-                    </span>
-                    <span className="text-sm text-foreground/60">/mois</span>
-                  </div>
-                  {isQuarterly && (
-                    <p className="text-sm text-foreground/50 mt-1">
-                      Facturé trimestriellement
-                    </p>
-                  )}
-                  {isBooster && (
-                    <p className="text-sm text-red-500 mt-1 font-medium">
-                      +1 projet simultané inclus
-                    </p>
-                  )}
-                </div>
-
-                <ul className="flex-1 space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-3 text-sm">
-                      <Check className="w-5 h-5 text-red-500 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <button
-                  onClick={() => setIsCalendlyOpen(true)}
-                  className={`w-full py-4 rounded-full font-semibold transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                    plan.popular
-                      ? 'btn-liquid-primary'
-                      : 'btn-liquid'
+                <div
+                  className={`pricing-card bento-card relative flex flex-col p-8 ${
+                    plan.popular ? 'ring-2 ring-red-500 glow-red' : ''
                   }`}
                 >
-                  {plan.cta}
-                </button>
+                  <div className={`flex items-center gap-3 ${plan.popular ? 'mt-8' : ''} mb-4`}>
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                      plan.popular 
+                        ? 'bg-gradient-to-br from-red-500 to-red-600' 
+                        : 'bg-gradient-to-br from-red-500/20 to-red-600/10'
+                    }`}>
+                      <plan.icon className={`w-6 h-6 ${plan.popular ? 'text-white' : 'text-red-500'}`} />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-extrabold">{plan.name}</h3>
+                      <p className="text-sm text-foreground/60">{plan.description}</p>
+                    </div>
+                  </div>
+
+                  <div className="mb-6">
+                    <div className="flex items-baseline gap-1 flex-wrap">
+                      <span className="text-4xl md:text-5xl font-extrabold">
+                        {getPrice(plan)}€
+                      </span>
+                      <span className="text-sm text-foreground/60">/mois</span>
+                    </div>
+                    {isQuarterly && (
+                      <p className="text-sm text-foreground/50 mt-1">
+                        Facturé trimestriellement
+                      </p>
+                    )}
+                    {isBooster && (
+                      <p className="text-sm text-red-500 mt-1 font-medium">
+                        +1 projet simultané inclus
+                      </p>
+                    )}
+                  </div>
+
+                  <ul className="flex-1 space-y-3 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-3 text-sm">
+                        <Check className="w-5 h-5 text-red-500 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <button
+                    onClick={() => setIsCalendlyOpen(true)}
+                    className={`w-full py-4 rounded-full font-semibold transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                      plan.popular
+                        ? 'btn-liquid-primary'
+                        : 'btn-liquid'
+                    }`}
+                  >
+                    {plan.cta}
+                  </button>
+                </div>
               </div>
             ))}
           </div>
