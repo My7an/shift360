@@ -46,7 +46,7 @@ const HeroSection = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-lg px-12 py-6"
             >
-              Parler à un expert
+              Parle à un spécialiste
             </button>
           </div>
         </div>
