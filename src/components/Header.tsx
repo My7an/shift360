@@ -56,7 +56,7 @@ const Header = () => {
             <img 
               src={Logo} 
               alt="mylan.group" 
-              className="h-8 md:h-10 w-auto transition-all duration-300 group-hover:scale-105"
+              className="h-10 md:h-14 w-auto transition-all duration-300 group-hover:scale-105"
             />
           </a>
 

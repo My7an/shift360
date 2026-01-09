@@ -42,26 +42,26 @@ const ProcessSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bento-grid md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="bento-card group flex flex-col p-8 relative overflow-hidden fade-in-up"
+                className="bento-card group flex flex-col relative overflow-hidden fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-600/0 group-hover:from-red-500/10 group-hover:to-red-600/5 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-600/0 group-hover:from-red-500/5 group-hover:to-red-600/3 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] rounded-[28px]"></div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <span className="text-6xl md:text-7xl font-extrabold text-red-500/20 mb-4">
+                  <span className="text-7xl md:text-8xl font-extrabold text-red-500/15 mb-6 leading-none">
                     {step.number}
                   </span>
-                  <h3 className="text-xl font-extrabold mb-3">{step.title}</h3>
-                  <p className="text-foreground/60 text-sm leading-relaxed mb-6 flex-1">
+                  <h3 className="text-xl font-extrabold mb-4">{step.title}</h3>
+                  <p className="text-foreground/60 text-sm leading-relaxed mb-8 flex-1">
                     {step.description}
                   </p>
                   <button
                     onClick={() => setIsCalendlyOpen(true)}
-                    className="btn-liquid text-sm py-2 px-4 self-start"
+                    className="btn-liquid text-sm py-3 px-5 self-start"
                   >
                     PARLER À UN EXPERT
                   </button>
