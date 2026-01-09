@@ -123,13 +123,6 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  /* Manier Regular Italic for elegant accents */
-  .font-serif-elegant {
-    font-family: 'Manier', serif;
-    font-weight: 400;
-    font-style: italic;
-  }
-
   .text-editorial {
     font-family: 'Poppins', sans-serif;
     font-style: italic;
