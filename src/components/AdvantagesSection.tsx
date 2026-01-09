@@ -37,19 +37,19 @@ const AdvantagesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="bento-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
           {advantages.map((advantage, index) => (
             <div
               key={index}
-              className="bento-card group p-6 flex flex-col items-start gap-4 fade-in-up"
+              className="bento-card group flex flex-col items-start gap-5 fade-in-up"
               style={{ animationDelay: `${index * 0.05}s` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/20 to-red-600/10 flex items-center justify-center flex-shrink-0 group-hover:from-red-500 group-hover:to-red-600 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                <advantage.icon className="w-6 h-6 text-red-500 group-hover:text-white transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]" />
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500/15 to-red-600/5 flex items-center justify-center flex-shrink-0 group-hover:from-red-500 group-hover:to-red-600 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+                <advantage.icon className="w-7 h-7 text-red-500 group-hover:text-white transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]" />
               </div>
               <div>
-                <span className="font-bold text-sm leading-tight block">{advantage.title}</span>
-                <span className="text-xs text-foreground/50 mt-1 block">{advantage.subtitle}</span>
+                <span className="font-bold text-base leading-tight block">{advantage.title}</span>
+                <span className="text-sm text-foreground/50 mt-2 block">{advantage.subtitle}</span>
               </div>
             </div>
           ))}
