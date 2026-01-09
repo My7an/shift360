@@ -33,7 +33,7 @@ const Header = () => {
   };
 
   const navLinks = [
-    { href: '#comment-ca-marche', label: 'Comment ça marche ?' },
+    { href: '#processus', label: 'Comment ça marche ?' },
     { href: '#projets', label: 'Projets' },
     { href: '#abonnements', label: 'Abonnements' },
     { href: '#faq', label: 'FAQ' },
