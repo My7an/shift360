@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Palette, Monitor, FileImage, Wrench } from 'lucide-react';
+import { Palette, Monitor, FileImage, Wrench, Sparkles } from 'lucide-react';
 
 const categories = [
   {
@@ -91,7 +91,7 @@ const ExpertisesSection = () => {
             <button
               key={category.id}
               onClick={() => setActiveTab(category.id)}
-              className={`flex items-center gap-3 px-7 py-4 rounded-full font-semibold transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+              className={`relative flex items-center gap-3 px-7 py-4 rounded-full font-semibold transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                 activeTab === category.id
                   ? 'bg-foreground text-background scale-105 shadow-lg'
                   : category.id === 'custom'
@@ -99,6 +99,13 @@ const ExpertisesSection = () => {
                     : 'bg-[hsl(0_0%_95%)] border border-[hsl(0_0%_90%)] hover:bg-[hsl(0_0%_92%)] hover:scale-[1.02]'
               }`}
             >
+              {/* Yellow star for Solutions Sur-mesure */}
+              {category.id === 'custom' && activeTab !== 'custom' && (
+                <div className="absolute -top-1 -right-1 animate-pulse">
+                  <Sparkles className="w-5 h-5 text-yellow-500 drop-shadow-lg" />
+                  <div className="absolute inset-0 bg-yellow-400/40 rounded-full blur-sm animate-ping" style={{ animationDuration: '2s' }} />
+                </div>
+              )}
               <category.icon className="w-5 h-5" />
               <span className="hidden sm:inline">{category.title}</span>
             </button>
