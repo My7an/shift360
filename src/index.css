@@ -374,6 +374,38 @@
     box-shadow: 0 0 40px rgba(255, 0, 0, 0.4), 0 0 80px rgba(255, 0, 0, 0.2);
   }
 
+  /* Pricing Card with light sweep animation */
+  .pricing-card {
+    @apply transition-all duration-500;
+    overflow: hidden;
+  }
+
+  .pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    );
+    transition: left 0.8s ease-in-out;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .pricing-card:hover {
+    transform: scale(1.03);
+  }
+
+  .pricing-card:hover::before {
+    left: 150%;
+  }
+
   /* Scroll reveal animations - ultra smooth */
   .scroll-reveal {
     opacity: 0;

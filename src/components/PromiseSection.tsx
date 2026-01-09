@@ -40,7 +40,7 @@ const PromiseSection = () => {
             {promises.map((promise, index) => (
               <div
                 key={index}
-                className={`bento-card group p-8 flex flex-col h-full min-h-[280px] fade-in-up ${
+                className={`bento-card group p-8 flex flex-col h-full min-h-[280px] fade-in-up transition-all duration-300 hover:scale-[1.02] ${
                   promise.highlight 
                     ? 'shadow-lg shadow-red-500/10 border border-red-500/30' 
                     : ''
