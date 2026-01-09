@@ -4,63 +4,63 @@
 
 @layer base {
   :root {
-    /* Mylan Brandkit - Exact Colors */
-    --background: 25 31% 92%; /* #f5eadf - Beige crème exact */
-    --foreground: 0 0% 11%; /* #1c1c1c - Noir exact */
+    /* Mylan Brandkit - Exact Colors from Brand Guidelines */
+    --background: 0 0% 100%; /* #FFFFFF - White */
+    --foreground: 0 100% 7%; /* #220000 - Dark red-black */
 
-    --card: 0 0% 100% / 0.15;
-    --card-foreground: 0 0% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 100% 7%;
 
-    --popover: 0 0% 100% / 0.2;
-    --popover-foreground: 0 0% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 100% 7%;
 
-    --primary: 0 0% 11%; /* #1c1c1c */
-    --primary-foreground: 25 31% 92%;
+    --primary: 0 100% 50%; /* #FF0000 - Primary Red */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 100% / 0.1;
-    --secondary-foreground: 0 0% 11%;
+    --secondary: 0 100% 7%; /* #220000 - Dark */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 25 20% 85%;
-    --muted-foreground: 0 0% 35%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 100% 7% / 0.6;
 
-    --accent: 2 94% 48%; /* #ed1308 - Rouge exact */
+    --accent: 0 100% 50%; /* #FF0000 - Primary Red */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 2 94% 48%;
+    --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 100% / 0.25;
-    --input: 0 0% 100% / 0.15;
-    --ring: 2 94% 48%;
+    --border: 0 100% 7% / 0.1;
+    --input: 0 100% 7% / 0.1;
+    --ring: 0 100% 50%;
 
     --radius: 1.75rem;
 
-    /* Premium Bento Style - Inspired by reference */
-    --bento-bg: 0 0% 95%; /* Light gray like reference */
-    --bento-border: 0 0% 88%;
+    /* Premium Bento Style */
+    --bento-bg: 0 0% 97%;
+    --bento-border: 0 100% 7% / 0.08;
     --bento-radius: 28px;
     --bento-gap: 20px;
 
     /* Glassmorphism */
-    --glass-bg: 0 0% 100% / 0.12;
-    --glass-border: 0 0% 100% / 0.3;
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 0 100% 7% / 0.1;
     --glass-blur: 20px;
 
-    /* Gradients - Rouge #ed1308 */
-    --gradient-red-start: 2 94% 48%;
-    --gradient-red-mid: 2 90% 42%;
-    --gradient-red-end: 2 88% 38%;
+    /* Gradients - Rouge #FF0000 */
+    --gradient-red-start: 0 100% 50%;
+    --gradient-red-mid: 0 100% 40%;
+    --gradient-red-end: 0 100% 30%;
 
-    /* Shadows - Subtle for sculpted effect */
-    --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
-    --shadow-bento: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --shadow-bento-hover: 0 12px 40px rgba(0, 0, 0, 0.08);
-    --shadow-glow: 0 0 60px rgba(237, 19, 8, 0.3);
+    /* Shadows */
+    --shadow-glass: 0 8px 32px 0 rgba(34, 0, 0, 0.08);
+    --shadow-bento: 0 2px 8px rgba(34, 0, 0, 0.04);
+    --shadow-bento-hover: 0 12px 40px rgba(34, 0, 0, 0.08);
+    --shadow-glow: 0 0 60px rgba(255, 0, 0, 0.3);
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 95%;
+    --background: 0 100% 7%; /* #220000 */
+    --foreground: 0 0% 100%;
   }
 }
 
@@ -99,13 +99,13 @@
 
   /* Text gradient animation for accent words with glow effect */
   .text-gradient-animated {
-    background: linear-gradient(90deg, #ed1308, #ff4136, #ed1308, #c91107);
+    background: linear-gradient(90deg, #FF0000, #ff4444, #FF0000, #cc0000);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient-sweep 8s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(237, 19, 8, 0.5)) drop-shadow(0 0 40px rgba(237, 19, 8, 0.3));
+    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5)) drop-shadow(0 0 40px rgba(255, 0, 0, 0.3));
   }
 
   @keyframes gradient-sweep {
@@ -163,16 +163,17 @@
   }
 
   .btn-liquid:hover {
-    background: hsl(0 0% 0%);
+    background: hsl(0 100% 7%); /* #220000 */
     color: white;
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 30px rgba(237, 19, 8, 0.15);
+    box-shadow: 0 8px 25px rgba(34, 0, 0, 0.2), 0 0 30px rgba(255, 0, 0, 0.15);
   }
 
   .btn-liquid-primary {
-    @apply relative px-8 py-4 bg-black text-white rounded-full 
+    @apply relative px-8 py-4 text-white rounded-full 
            font-semibold overflow-hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: hsl(0 100% 7%); /* #220000 */
+    box-shadow: 0 4px 20px rgba(34, 0, 0, 0.15);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -193,7 +194,7 @@
 
   .btn-liquid-primary:hover {
     @apply scale-105;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 0 40px rgba(237, 19, 8, 0.2);
+    box-shadow: 0 8px 30px rgba(34, 0, 0, 0.25), 0 0 40px rgba(255, 0, 0, 0.2);
   }
 
   .btn-liquid-primary:active,
@@ -204,15 +205,15 @@
   @keyframes btn-click {
     0% {
       transform: scale(1.05);
-      box-shadow: 0 0 0 0 rgba(237, 19, 8, 0.4);
+      box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4);
     }
     50% {
       transform: scale(1.05) translate(2px, -2px);
-      box-shadow: 0 0 20px 5px rgba(237, 19, 8, 0.3);
+      box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.3);
     }
     100% {
       transform: scale(1.05);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 8px 30px rgba(34, 0, 0, 0.25);
     }
   }
 
@@ -278,7 +279,7 @@
   .gradient-blob-1 {
     width: 600px;
     height: 600px;
-    background: linear-gradient(135deg, #ed1308, #c91107);
+    background: linear-gradient(135deg, #FF0000, #cc0000);
     top: -200px;
     right: -150px;
     animation-delay: 0s;
@@ -287,7 +288,7 @@
   .gradient-blob-2 {
     width: 500px;
     height: 500px;
-    background: linear-gradient(135deg, #c91107, #ed1308);
+    background: linear-gradient(135deg, #cc0000, #FF0000);
     bottom: -100px;
     left: -100px;
     animation-delay: -7s;
@@ -296,7 +297,7 @@
   .gradient-blob-3 {
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, #ed1308, #a00d06);
+    background: linear-gradient(135deg, #FF0000, #990000);
     top: 40%;
     left: 30%;
     animation-delay: -14s;
@@ -342,7 +343,7 @@
 
   /* Glow Effect */
   .glow-red {
-    box-shadow: 0 0 40px rgba(237, 19, 8, 0.4), 0 0 80px rgba(237, 19, 8, 0.2);
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.4), 0 0 80px rgba(255, 0, 0, 0.2);
   }
 
   /* Scroll reveal animations - ultra smooth */
