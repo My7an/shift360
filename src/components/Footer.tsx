@@ -17,28 +17,47 @@ const serviceLinks = [
 ];
 
 const Footer = () => {
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    const target = document.querySelector(href);
+    if (target) {
+      const headerOffset = 100;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <footer id="contact" className="py-16 px-6 border-t border-white/10">
+    <footer id="contact" className="py-20 px-6 border-t border-white/10">
       <div className="container mx-auto max-w-6xl">
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* À Propos */}
           <div>
-            <span className="text-2xl font-bold mb-4 block">mylan.group</span>
+            <span className="text-3xl font-extrabold mb-6 block tracking-tight">mylan.group</span>
             <p className="text-sm text-foreground/60 leading-relaxed">
-              Mylan.group c'est une équipe partout dans le monde. Une équipe créative impliquée et réactive. Nos portes sont ouvertes, partageons un café.
+              Mylan.group est une équipe mondiale impliquée et réactive. Nos portes sont ouvertes pour bosser ou partager un café.
             </p>
           </div>
 
           {/* Liens Rapides */}
           <div>
-            <h4 className="font-bold mb-4">Liens Rapides</h4>
+            <h4 className="font-extrabold mb-4 text-lg">Liens Rapides</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-sm text-foreground/60 hover:text-foreground transition-colors"
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className="text-sm text-foreground/60 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
                   >
                     {link.label}
                   </a>
@@ -49,13 +68,14 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-bold mb-4">Services</h4>
+            <h4 className="font-extrabold mb-4 text-lg">Services</h4>
             <ul className="space-y-2">
               {serviceLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-sm text-foreground/60 hover:text-foreground transition-colors"
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className="text-sm text-foreground/60 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
                   >
                     {link.label}
                   </a>
@@ -66,7 +86,7 @@ const Footer = () => {
 
           {/* Contact Form */}
           <div>
-            <h4 className="font-bold mb-4">Contactez-nous</h4>
+            <h4 className="font-extrabold mb-4 text-lg">Contactez-nous</h4>
             <ContactForm />
           </div>
         </div>
@@ -76,11 +96,11 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Contact Info */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-foreground/60">
-              <a href="tel:+33650016134" className="flex items-center gap-2 hover:text-foreground transition-colors">
+              <a href="tel:+33650016134" className="flex items-center gap-2 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                 <Phone className="w-4 h-4 text-red-500" />
                 +33 6 50 01 61 34
               </a>
-              <a href="mailto:servicebellinepro@gmail.com" className="flex items-center gap-2 hover:text-foreground transition-colors">
+              <a href="mailto:servicebellinepro@gmail.com" className="flex items-center gap-2 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                 <Mail className="w-4 h-4 text-red-500" />
                 servicebellinepro@gmail.com
               </a>

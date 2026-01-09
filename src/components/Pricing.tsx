@@ -16,6 +16,7 @@ const plans = [
       'Web & Print',
       'Retouches illimitées',
       'Collaborateurs illimités',
+      'Expert dédié',
     ],
     cta: 'Choisir Soft',
     popular: false,
@@ -29,9 +30,12 @@ const plans = [
     features: [
       '1 projet à la fois',
       'Livraison 48h',
+      'Web & Print',
       'UX/UI Figma',
       'Branding & Rebranding',
       'Sites Webflow & Framer',
+      'Retouches illimitées',
+      'Collaborateurs illimités',
     ],
     cta: 'Choisir Avancé',
     popular: true,
@@ -43,9 +47,12 @@ const plans = [
     description: 'Le meilleur de mylan.group',
     icon: Diamond,
     features: [
-      '2 projets simultanés',
+      '2 projets à la fois',
       'Livraison 72h',
-      'Full services (UX/UI, Web, Branding)',
+      'Web & Print',
+      'UX/UI Figma',
+      'Branding & Rebranding',
+      'Sites Webflow & Framer',
       'Retouches illimitées',
       'Collaborateurs illimités',
     ],
@@ -60,11 +67,11 @@ const Pricing = () => {
 
   return (
     <>
-      <section id="abonnements" className="py-24 px-6">
+      <section id="abonnements" className="py-32 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-              Nos <span className="font-serif-elegant">abonnements</span>
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
+              Nos <span className="font-serif-elegant text-gradient-animated">abonnements</span>
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto mb-8">
               Choisissez le forfait adapté à vos besoins
@@ -72,7 +79,7 @@ const Pricing = () => {
 
             {/* Switch Mensuel/Trimestriel */}
             <div className="flex items-center justify-center gap-4">
-              <span className={`font-medium transition-colors ${!isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
+              <span className={`font-medium transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${!isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
                 Mensuel
               </span>
               <Switch
@@ -80,7 +87,7 @@ const Pricing = () => {
                 onCheckedChange={setIsQuarterly}
                 className="data-[state=checked]:bg-red-500"
               />
-              <span className={`font-medium transition-colors ${isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
+              <span className={`font-medium transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
                 Trimestriel
                 <span className="ml-2 px-2 py-1 text-xs bg-red-500 text-white rounded-full">
                   -15%
@@ -93,9 +100,10 @@ const Pricing = () => {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`bento-card relative flex flex-col p-8 ${
+                className={`bento-card relative flex flex-col p-8 fade-in-up ${
                   plan.popular ? 'ring-2 ring-red-500 glow-red' : ''
                 }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-medium rounded-full">
@@ -104,7 +112,7 @@ const Pricing = () => {
                 )}
 
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                     plan.popular 
                       ? 'bg-gradient-to-br from-red-500 to-red-600' 
                       : 'bg-gradient-to-br from-red-500/20 to-red-600/10'
@@ -112,13 +120,13 @@ const Pricing = () => {
                     <plan.icon className={`w-6 h-6 ${plan.popular ? 'text-white' : 'text-red-500'}`} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">{plan.name}</h3>
+                    <h3 className="text-xl font-extrabold">{plan.name}</h3>
                     <p className="text-sm text-foreground/60">{plan.description}</p>
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <span className="text-5xl font-bold">
+                  <span className="text-5xl font-extrabold">
                     {isQuarterly ? plan.quarterlyPrice : plan.monthlyPrice}€
                   </span>
                   <span className="text-foreground/60 ml-2">/mois</span>
@@ -140,7 +148,7 @@ const Pricing = () => {
 
                 <button
                   onClick={() => setIsCalendlyOpen(true)}
-                  className={`w-full py-4 rounded-full font-semibold transition-all duration-500 ${
+                  className={`w-full py-4 rounded-full font-semibold transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                     plan.popular
                       ? 'btn-liquid-primary'
                       : 'btn-liquid'
