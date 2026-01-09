@@ -4,7 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import PromiseSection from '@/components/PromiseSection';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import ExpertisesSection from '@/components/ExpertisesSection';
-import AdvantagesSection from '@/components/AdvantagesSection';
+import AdvantagesCarousel from '@/components/AdvantagesCarousel';
 import ProcessSection from '@/components/ProcessSection';
 import Pricing from '@/components/Pricing';
 import SocialProof from '@/components/SocialProof';
@@ -22,7 +22,7 @@ const Index = () => {
         <PromiseSection />
         <PortfolioMarquee />
         <ExpertisesSection />
-        <AdvantagesSection />
+        <AdvantagesCarousel />
         <ProcessSection />
         <Pricing />
         <SocialProof />

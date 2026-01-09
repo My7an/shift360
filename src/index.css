@@ -129,7 +129,7 @@
     letter-spacing: 0.01em;
   }
 
-  /* Text gradient animation for accent words with glow effect */
+  /* Text gradient animation for accent words - no glow */
   .text-gradient-animated {
     background: linear-gradient(90deg, #FF0000, #ff4444, #FF0000, #cc0000);
     background-size: 300% 100%;
@@ -137,7 +137,6 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient-sweep 8s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(255, 0, 0, 0.5)) drop-shadow(0 0 40px rgba(255, 0, 0, 0.3));
   }
 
   @keyframes gradient-sweep {

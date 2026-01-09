@@ -5,9 +5,11 @@ import CalendlyModal from './CalendlyModal';
 
 const plans = [
   {
-    name: 'SOFT',
+    name: 'Soft',
     monthlyPrice: 1590,
     quarterlyPrice: 1330,
+    boosterMonthlyPrice: 2690,
+    boosterQuarterlyPrice: 2290,
     description: 'Idéal pour démarrer',
     icon: Sparkles,
     features: [
@@ -22,9 +24,11 @@ const plans = [
     popular: false,
   },
   {
-    name: 'AVANCÉ',
+    name: 'Avancé',
     monthlyPrice: 2090,
     quarterlyPrice: 1830,
+    boosterMonthlyPrice: 3490,
+    boosterQuarterlyPrice: 2990,
     description: 'Pour les équipes ambitieuses',
     icon: Crown,
     features: [
@@ -41,9 +45,11 @@ const plans = [
     popular: true,
   },
   {
-    name: 'ULTRA',
+    name: 'Ultra',
     monthlyPrice: 3490,
     quarterlyPrice: 3230,
+    boosterMonthlyPrice: 6190,
+    boosterQuarterlyPrice: 5290,
     description: 'Le meilleur de mylan.group',
     icon: Diamond,
     features: [
@@ -64,6 +70,14 @@ const plans = [
 const Pricing = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [isQuarterly, setIsQuarterly] = useState(false);
+  const [isBooster, setIsBooster] = useState(false);
+
+  const getPrice = (plan: typeof plans[0]) => {
+    if (isBooster) {
+      return isQuarterly ? plan.boosterQuarterlyPrice : plan.boosterMonthlyPrice;
+    }
+    return isQuarterly ? plan.quarterlyPrice : plan.monthlyPrice;
+  };
 
   return (
     <>
@@ -71,28 +85,52 @@ const Pricing = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
-              Nos <span className="font-serif-elegant text-gradient-animated">abonnements</span>
+              Nos <span className="text-gradient-animated">abonnements</span>
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto mb-8">
               Choisissez le forfait adapté à vos besoins
             </p>
 
-            {/* Switch Mensuel/Trimestriel */}
-            <div className="flex items-center justify-center gap-4">
-              <span className={`font-medium transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${!isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
-                Mensuel
-              </span>
-              <Switch
-                checked={isQuarterly}
-                onCheckedChange={setIsQuarterly}
-                className="data-[state=checked]:bg-red-500"
-              />
-              <span className={`font-medium transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
-                Trimestriel
-                <span className="ml-2 px-2 py-1 text-xs bg-red-500 text-white rounded-full">
-                  -15%
+            {/* Switches Container */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+              {/* Switch Mensuel/Trimestriel */}
+              <div className="flex items-center gap-4">
+                <span className={`font-medium transition-all duration-300 ${!isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
+                  Mensuel
                 </span>
-              </span>
+                <Switch
+                  checked={isQuarterly}
+                  onCheckedChange={setIsQuarterly}
+                  className="data-[state=checked]:bg-red-500"
+                />
+                <span className={`font-medium transition-all duration-300 ${isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
+                  Trimestriel
+                  <span className="ml-2 px-2 py-1 text-xs bg-red-500 text-white rounded-full">
+                    -15%
+                  </span>
+                </span>
+              </div>
+
+              {/* Separator */}
+              <div className="hidden sm:block w-px h-6 bg-foreground/20" />
+
+              {/* Switch Booster +1 Projet */}
+              <div className="flex items-center gap-4">
+                <span className={`font-medium transition-all duration-300 ${!isBooster ? 'text-foreground/50' : 'text-foreground/50'}`}>
+                  Standard
+                </span>
+                <Switch
+                  checked={isBooster}
+                  onCheckedChange={setIsBooster}
+                  className="data-[state=checked]:bg-red-500"
+                />
+                <span className={`font-medium transition-all duration-300 ${isBooster ? 'text-foreground' : 'text-foreground/50'}`}>
+                  +1 projet simultané
+                  <span className="ml-2 px-2 py-1 text-xs bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full">
+                    Boost
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
 
@@ -127,12 +165,17 @@ const Pricing = () => {
 
                 <div className="mb-6">
                   <span className="text-5xl font-extrabold">
-                    {isQuarterly ? plan.quarterlyPrice : plan.monthlyPrice}€
+                    {getPrice(plan)}€
                   </span>
                   <span className="text-foreground/60 ml-2">/mois</span>
                   {isQuarterly && (
                     <p className="text-sm text-foreground/50 mt-1">
                       Facturé trimestriellement
+                    </p>
+                  )}
+                  {isBooster && (
+                    <p className="text-sm text-red-500 mt-1 font-medium">
+                      +1 projet simultané inclus
                     </p>
                   )}
                 </div>

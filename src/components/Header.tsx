@@ -52,7 +52,7 @@ const Header = () => {
           <a 
             href="#" 
             onClick={(e) => handleSmoothScroll(e, '#')}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2 group flex-shrink-0"
           >
             <img 
               src={Logo} 
@@ -61,37 +61,38 @@ const Header = () => {
             />
           </a>
 
-          {/* Desktop Navigation - Always visible */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group"
+          {/* Desktop Navigation + CTA - Aligned on same row */}
+          <div className="hidden md:flex items-center gap-8">
+            <nav className="flex items-center gap-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
+                  className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group whitespace-nowrap"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+              ))}
+              {/* Contact opens Calendly */}
+              <button
+                onClick={() => setIsCalendlyOpen(true)}
+                className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group whitespace-nowrap"
               >
-                {link.label}
+                Contact
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </a>
-            ))}
-            {/* Contact opens Calendly */}
+              </button>
+            </nav>
+            <ThemeToggle />
+            {/* CTA Button */}
             <button
               onClick={() => setIsCalendlyOpen(true)}
-              className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group"
+              className="btn-liquid-primary text-sm whitespace-nowrap"
             >
-              Contact
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              Parler à un expert
             </button>
-            <ThemeToggle />
-          </nav>
-
-          {/* CTA Button - Desktop */}
-          <button
-            onClick={() => setIsCalendlyOpen(true)}
-            className="hidden md:inline-flex btn-liquid-primary text-sm"
-          >
-            Parler à un expert
-          </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button

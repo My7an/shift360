@@ -29,7 +29,7 @@ const PromiseSection = () => {
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
-              Nos <span className="font-serif-elegant text-gradient-animated">engagements</span>
+              Nos <span className="text-gradient-animated">engagements</span>
             </h2>
           </div>
 
@@ -54,7 +54,7 @@ const PromiseSection = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-lg"
             >
-              PARLER À UN EXPERT
+              Parler à un expert
             </button>
           </div>
         </div>
