@@ -1,75 +1,92 @@
 import { useState } from 'react';
 import { Check, Sparkles, Crown, Diamond } from 'lucide-react';
+import { Switch } from '@/components/ui/switch';
 import CalendlyModal from './CalendlyModal';
 
 const plans = [
   {
-    name: 'Basic',
-    price: '0',
-    description: 'Parfait pour démarrer',
+    name: 'SOFT',
+    monthlyPrice: 1590,
+    quarterlyPrice: 1330,
+    description: 'Idéal pour démarrer',
     icon: Sparkles,
     features: [
-      '1 demande active',
+      '1 projet à la fois',
       'Livraison 72h',
-      'Révisions illimitées',
-      'Support par email',
-      'Fichiers sources inclus',
+      'Web & Print',
+      'Retouches illimitées',
+      'Collaborateurs illimités',
     ],
-    cta: 'Commencer gratuitement',
+    cta: 'Choisir Soft',
     popular: false,
   },
   {
-    name: 'Or',
-    price: '0',
+    name: 'AVANCÉ',
+    monthlyPrice: 2090,
+    quarterlyPrice: 1830,
     description: 'Pour les équipes ambitieuses',
     icon: Crown,
     features: [
-      '3 demandes actives',
+      '1 projet à la fois',
       'Livraison 48h',
-      'Révisions illimitées',
-      'Support prioritaire',
-      'Fichiers sources inclus',
-      'Accès équipe illimité',
-      'Motion design inclus',
+      'UX/UI Figma',
+      'Branding & Rebranding',
+      'Sites Webflow & Framer',
     ],
-    cta: 'Essayer gratuitement',
+    cta: 'Choisir Avancé',
     popular: true,
   },
   {
-    name: 'Diamond',
-    price: '0',
+    name: 'ULTRA',
+    monthlyPrice: 3490,
+    quarterlyPrice: 3230,
     description: 'Le meilleur de mylan.group',
     icon: Diamond,
     features: [
-      'Demandes illimitées',
-      'Livraison 24h',
-      'Révisions illimitées',
-      'Support dédié 24/7',
-      'Fichiers sources inclus',
-      'Accès équipe illimité',
-      'Motion design inclus',
-      'Direction artistique',
-      'Consultant dédié',
+      '2 projets simultanés',
+      'Livraison 72h',
+      'Full services (UX/UI, Web, Branding)',
+      'Retouches illimitées',
+      'Collaborateurs illimités',
     ],
-    cta: 'Contacter l\'équipe',
+    cta: 'Choisir Ultra',
     popular: false,
   },
 ];
 
 const Pricing = () => {
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const [isQuarterly, setIsQuarterly] = useState(false);
 
   return (
     <>
       <section id="abonnements" className="py-24 px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Nos <span className="font-serif-elegant">abonnements</span>
             </h2>
-            <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/60 max-w-2xl mx-auto mb-8">
               Choisissez le forfait adapté à vos besoins
             </p>
+
+            {/* Switch Mensuel/Trimestriel */}
+            <div className="flex items-center justify-center gap-4">
+              <span className={`font-medium transition-colors ${!isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
+                Mensuel
+              </span>
+              <Switch
+                checked={isQuarterly}
+                onCheckedChange={setIsQuarterly}
+                className="data-[state=checked]:bg-red-500"
+              />
+              <span className={`font-medium transition-colors ${isQuarterly ? 'text-foreground' : 'text-foreground/50'}`}>
+                Trimestriel
+                <span className="ml-2 px-2 py-1 text-xs bg-red-500 text-white rounded-full">
+                  -15%
+                </span>
+              </span>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
@@ -101,8 +118,15 @@ const Pricing = () => {
                 </div>
 
                 <div className="mb-6">
-                  <span className="text-5xl font-bold">{plan.price}€</span>
+                  <span className="text-5xl font-bold">
+                    {isQuarterly ? plan.quarterlyPrice : plan.monthlyPrice}€
+                  </span>
                   <span className="text-foreground/60 ml-2">/mois</span>
+                  {isQuarterly && (
+                    <p className="text-sm text-foreground/50 mt-1">
+                      Facturé trimestriellement
+                    </p>
+                  )}
                 </div>
 
                 <ul className="flex-1 space-y-3 mb-8">
