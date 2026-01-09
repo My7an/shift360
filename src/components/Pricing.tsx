@@ -20,7 +20,7 @@ const plans = [
       'Collaborateurs illimités',
       'Expert dédié',
     ],
-    cta: 'Parle à un spécialiste',
+    cta: 'Parler à un spécialiste',
     popular: false,
   },
   {
@@ -41,7 +41,7 @@ const plans = [
       'Retouches illimitées',
       'Collaborateurs illimités',
     ],
-    cta: 'Parle à un spécialiste',
+    cta: 'Parler à un spécialiste',
     popular: true,
   },
   {
@@ -62,7 +62,7 @@ const plans = [
       'Retouches illimitées',
       'Collaborateurs illimités',
     ],
-    cta: 'Parle à un spécialiste',
+    cta: 'Parler à un spécialiste',
     popular: false,
   },
 ];
@@ -144,12 +144,12 @@ const Pricing = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {plan.popular && (
-                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-5 py-2 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold rounded-full whitespace-nowrap z-10 shadow-lg">
+                  <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold rounded-full whitespace-nowrap z-20 shadow-xl border-2 border-white">
                     Plus populaire
                   </div>
                 )}
 
-                <div className={`flex items-center gap-3 ${plan.popular ? 'mt-6' : ''} mb-4`}>
+                <div className={`flex items-center gap-3 ${plan.popular ? 'mt-8' : ''} mb-4`}>
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                     plan.popular 
                       ? 'bg-gradient-to-br from-red-500 to-red-600' 

@@ -71,6 +71,18 @@ const PortfolioMarquee = () => {
         <MarqueeRow items={row2Items} reverse />
         <MarqueeRow items={row3Items} />
       </div>
+
+      {/* Brochure Button */}
+      <div className="flex justify-center mt-12">
+        <a
+          href="https://figma.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold border-2 border-red-500 text-red-500 bg-transparent hover:bg-red-50 transition-all duration-300 hover:scale-[1.02]"
+        >
+          Voir notre brochure
+        </a>
+      </div>
     </section>
   );
 };

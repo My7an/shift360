@@ -90,7 +90,7 @@ const Header = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-sm whitespace-nowrap px-5 py-2"
             >
-              Parle à un spécialiste
+              Parler à un spécialiste
             </button>
           </div>
 
@@ -134,7 +134,7 @@ const Header = () => {
                 }}
                 className="btn-liquid-primary text-center mt-4"
               >
-                Parle à un spécialiste
+                Parler à un spécialiste
               </button>
             </nav>
           </div>
