@@ -71,19 +71,41 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
+    @apply font-extrabold;
     letter-spacing: -0.03em;
+    font-family: 'Poppins', sans-serif;
   }
 
+  /* Manier Regular Italic for elegant accents */
   .font-serif-elegant {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 700;
+    font-family: 'Manier', serif;
+    font-weight: 400;
+    font-style: italic;
   }
 
   .text-editorial {
     font-family: 'Poppins', sans-serif;
     font-style: italic;
     letter-spacing: 0.01em;
+  }
+
+  /* Text gradient animation for accent words */
+  .text-gradient-animated {
+    background: linear-gradient(90deg, #ed1308, #c91107, #ed1308, #c91107);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-sweep 8s ease-in-out infinite;
+  }
+
+  @keyframes gradient-sweep {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
   }
 }
 
@@ -105,32 +127,64 @@
     box-shadow: var(--shadow-glass);
   }
 
-  /* Liquid Glass Button */
+  /* Liquid Glass Button with light sweep */
   .btn-liquid {
     @apply relative px-6 py-3 border border-white/30 rounded-full 
-           font-medium transition-all duration-500 ease-out overflow-hidden;
+           font-medium overflow-hidden;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-liquid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-liquid:hover::before {
+    left: 100%;
   }
 
   .btn-liquid:hover {
     background: hsl(0 0% 0%);
     color: white;
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 0 30px rgba(237, 19, 8, 0.15);
   }
 
   .btn-liquid-primary {
     @apply relative px-8 py-4 bg-black text-white rounded-full 
-           font-semibold transition-all duration-500 ease-out overflow-hidden;
+           font-semibold overflow-hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-liquid-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-liquid-primary:hover::before {
+    left: 100%;
   }
 
   .btn-liquid-primary:hover {
     @apply scale-105;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 0 40px rgba(237, 19, 8, 0.2);
   }
 
   .btn-liquid-primary:active,
@@ -153,9 +207,10 @@
     }
   }
 
-  /* Bento Card */
+  /* Bento Card with smooth hover */
   .bento-card {
-    @apply glass p-6 transition-all duration-500 ease-out cursor-pointer;
+    @apply glass p-6 cursor-pointer;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .bento-card:hover {
@@ -249,7 +304,7 @@
     box-shadow: 0 0 40px rgba(237, 19, 8, 0.4), 0 0 80px rgba(237, 19, 8, 0.2);
   }
 
-  /* Scroll reveal animations */
+  /* Scroll reveal animations - ultra smooth */
   .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -259,6 +314,63 @@
   .scroll-reveal.revealed {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Fade in up animation for content */
+  .fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Floating badge with ping */
+  .badge-floating {
+    @apply inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full text-sm font-medium;
+  }
+
+  .ping-dot {
+    @apply w-2 h-2 rounded-full bg-yellow-400 relative;
+  }
+
+  .ping-dot::before {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-yellow-400;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  /* Success checkmark animation */
+  .success-checkmark {
+    animation: checkmark 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes checkmark {
+    0% {
+      transform: scale(0) rotate(-45deg);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2) rotate(0deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 1;
+    }
   }
 }
 

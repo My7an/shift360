@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-        script: ['Dancing Script', 'cursive'],
+        serif: ['Manier', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",

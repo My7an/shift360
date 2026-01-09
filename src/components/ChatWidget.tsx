@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Mail } from 'lucide-react';
 import { faqs } from './FAQ';
+import logo from '@/assets/logo.svg';
 
 interface Message {
   id: number;
@@ -20,7 +21,7 @@ const findBestAnswer = (userMessage: string): string | null => {
   
   // Check for greeting
   if (lowerMessage.match(/^(bonjour|salut|hello|hi|hey|coucou)/)) {
-    return "Bonjour ! 👋 Je suis l'assistant virtuel de mylan.group. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur nos services, tarifs ou notre processus de travail.";
+    return "Bonjour ! 👋 Je suis ravi de vous accueillir. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur nos abonnements, services ou notre processus de travail.";
   }
 
   // Check for thank you
@@ -30,7 +31,7 @@ const findBestAnswer = (userMessage: string): string | null => {
 
   // Check for pricing/tarif
   if (lowerMessage.match(/(prix|tarif|coût|coute|combien|abonnement|forfait)/)) {
-    return "Nous proposons trois forfaits adaptés à vos besoins : Basic, Or et Diamond. Chaque forfait offre des designs illimités avec différents niveaux de service. Je vous invite à consulter notre section Abonnements pour découvrir les détails, ou à prendre rendez-vous avec un expert pour une recommandation personnalisée !";
+    return "Nous proposons trois forfaits adaptés à vos besoins :\n\n• SOFT : 1590€/mois (1330€ trimestriel)\n• AVANCÉ : 2090€/mois (1830€ trimestriel)\n• ULTRA : 3490€/mois (3230€ trimestriel)\n\nChaque forfait offre des designs illimités avec différents niveaux de service. Je vous invite à consulter notre section Abonnements pour découvrir les détails, ou à prendre rendez-vous avec un expert pour une recommandation personnalisée !";
   }
 
   // Find matching FAQ
@@ -61,13 +62,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! 👋 Je suis l'assistant de mylan.group. Comment puis-je vous aider ?",
-      isUser: false,
-      timestamp: new Date(),
-    },
-    {
-      id: 2,
-      text: "Vous pouvez me poser des questions sur nos services, tarifs, ou prendre rendez-vous directement.",
+      text: "Bonjour ! Je suis l'Expert Mylan. Je suis là pour répondre à toutes vos questions sur nos abonnements design 24/7. Comment puis-je vous aider ?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -132,7 +127,7 @@ const ChatWidget = () => {
       {/* Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 ${
+        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isOpen 
             ? 'bg-foreground text-background rotate-90' 
             : 'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg hover:scale-110'
@@ -145,9 +140,12 @@ const ChatWidget = () => {
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 glass-strong rounded-3xl overflow-hidden animate-scale-in">
           {/* Header */}
-          <div className="bg-gradient-to-r from-red-500 to-red-600 p-4">
-            <h3 className="text-white font-bold">Assistant mylan.group</h3>
-            <p className="text-white/80 text-sm">En ligne • Répond en quelques secondes</p>
+          <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 flex items-center gap-3">
+            <img src={logo} alt="Mylan" className="w-10 h-10 rounded-full bg-white p-1" />
+            <div>
+              <h3 className="text-white font-bold">Expert Mylan</h3>
+              <p className="text-white/80 text-sm">En ligne • Répond en quelques secondes</p>
+            </div>
           </div>
 
           {/* Messages */}
@@ -186,19 +184,19 @@ const ChatWidget = () => {
           <div className="px-4 pb-2 flex gap-2 flex-wrap">
             <button
               onClick={() => setMessage("Quels sont vos tarifs ?")}
-              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors"
+              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             >
               💰 Tarifs
             </button>
             <button
               onClick={() => setMessage("Comment ça marche ?")}
-              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors"
+              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             >
               🔄 Processus
             </button>
             <a
               href="mailto:servicebellinepro@gmail.com"
-              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-colors flex items-center gap-1"
+              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] flex items-center gap-1"
             >
               <Mail size={12} /> Email
             </a>
@@ -213,11 +211,11 @@ const ChatWidget = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Votre message..."
-                className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50"
+                className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
               />
               <button 
                 onClick={handleSend}
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white flex items-center justify-center hover:scale-105 transition-transform"
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white flex items-center justify-center hover:scale-105 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
               >
                 <Send size={18} />
               </button>

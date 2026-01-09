@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { Send } from 'lucide-react';
+import { Send, Check } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
@@ -16,6 +17,8 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const ContactForm = () => {
+  const [showSuccess, setShowSuccess] = useState(false);
+  
   const {
     register,
     handleSubmit,
@@ -33,17 +36,31 @@ const ContactForm = () => {
     
     window.location.href = `mailto:servicebellinepro@gmail.com?subject=${subject}&body=${body}`;
     
+    // Show success animation
+    setShowSuccess(true);
+    setTimeout(() => {
+      setShowSuccess(false);
+      reset();
+    }, 2000);
+    
     toast.success('Redirection vers votre client email...');
-    reset();
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 relative">
+      {showSuccess && (
+        <div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-2xl z-10">
+          <div className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center success-checkmark">
+            <Check className="w-8 h-8 text-white" />
+          </div>
+        </div>
+      )}
+      
       <div>
         <Input
           placeholder="Votre nom"
           {...register('name')}
-          className="bg-white/10 border-white/20 placeholder:text-foreground/40"
+          className="bg-white/10 border-white/20 placeholder:text-foreground/40 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
         />
         {errors.name && (
           <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
@@ -55,7 +72,7 @@ const ContactForm = () => {
           type="email"
           placeholder="Votre email"
           {...register('email')}
-          className="bg-white/10 border-white/20 placeholder:text-foreground/40"
+          className="bg-white/10 border-white/20 placeholder:text-foreground/40 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
         />
         {errors.email && (
           <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
@@ -67,7 +84,7 @@ const ContactForm = () => {
           type="tel"
           placeholder="Votre téléphone (optionnel)"
           {...register('phone')}
-          className="bg-white/10 border-white/20 placeholder:text-foreground/40"
+          className="bg-white/10 border-white/20 placeholder:text-foreground/40 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
         />
       </div>
 
@@ -76,7 +93,7 @@ const ContactForm = () => {
           placeholder="Votre message"
           rows={4}
           {...register('message')}
-          className="bg-white/10 border-white/20 placeholder:text-foreground/40 resize-none"
+          className="bg-white/10 border-white/20 placeholder:text-foreground/40 resize-none transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
         />
         {errors.message && (
           <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>
