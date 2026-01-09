@@ -21,8 +21,19 @@ const HeroSection = () => {
 
   return (
     <>
-      <section className="min-h-screen flex flex-col justify-center items-center pt-32 pb-20 px-6">
-        <div className="container mx-auto text-center max-w-5xl">
+      <section className="min-h-screen flex flex-col justify-center items-center pt-32 pb-20 px-6 relative overflow-hidden">
+        {/* Spline 3D Background */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <spline-viewer 
+            url="https://prod.spline.design/E3BsMnQmkihkMgR8/scene.splinecode"
+            style={{ width: '100%', height: '100%' }}
+          />
+        </div>
+        
+        {/* Overlay pour lisibilité */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-background/60 via-background/40 to-background/80" />
+        
+        <div className="container mx-auto text-center max-w-5xl relative z-10">
           {/* Main Title with Typography Duo */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[1.05] mb-8 animate-fade-in tracking-tighter">
             Votre équipe design,
