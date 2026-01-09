@@ -56,8 +56,8 @@ const PortfolioMarquee = () => {
       <div className="container mx-auto px-6 mb-16 relative">
         {/* Imposing Title */}
         <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
-            Nos réalisations
+          <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter">
+            Nos <span className="font-serif-elegant">réalisations</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
           <p className="text-editorial text-xl md:text-2xl text-foreground/60 max-w-2xl mx-auto pt-2">

@@ -31,8 +31,8 @@ const HowItWorks = () => {
       
       <div className="container mx-auto max-w-7xl relative">
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            Comment ça marche ?
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-6 tracking-tighter">
+            Comment ça <span className="font-serif-elegant">marche ?</span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full mb-6"></div>
           <p className="text-editorial text-xl md:text-2xl text-foreground/60 max-w-2xl mx-auto">
