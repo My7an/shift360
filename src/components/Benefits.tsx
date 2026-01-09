@@ -16,8 +16,8 @@ const Benefits = () => {
     <section className="py-24 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Pourquoi nous choisir?
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+            Pourquoi nous <span className="font-serif-elegant">choisir ?</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             Les avantages qui font la différence

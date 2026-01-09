@@ -5,30 +5,46 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const faqs = [
+export const faqs = [
   {
-    question: 'Comment fonctionne l\'abonnement illimité?',
-    answer: 'Une fois abonné, vous pouvez soumettre autant de demandes design que vous le souhaitez. Notre équipe les traite une par une (ou plusieurs en parallèle selon votre forfait) avec des délais de livraison garantis.',
+    question: 'Comment fonctionne l\'abonnement ?',
+    answer: 'Une fois abonné, vous accédez à votre tableau Trello privé. Vous y déposez autant de demandes de design que vous souhaitez. Nous les traitons une par une (ou deux selon le forfait) avec une livraison sous 48h.',
   },
   {
-    question: 'Quels types de design proposez-vous?',
-    answer: 'Nous couvrons tous les besoins: UI/UX, branding, illustration, motion design, présentations, réseaux sociaux, packaging, et bien plus encore.',
+    question: 'Qu\'entendez-vous par "Design Illimité" ?',
+    answer: 'Il n\'y a aucune limite au nombre de demandes que vous pouvez mettre dans votre file d\'attente. Nous travaillons sur vos projets chaque jour ouvré jusqu\'à ce que votre liste soit vide.',
   },
   {
-    question: 'Comment puis-je annuler mon abonnement?',
-    answer: 'Vous pouvez annuler à tout moment depuis votre espace client. Aucun engagement, aucune pénalité. Vous gardez accès jusqu\'à la fin de votre période payée.',
+    question: 'Pourquoi ne pas simplement embaucher un graphiste ?',
+    answer: 'Un designer senior coûte aujourd\'hui plus de 50 000 €/an, sans compter les charges et les avantages. Avec mylan.group, vous avez la même expertise pour une fraction du prix, avec la flexibilité d\'arrêter quand vous voulez.',
   },
   {
-    question: 'Qui sont vos designers?',
-    answer: 'Notre équipe est composée de designers seniors avec plus de 5 ans d\'expérience, sélectionnés parmi les meilleurs talents mondiaux.',
+    question: 'À quelle vitesse vais-je recevoir mes designs ?',
+    answer: 'En moyenne, la majorité des demandes sont livrées en moins de 48 heures. Les projets plus complexes (gros sites web, présentations denses) peuvent être découpés en plusieurs étapes de 48h.',
   },
   {
-    question: 'Et si je ne suis pas satisfait?',
-    answer: 'Nous offrons des révisions illimitées jusqu\'à votre satisfaction complète. Si vous n\'êtes toujours pas satisfait, nous vous remboursons.',
+    question: 'Qui réalise les designs ?',
+    answer: 'Tous les designs sont réalisés "fait main" par notre fondateur et expert, garantissant une cohérence de marque et une qualité que les agences avec sous-traitants n\'ont pas.',
   },
   {
-    question: 'Comment communiquer avec l\'équipe?',
-    answer: 'Vous disposez d\'un espace client dédié, d\'un chat en direct avec votre designer, et d\'un support par email. Pour les forfaits premium, un consultant dédié vous accompagne.',
+    question: 'Et si je n\'aime pas le design ?',
+    answer: 'Pas d\'inquiétude. Les révisions sont illimitées. Nous ajustons le curseur jusqu\'à ce que vous soyez 100% enchanté par le résultat.',
+  },
+  {
+    question: 'Y a-t-il des services exclus ?',
+    answer: 'Nous ne réalisons pas de montage vidéo lourd (cinéma), de modélisation 3D complexe ou de design maximaliste. Nous nous concentrons sur le branding, l\'UI/UX et le design graphique premium.',
+  },
+  {
+    question: 'Puis-je mettre mon abonnement en pause ?',
+    answer: 'Oui, absolument. Si vous n\'avez plus de besoins pour le moment, vous pouvez mettre en pause et revenir plus tard. Votre cycle de facturation s\'arrêtera là où vous l\'avez laissé.',
+  },
+  {
+    question: 'Comment se passe le paiement ?',
+    answer: 'Tout est sécurisé via Stripe. Vous recevez une facture automatique chaque mois. C\'est simple, transparent et sans engagement.',
+  },
+  {
+    question: 'Comment communiquer avec vous ?',
+    answer: 'Tout se passe sur Trello pour les demandes et via Calendly pour les points stratégiques. Pour toute urgence ou question bloquante, contactez-nous à : servicebellinepro@gmail.com.',
   },
 ];
 
@@ -37,8 +53,8 @@ const FAQ = () => {
     <section id="faq" className="py-24 px-6">
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Questions fréquentes
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+            Questions <span className="font-serif-elegant">fréquentes</span>
           </h2>
           <p className="text-lg text-foreground/60">
             Tout ce que vous devez savoir
