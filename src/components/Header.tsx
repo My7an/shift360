@@ -14,7 +14,7 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: '#comment-ca-marche', label: 'Comment ça marche?' },
+    { href: '#comment-ca-marche', label: 'Comment ça marche ?' },
     { href: '#projets', label: 'Projets' },
     { href: '#abonnements', label: 'Abonnements' },
     { href: '#contact', label: 'Contact' },
@@ -28,38 +28,40 @@ const Header = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <span className="text-xl font-bold tracking-tight">mylan.group</span>
+        {/* Logo - Accueil */}
+        <a href="#" className="flex items-center gap-2 group">
+          <span className="text-xl font-bold tracking-tight transition-all duration-300 group-hover:text-red-500">mylan.group</span>
         </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* Desktop Navigation - Always visible */}
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-300"
+              className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group"
             >
               {link.label}
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
             </a>
           ))}
         </nav>
 
-        {/* CTA Button */}
+        {/* CTA Button - Desktop */}
         <a
           href="https://calendly.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden lg:inline-flex btn-liquid-primary text-sm"
+          className="hidden md:inline-flex btn-liquid-primary text-sm"
         >
           Parler à un expert
         </a>
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden p-2 glass rounded-xl"
+          className="md:hidden p-2 glass rounded-xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -67,7 +69,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
+        <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a

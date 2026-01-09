@@ -49,17 +49,24 @@ const PortfolioMarquee = () => {
   const row3Items = portfolioItems.slice(3, 6);
 
   return (
-    <section id="projets" className="py-20 overflow-hidden">
-      <div className="container mx-auto px-6 mb-12">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-4">
-          Nos réalisations
-        </h2>
-        <p className="text-lg text-foreground/60 text-center max-w-2xl mx-auto">
-          Plus de 500 projets livrés pour des entreprises du monde entier
-        </p>
+    <section id="projets" className="py-24 overflow-hidden relative">
+      {/* Subtle red glow accent */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+      
+      <div className="container mx-auto px-6 mb-16 relative">
+        {/* Imposing Title */}
+        <div className="text-center space-y-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+            Nos réalisations
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-red-600 mx-auto rounded-full"></div>
+          <p className="text-editorial text-xl md:text-2xl text-foreground/60 max-w-2xl mx-auto pt-2">
+            Plus de 500 projets livrés pour des entreprises du monde entier
+          </p>
+        </div>
       </div>
       
-      <div className="space-y-6">
+      <div className="space-y-6 relative">
         <MarqueeRow items={row1Items} />
         <MarqueeRow items={row2Items} reverse />
         <MarqueeRow items={row3Items} />
