@@ -1,12 +1,12 @@
 import { Star } from 'lucide-react';
 
 const testimonials = [
-  { name: 'Marie L.', role: 'CEO, TechStart', text: 'mylan.group a transformé notre approche design. Rapide, créatif, impeccable.' },
-  { name: 'Thomas R.', role: 'Fondateur, InnovateLab', text: 'Le meilleur investissement pour notre startup. ROI immédiat.' },
-  { name: 'Sophie M.', role: 'Directrice Marketing, Scale', text: 'Qualité exceptionnelle, délais respectés. Je recommande à 100%.' },
-  { name: 'Antoine D.', role: 'CTO, FastGrowth', text: 'Plus besoin d\'équipe design interne. mylan.group gère tout.' },
-  { name: 'Julie B.', role: 'CMO, BrandUp', text: 'Créativité sans limite. Chaque projet dépasse nos attentes.' },
-  { name: 'Marc P.', role: 'Founder, NextLevel', text: 'Réactivité incroyable. Support toujours disponible et efficace.' },
+  { name: 'Marie L.', text: 'mylan.group a transformé notre approche design. Rapide, créatif, impeccable.' },
+  { name: 'Thomas R.', text: 'Le meilleur investissement pour notre startup. ROI immédiat.' },
+  { name: 'Sophie M.', text: 'Qualité exceptionnelle, délais respectés. Je recommande à 100%.' },
+  { name: 'Antoine D.', text: 'Plus besoin d\'équipe design interne. mylan.group gère tout.' },
+  { name: 'Julie B.', text: 'Créativité sans limite. Chaque projet dépasse nos attentes.' },
+  { name: 'Marc P.', text: 'Réactivité incroyable. Support toujours disponible et efficace.' },
 ];
 
 const logos = [
@@ -44,10 +44,7 @@ const SocialProof = () => {
               <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
                 "{testimonial.text}"
               </p>
-              <div>
-                <p className="font-semibold text-sm">{testimonial.name}</p>
-                <p className="text-xs text-foreground/60">{testimonial.role}</p>
-              </div>
+              <p className="font-semibold text-sm">{testimonial.name}</p>
             </div>
           ))}
         </div>

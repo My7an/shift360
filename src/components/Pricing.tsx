@@ -164,10 +164,12 @@ const Pricing = () => {
                 </div>
 
                 <div className="mb-6">
-                  <span className="text-5xl font-extrabold">
-                    {getPrice(plan)}€
-                  </span>
-                  <span className="text-foreground/60 ml-2">/mois</span>
+                  <div className="flex items-baseline gap-1 whitespace-nowrap">
+                    <span className="text-4xl md:text-5xl font-extrabold">
+                      {getPrice(plan)}€
+                    </span>
+                    <span className="text-base text-foreground/60">/mois</span>
+                  </div>
                   {isQuarterly && (
                     <p className="text-sm text-foreground/50 mt-1">
                       Facturé trimestriellement
