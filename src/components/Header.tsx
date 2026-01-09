@@ -43,11 +43,11 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'glass-strong py-3' : 'bg-transparent py-5'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-16 md:h-20 ${
+          isScrolled ? 'glass-strong' : 'bg-transparent'
         }`}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-6 h-full flex items-center justify-between">
           {/* Logo - Accueil */}
           <a 
             href="#" 
@@ -57,38 +57,38 @@ const Header = () => {
             <img 
               src={Logo} 
               alt="mylan.group" 
-              className="h-10 md:h-14 w-auto transition-all duration-300 group-hover:scale-105"
+              className="h-8 md:h-10 w-auto transition-all duration-300 group-hover:scale-105"
             />
           </a>
 
           {/* Desktop Navigation + CTA - Aligned on same row */}
-          <div className="hidden md:flex items-center gap-8">
-            <nav className="flex items-center gap-8">
+          <div className="hidden md:flex items-center h-full gap-6">
+            <nav className="flex items-center h-full gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group whitespace-nowrap"
+                  className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
               ))}
               {/* Contact opens Calendly */}
               <button
                 onClick={() => setIsCalendlyOpen(true)}
-                className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 py-2 group whitespace-nowrap"
+                className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
               >
                 Contact
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </button>
             </nav>
             <ThemeToggle />
             {/* CTA Button */}
             <button
               onClick={() => setIsCalendlyOpen(true)}
-              className="btn-liquid-primary text-sm whitespace-nowrap"
+              className="btn-liquid-primary text-sm whitespace-nowrap px-5 py-2"
             >
               Parler à un expert
             </button>
