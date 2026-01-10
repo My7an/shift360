@@ -35,7 +35,7 @@ const ProcessSection = () => {
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
-              Comment ça <span className="text-gradient-animated">marche ?</span>
+              Comment ça <span className="font-playfair italic text-gradient-animated">marche ?</span>
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
               Un processus simple et efficace pour vos créations

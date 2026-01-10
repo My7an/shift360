@@ -78,7 +78,7 @@ const ExpertisesSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
-            Nos <span className="text-gradient-animated">expertises</span>
+            Nos <span className="font-playfair italic text-gradient-animated">expertises</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             Des compétences variées pour tous vos projets créatifs
@@ -95,15 +95,18 @@ const ExpertisesSection = () => {
                 activeTab === category.id
                   ? 'bg-foreground text-background scale-105 shadow-lg'
                   : category.id === 'custom'
-                    ? 'bg-[hsl(0_0%_95%)] border-2 border-red-500 hover:bg-red-50 hover:scale-[1.02]'
+                    ? 'bg-gradient-to-r from-red-50 to-red-100 border-2 border-red-500 shadow-lg shadow-red-500/20 hover:shadow-xl hover:shadow-red-500/30 hover:scale-[1.04]'
                     : 'bg-[hsl(0_0%_95%)] border border-[hsl(0_0%_90%)] hover:bg-[hsl(0_0%_92%)] hover:scale-[1.02]'
               }`}
             >
-              {/* Yellow star for Solutions Sur-mesure */}
+              {/* Large yellow star for Solutions Sur-mesure */}
               {category.id === 'custom' && activeTab !== 'custom' && (
-                <div className="absolute -top-1 -right-1 animate-pulse">
-                  <Sparkles className="w-5 h-5 text-yellow-500 drop-shadow-lg" />
-                  <div className="absolute inset-0 bg-yellow-400/40 rounded-full blur-sm animate-ping" style={{ animationDuration: '2s' }} />
+                <div className="absolute -top-3 -right-3">
+                  <div className="relative">
+                    <Sparkles className="w-8 h-8 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] animate-pulse" />
+                    <div className="absolute inset-0 bg-yellow-400/60 rounded-full blur-lg animate-ping" style={{ animationDuration: '1.5s' }} />
+                    <div className="absolute inset-0 bg-yellow-300/40 rounded-full blur-xl" />
+                  </div>
                 </div>
               )}
               <category.icon className="w-5 h-5" />

@@ -50,7 +50,7 @@ const plans = [
     quarterlyPrice: 3230,
     boosterMonthlyPrice: 6190,
     boosterQuarterlyPrice: 5290,
-    description: 'Le meilleur de mylan.group',
+    description: 'Le meilleur de DesignShift',
     icon: Diamond,
     features: [
       '2 projets à la fois',
@@ -85,7 +85,7 @@ const Pricing = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
-              Nos <span className="text-gradient-animated">abonnements</span>
+              Nos <span className="font-playfair italic text-gradient-animated">abonnements</span>
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto mb-8">
               Choisissez le forfait adapté à vos besoins

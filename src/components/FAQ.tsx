@@ -16,7 +16,7 @@ export const faqs = [
   },
   {
     question: 'Pourquoi ne pas simplement embaucher un graphiste ?',
-    answer: 'Un designer senior coûte aujourd\'hui plus de 50 000 €/an, sans compter les charges et les avantages. Avec mylan.group, vous avez la même expertise pour une fraction du prix, avec la flexibilité d\'arrêter quand vous voulez.',
+    answer: 'Un designer senior coûte aujourd\'hui plus de 50 000 €/an, sans compter les charges et les avantages. Avec DesignShift, vous avez la même expertise pour une fraction du prix, avec la flexibilité d\'arrêter quand vous voulez.',
   },
   {
     question: 'À quelle vitesse vais-je recevoir mes designs ?',
@@ -54,7 +54,7 @@ const FAQ = () => {
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            Questions <span className="text-gradient-animated">fréquentes</span>
+            Questions <span className="font-playfair italic text-gradient-animated">fréquentes</span>
           </h2>
           <p className="text-lg text-foreground/60">
             Tout ce que vous devez savoir
