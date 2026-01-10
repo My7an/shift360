@@ -34,9 +34,9 @@ const PromiseSection = () => {
       <section className="py-24 px-6">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
-              Nos <span className="text-gradient-animated">engagements</span>
-            </h2>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
+            Nos <span className="font-playfair italic text-gradient-animated">engagements</span>
+          </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

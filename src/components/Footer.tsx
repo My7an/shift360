@@ -42,9 +42,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* À Propos */}
           <div>
-            <span className="text-3xl font-extrabold mb-6 block tracking-tight">mylan.group</span>
+            <span className="text-3xl font-extrabold mb-6 block tracking-tight">DesignShift</span>
             <p className="text-sm text-foreground/60 leading-relaxed">
-              Mylan.group est une équipe mondiale impliquée et réactive. Nos portes sont ouvertes pour bosser ou partager un café.
+              DesignShift est une équipe mondiale impliquée et réactive. Nos portes sont ouvertes pour bosser ou partager un café.
             </p>
           </div>
 
@@ -112,7 +112,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <p className="text-sm text-foreground/50">
-              © 2026 mylan.group. Tous droits réservés.
+              © 2026 DesignShift. Tous droits réservés.
             </p>
           </div>
         </div>

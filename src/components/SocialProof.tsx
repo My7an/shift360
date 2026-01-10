@@ -1,10 +1,10 @@
 import { Star } from 'lucide-react';
 
 const testimonials = [
-  { name: 'Marie L.', text: 'mylan.group a transformé notre approche design. Rapide, créatif, impeccable.' },
+  { name: 'Marie L.', text: 'DesignShift a transformé notre approche design. Rapide, créatif, impeccable.' },
   { name: 'Thomas R.', text: 'Le meilleur investissement pour notre startup. ROI immédiat.' },
   { name: 'Sophie M.', text: 'Qualité exceptionnelle, délais respectés. Je recommande à 100%.' },
-  { name: 'Antoine D.', text: 'Plus besoin d\'équipe design interne. mylan.group gère tout.' },
+  { name: 'Antoine D.', text: 'Plus besoin d\'équipe design interne. DesignShift gère tout.' },
   { name: 'Julie B.', text: 'Créativité sans limite. Chaque projet dépasse nos attentes.' },
   { name: 'Marc P.', text: 'Réactivité incroyable. Support toujours disponible et efficace.' },
 ];
@@ -21,7 +21,7 @@ const SocialProof = () => {
     <section className="py-24 overflow-hidden">
       <div className="container mx-auto px-6 mb-12">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-4 tracking-tight">
-          Ils nous font <span className="text-gradient-animated">confiance</span>
+          Ils nous font <span className="font-playfair italic text-gradient-animated">confiance</span>
         </h2>
         <p className="text-lg text-foreground/60 text-center max-w-2xl mx-auto">
           Plus de 230 projets livrés pour des entreprises du monde entier
