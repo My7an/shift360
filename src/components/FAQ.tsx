@@ -7,44 +7,44 @@ import {
 
 export const faqs = [
   {
-    question: 'Comment fonctionne l\'abonnement ?',
-    answer: 'Une fois abonné, vous accédez à votre tableau Trello privé. Vous y déposez autant de demandes de design que vous souhaitez. Nous les traitons une par une (ou deux selon le forfait) avec une livraison sous 48h.',
+    question: 'Comment fonctionne votre prestation ?',
+    answer: 'Vous prenez contact avec un expert pour définir vos besoins. Ensuite, vous accédez à votre espace Trello personnalisé pour piloter vos projets. Nous livrons vos designs en 48 à 72 heures avec un accompagnement professionnel à chaque étape.',
   },
   {
-    question: 'Qu\'entendez-vous par "Design Illimité" ?',
-    answer: 'Il n\'y a aucune limite au nombre de demandes que vous pouvez mettre dans votre file d\'attente. Nous travaillons sur vos projets chaque jour ouvré jusqu\'à ce que votre liste soit vide.',
+    question: 'Quels sont vos délais de livraison ?',
+    answer: 'Nos designs sont livrés en 48 à 72 heures maximum. Ce délai garantit une qualité optimale tout en respectant vos contraintes de temps. Pour les projets plus complexes, nous découpons le travail en étapes successives.',
   },
   {
-    question: 'Pourquoi ne pas simplement embaucher un graphiste ?',
-    answer: 'Un designer senior coûte aujourd\'hui plus de 50 000 €/an, sans compter les charges et les avantages. Avec DesignShift, vous avez la même expertise pour une fraction du prix, avec la flexibilité d\'arrêter quand vous voulez.',
+    question: 'Qu\'est-ce que l\'offre ULTRA ?',
+    answer: 'L\'offre ULTRA est notre prestation premium, entièrement sur mesure. Elle inclut : organisation complète du projet, osmose créative, qualité d\'expert, design 100% fait main, livraison en 48-72h, retouches illimitées et accompagnement professionnel.',
+  },
+  {
+    question: 'Pourquoi choisir MYLAN.group plutôt qu\'un graphiste freelance ?',
+    answer: 'Avec MYLAN.group, vous bénéficiez d\'une organisation professionnelle structurée, d\'un suivi précis via Trello, de délais garantis (48-72h) et de retouches illimitées. Notre approche "osmose créative" garantit une collaboration fluide et des résultats qui dépassent vos attentes.',
   },
   {
     question: 'À quelle vitesse vais-je recevoir mes designs ?',
-    answer: 'En moyenne, la majorité des demandes sont livrées en moins de 48 heures. Les projets plus complexes (gros sites web, présentations denses) peuvent être découpés en plusieurs étapes de 48h.',
+    answer: 'Nos projets sont livrés en 48 à 72 heures. Nous optimisons notre processus pour garantir rapidité et qualité. Les projets plus complexes (sites web, présentations denses) sont découpés en étapes pour maintenir ce rythme.',
   },
   {
     question: 'Qui réalise les designs ?',
-    answer: 'Tous les designs sont réalisés "fait main" par notre fondateur et expert, garantissant une cohérence de marque et une qualité que les agences avec sous-traitants n\'ont pas.',
+    answer: 'Tous les designs sont réalisés "fait main" par notre équipe d\'experts, garantissant une cohérence de marque et une qualité que les agences traditionnelles n\'offrent pas. Zéro IA, uniquement du vrai savoir-faire humain.',
   },
   {
     question: 'Et si je n\'aime pas le design ?',
-    answer: 'Pas d\'inquiétude. Les révisions sont illimitées. Nous ajustons le curseur jusqu\'à ce que vous soyez 100% enchanté par le résultat.',
+    answer: 'Les retouches sont illimitées. Nous ajustons vos visuels jusqu\'à ce que vous soyez 100% satisfait. La perfection est notre seul standard.',
   },
   {
     question: 'Y a-t-il des services exclus ?',
     answer: 'Nous ne réalisons pas de montage vidéo lourd (cinéma), de modélisation 3D complexe ou de design maximaliste. Nous nous concentrons sur le branding, l\'UI/UX et le design graphique premium.',
   },
   {
-    question: 'Puis-je mettre mon abonnement en pause ?',
-    answer: 'Oui, absolument. Si vous n\'avez plus de besoins pour le moment, vous pouvez mettre en pause et revenir plus tard. Votre cycle de facturation s\'arrêtera là où vous l\'avez laissé.',
+    question: 'Comment se passe la collaboration ?',
+    answer: 'Tout est structuré et organisé. Vous avez accès à un espace Trello dédié pour vos briefs et suivis. Un expert dédié vous accompagne. Pour les échanges stratégiques, nous utilisons Calendly. Communication fluide et professionnelle garantie.',
   },
   {
-    question: 'Comment se passe le paiement ?',
-    answer: 'Tout est sécurisé via Stripe. Vous recevez une facture automatique chaque mois. C\'est simple, transparent et sans engagement.',
-  },
-  {
-    question: 'Comment communiquer avec vous ?',
-    answer: 'Tout se passe sur Trello pour les demandes et via Calendly pour les points stratégiques. Pour toute urgence ou question bloquante, contactez-nous à : servicebellinepro@gmail.com.',
+    question: 'Comment vous contacter ?',
+    answer: 'Utilisez notre bouton "Parler avec un expert" pour planifier un échange via Calendly. Pour toute question urgente, contactez-nous à : servicebellinepro@gmail.com. Nous répondons rapidement !',
   },
 ];
 
@@ -57,7 +57,7 @@ const FAQ = () => {
             Questions <span className="font-playfair italic text-gradient-animated">fréquentes</span>
           </h2>
           <p className="text-lg text-foreground/60">
-            Tout ce que vous devez savoir
+            Tout ce que vous devez savoir sur nos prestations
           </p>
         </div>
 

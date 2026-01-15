@@ -18,17 +18,19 @@ const knowledgeBase = faqs.map(faq => ({
 
 // Comprehensive site knowledge for the chatbot
 const siteKnowledge = {
-  pricing: {
-    soft: { monthly: 1590, quarterly: 1330, boosterMonthly: 2690, boosterQuarterly: 2290 },
-    avance: { monthly: 2090, quarterly: 1830, boosterMonthly: 3490, boosterQuarterly: 2990 },
-    ultra: { monthly: 3490, quarterly: 3230, boosterMonthly: 6190, boosterQuarterly: 5290 },
-  },
-  delivery: '48h pour le pack Avancé, 72h pour Soft et Ultra',
+  offer: 'ULTRA - Offre premium sur mesure',
+  delivery: '48 à 72 heures',
   tools: 'Figma, Adobe Creative Suite (Photoshop, Illustrator, InDesign), Webflow, Framer',
   services: ['Branding', 'Logo', 'UX/UI Design', 'Sites web', 'Print', 'Social media', 'Motion design', 'Packaging'],
-  guarantee: '75% remboursé si vous annulez durant la première semaine',
-  revisions: 'Retouches illimitées incluses dans tous les forfaits',
-  collaborators: 'Jusqu\'à 2 collaborateurs inclus dans votre espace',
+  revisions: 'Retouches illimitées incluses',
+  features: [
+    'Organisation complète du projet',
+    'Osmose créative',
+    'Qualité d\'experts',
+    'Design 100% fait main',
+    'Accompagnement professionnel',
+    'Expert dédié',
+  ],
 };
 
 const findBestAnswer = (userMessage: string): string | null => {
@@ -36,22 +38,22 @@ const findBestAnswer = (userMessage: string): string | null => {
   
   // Check for greeting
   if (lowerMessage.match(/^(bonjour|salut|hello|hi|hey|coucou)/)) {
-    return "Bonjour ! 👋 Je suis ravi de vous accueillir. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur nos abonnements, services ou notre processus de travail.";
+    return "Bonjour ! 👋 Je suis ravi de vous accueillir chez MYLAN.group. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur notre offre ULTRA, nos services ou notre processus de travail.";
   }
 
   // Check for thank you
   if (lowerMessage.match(/(merci|thanks|thank you)/)) {
-    return "Avec plaisir ! N'hésitez pas si vous avez d'autres questions. 😊";
+    return "Avec plaisir ! N'hésitez pas si vous avez d'autres questions. Vous pouvez aussi parler directement avec un expert en utilisant notre bouton de prise de rendez-vous. 😊";
   }
 
   // Check for pricing/tarif
-  if (lowerMessage.match(/(prix|tarif|coût|coute|combien|abonnement|forfait|pack)/)) {
-    return `Nous proposons trois forfaits adaptés à vos besoins :\n\n• SOFT : ${siteKnowledge.pricing.soft.monthly}€/mois (${siteKnowledge.pricing.soft.quarterly}€ trimestriel) - 1 projet à la fois, livraison 72h\n• AVANCÉ : ${siteKnowledge.pricing.avance.monthly}€/mois (${siteKnowledge.pricing.avance.quarterly}€ trimestriel) - 1 projet, livraison 48h, UX/UI inclus\n• ULTRA : ${siteKnowledge.pricing.ultra.monthly}€/mois (${siteKnowledge.pricing.ultra.quarterly}€ trimestriel) - 2 projets simultanés\n\nVous pouvez aussi ajouter +1 projet simultané avec notre option Boost ! Je vous invite à consulter notre section Abonnements ou à parler à un spécialiste.`;
+  if (lowerMessage.match(/(prix|tarif|coût|coute|combien|offre|pack|ultra)/)) {
+    return `Nous proposons une offre unique et premium : **ULTRA**\n\n💎 Cette prestation sur mesure inclut :\n• Organisation complète du projet\n• Osmose créative avec le client\n• Qualité d'experts\n• Design 100% fait main\n• Livraison en 48 à 72 heures\n• Retouches illimitées\n• Accompagnement professionnel\n\nPas d'abonnement, pas de contraintes. Je vous invite à parler avec un expert pour discuter de votre projet !`;
   }
 
   // Check for delivery/délai
   if (lowerMessage.match(/(délai|delai|livraison|48h|72h|temps|rapide|vite)/)) {
-    return `Nos délais de livraison dépendent de votre forfait :\n\n• Forfait SOFT : Livraison en 72h\n• Forfait AVANCÉ : Livraison en 48h ⚡\n• Forfait ULTRA : Livraison en 72h (mais 2 projets en parallèle)\n\nCes délais s'appliquent pour chaque projet individuel. Nous travaillons rapidement sans compromettre la qualité !`;
+    return `Nos délais de livraison sont optimisés pour la rapidité :\n\n⚡ **Livraison en 48 à 72 heures**\n\nCe délai s'applique pour chaque projet individuel. Nous travaillons rapidement sans jamais compromettre la qualité. Les projets complexes sont découpés en étapes successives pour maintenir ce rythme.`;
   }
 
   // Check for tools/logiciels
@@ -59,14 +61,9 @@ const findBestAnswer = (userMessage: string): string | null => {
     return `Notre équipe travaille avec les meilleurs outils du marché :\n\n🎨 Design : ${siteKnowledge.tools}\n\nNous maîtrisons également les outils de prototypage, de motion design et de création de sites web modernes. Chaque livrable est fourni dans le format de votre choix !`;
   }
 
-  // Check for difference between packs
-  if (lowerMessage.match(/(différence|difference|pack|forfait|lequel|choisir|comparaison)/)) {
-    return `Voici les principales différences entre nos forfaits :\n\n📦 SOFT (${siteKnowledge.pricing.soft.monthly}€/mois) :\n- 1 projet à la fois\n- Livraison 72h\n- Web & Print\n\n⭐ AVANCÉ (${siteKnowledge.pricing.avance.monthly}€/mois) :\n- 1 projet à la fois\n- Livraison 48h (plus rapide !)\n- UX/UI Figma inclus\n- Sites Webflow & Framer\n\n💎 ULTRA (${siteKnowledge.pricing.ultra.monthly}€/mois) :\n- 2 projets simultanés\n- Tout le pack Avancé\n- Idéal pour les gros volumes\n\nTous incluent les retouches illimitées et les collaborateurs !`;
-  }
-
-  // Check for guarantee/garantie
-  if (lowerMessage.match(/(garantie|garantir|rembours|annul|satisfait|test)/)) {
-    return `Nous offrons une garantie "Test & Go" unique :\n\n✅ ${siteKnowledge.guarantee}\n✅ Vous pouvez mettre en pause ou annuler à tout moment\n✅ Sans engagement de durée\n\nVous êtes libre de tester notre service sans risque !`;
+  // Check for what's included
+  if (lowerMessage.match(/(inclus|comprend|contient|offre|ultra)/)) {
+    return `Notre offre ULTRA inclut tout ce dont vous avez besoin :\n\n✅ Organisation complète du projet\n✅ Osmose créative avec le client\n✅ Qualité d'experts\n✅ Design 100% fait main\n✅ Livraison en 48 à 72 heures\n✅ Retouches illimitées\n✅ Solutions sur mesure\n✅ Accompagnement professionnel\n✅ Expert dédié\n\nTout cela sans abonnement et sans contraintes !`;
   }
 
   // Check for revisions/retouches
@@ -76,12 +73,12 @@ const findBestAnswer = (userMessage: string): string | null => {
 
   // Check for services
   if (lowerMessage.match(/(service|créa|design|logo|site|brand|print|motion|social)/)) {
-    return `Nous proposons une large gamme de services créatifs :\n\n🎨 Branding & Identité : Logo, charte graphique, mascotte\n💻 UX/UI Design : Maquettes Figma, prototypes\n🌐 Sites Web : Webflow, Framer\n📱 Social Media : Posts, stories, assets\n🖨️ Print : Brochures, cartes, packaging\n🎬 Motion Design : Animations, vidéos\n\nTout cela en illimité avec votre abonnement !`;
+    return `Nous proposons une large gamme de services créatifs :\n\n🎨 Branding & Identité : Logo, charte graphique, mascotte\n💻 UX/UI Design : Maquettes Figma, prototypes\n🌐 Sites Web : Webflow, Framer\n📱 Social Media : Posts, stories, assets\n🖨️ Print : Brochures, cartes, packaging\n🎬 Motion Design : Animations, vidéos\n\nTout cela avec notre offre ULTRA, livré en 48-72h !`;
   }
 
   // Check for how it works/process
   if (lowerMessage.match(/(comment|marche|fonctionne|processus|étape|etape|commencer)/)) {
-    return `Notre processus est simple et efficace :\n\n1️⃣ Choisissez votre abonnement (Soft, Avancé ou Ultra)\n2️⃣ Accédez à votre Design Board personnel (Trello)\n3️⃣ Déposez vos briefs en quelques minutes\n4️⃣ Recevez vos designs en 48h ou 72h\n\nVous pouvez demander des modifications illimitées jusqu'à satisfaction totale !`;
+    return `Notre processus est simple et professionnel :\n\n1️⃣ **Échange stratégique** : Parlez avec un expert pour définir vos besoins\n2️⃣ **Design Board** : Accédez à votre espace Trello personnalisé\n3️⃣ **Brief** : Déposez vos demandes en quelques minutes\n4️⃣ **Livraison** : Recevez vos designs en 48 à 72 heures\n\nRetouches illimitées incluses jusqu'à satisfaction totale !`;
   }
 
   // Find matching FAQ
@@ -105,7 +102,7 @@ const findBestAnswer = (userMessage: string): string | null => {
 
   // Fallback for common questions we might have missed
   if (lowerMessage.match(/(qui|êtes|equipe|team|designer)/)) {
-    return "Nous sommes mylan.group, une équipe de designers experts dédiée à créer des visuels professionnels pour votre entreprise. Notre modèle d'abonnement vous offre un accès illimité à des designs de qualité premium, sans les coûts d'une agence traditionnelle ou les délais des freelances.";
+    return "Nous sommes MYLAN.group, une équipe de designers experts dédiée à créer des visuels professionnels pour votre entreprise. Notre offre ULTRA vous garantit une prestation premium, sur mesure, avec un accompagnement professionnel et des délais rapides (48-72h).";
   }
 
   return null;
@@ -117,7 +114,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Je suis l'Expert Mylan. Je suis là pour répondre à toutes vos questions sur nos abonnements design 24/7. Comment puis-je vous aider ?",
+      text: "Bonjour ! Je suis l'Expert MYLAN. Je suis là pour répondre à toutes vos questions sur nos prestations design. Comment puis-je vous aider ?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -155,7 +152,7 @@ const ChatWidget = () => {
       if (answer) {
         botResponse = answer;
       } else {
-        botResponse = `Je comprends votre question, mais pour vous apporter la meilleure réponse possible, je vous invite à contacter directement notre équipe. 📧\n\nÉcrivez-nous à : servicebellinepro@gmail.com\n\nNous vous répondrons dans les plus brefs délais !`;
+        botResponse = `Je comprends votre question, mais pour vous apporter la meilleure réponse possible, je vous invite à parler directement avec un expert. 📧\n\nÉcrivez-nous à : servicebellinepro@gmail.com\nOu utilisez le bouton "Parler avec un expert" pour planifier un échange.\n\nNous vous répondrons dans les plus brefs délais !`;
       }
 
       const botMessage: Message = {
@@ -196,9 +193,9 @@ const ChatWidget = () => {
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 glass-strong rounded-3xl overflow-hidden animate-scale-in">
           {/* Header */}
           <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 flex items-center gap-3">
-            <img src={logo} alt="Mylan" className="w-10 h-10 rounded-full bg-white p-1" />
+            <img src={logo} alt="MYLAN" className="w-10 h-10 rounded-full bg-white p-1" />
             <div>
-              <h3 className="text-white font-bold">Expert Mylan</h3>
+              <h3 className="text-white font-bold">Expert MYLAN</h3>
               <p className="text-white/80 text-sm">En ligne • Répond en quelques secondes</p>
             </div>
           </div>
@@ -238,16 +235,16 @@ const ChatWidget = () => {
           {/* Quick Actions */}
           <div className="px-4 pb-2 flex gap-2 flex-wrap">
             <button
-              onClick={() => setMessage("Quels sont vos tarifs ?")}
+              onClick={() => setMessage("Comment fonctionne votre offre ULTRA ?")}
               className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             >
-              💰 Tarifs
+              💎 Offre ULTRA
             </button>
             <button
-              onClick={() => setMessage("Comment ça marche ?")}
+              onClick={() => setMessage("Quels sont vos délais de livraison ?")}
               className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             >
-              🔄 Processus
+              ⚡ Délais
             </button>
             <a
               href="mailto:servicebellinepro@gmail.com"

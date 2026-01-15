@@ -4,31 +4,17 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
   type CarouselApi,
 } from '@/components/ui/carousel';
 
 const advantages = [
   {
-    title: 'Prix mensuel fixe',
-    description: 'Un seul tarif, clair et net. Zéro surprise, zéro stress.',
-  },
-  {
-    title: 'Projets livrés en 48h',
-    description: 'Top chrono lancé. Rapide, efficace, sans compromis sur la qualité.',
+    title: 'Livraison en 72h',
+    description: 'Rapidité garantie. Vos designs livrés en 72 heures maximum, sans compromis sur la qualité.',
   },
   {
     title: 'Retouches illimitées',
     description: 'On ajuste, on affine, on peaufine. On s\'arrête seulement quand vous adorez.',
-  },
-  {
-    title: 'Jusqu\'à 2 collaborateurs inclus',
-    description: 'Travaillez à plusieurs, sans surcoût. Alors, on partage le plan ?',
-  },
-  {
-    title: 'Pause ou annulation à tout moment',
-    description: 'Besoin de souffler ? Aucun souci. Vous êtes libre, toujours.',
   },
   {
     title: 'Organisation aux petits oignons',
@@ -46,6 +32,14 @@ const advantages = [
     title: 'Qualité d\'expert garantie',
     description: 'Exigence, précision, excellence. Chaque livraison est pensée pour performer.',
   },
+  {
+    title: 'Accompagnement professionnel',
+    description: 'Un expert dédié vous accompagne à chaque étape de votre projet.',
+  },
+  {
+    title: 'Solutions sur mesure',
+    description: 'Chaque projet est unique. Nous adaptons notre approche à vos besoins spécifiques.',
+  },
 ];
 
 const AdvantagesCarousel = () => {
@@ -62,7 +56,7 @@ const AdvantagesCarousel = () => {
             Nos <span className="font-playfair italic text-gradient-animated">avantages</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Tout ce qui fait la différence avec DesignShift
+            Tout ce qui fait la différence avec MYLAN.group
           </p>
         </div>
 

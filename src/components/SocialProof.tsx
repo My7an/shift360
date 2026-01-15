@@ -1,10 +1,10 @@
 import { Star } from 'lucide-react';
 
 const testimonials = [
-  { name: 'Marie L.', text: 'DesignShift a transformé notre approche design. Rapide, créatif, impeccable.' },
+  { name: 'Marie L.', text: 'MYLAN.group a transformé notre approche design. Rapide, créatif, impeccable.' },
   { name: 'Thomas R.', text: 'Le meilleur investissement pour notre startup. ROI immédiat.' },
   { name: 'Sophie M.', text: 'Qualité exceptionnelle, délais respectés. Je recommande à 100%.' },
-  { name: 'Antoine D.', text: 'Plus besoin d\'équipe design interne. DesignShift gère tout.' },
+  { name: 'Antoine D.', text: 'Plus besoin d\'équipe design interne. MYLAN.group gère tout.' },
   { name: 'Julie B.', text: 'Créativité sans limite. Chaque projet dépasse nos attentes.' },
   { name: 'Marc P.', text: 'Réactivité incroyable. Support toujours disponible et efficace.' },
 ];
