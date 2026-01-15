@@ -29,16 +29,18 @@ const HeroSection = () => {
 
           {/* Main Title with Typography Duo */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.05] mb-8 animate-fade-in tracking-tighter">
-            Votre équipe design,
+            Vos designs professionnels
             <br />
             <span className="font-playfair italic text-gradient-animated">
-              par abonnement.
+              livrés en 72 heures.
             </span>
           </h1>
           
-          {/* Subtitle - Same font, Italic style */}
+          {/* Subtitle - Professional & Premium */}
           <p className="text-editorial text-xl md:text-2xl lg:text-3xl text-foreground/70 mb-14 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Vos designs professionnels et en illimité.
+            Rapidité d'exécution, qualité experte et organisation structurée.
+            <br className="hidden md:block" />
+            <span className="text-foreground/50">Votre équipe de design par excellence, sans abonnement.</span>
           </p>
 
           <div className="flex justify-center animate-fade-in pointer-events-auto" style={{ animationDelay: '0.4s' }}>
@@ -46,7 +48,7 @@ const HeroSection = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-lg px-12 py-6"
             >
-              Parler à un spécialiste
+              Parler avec un expert
             </button>
           </div>
         </div>

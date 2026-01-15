@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '@/assets/logo.svg';
 import CalendlyModal from './CalendlyModal';
 import ThemeToggle from './ThemeToggle';
@@ -8,6 +9,8 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +22,10 @@ const Header = () => {
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
+    if (!isHomePage) {
+      window.location.href = '/' + href;
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       const headerOffset = 100;
@@ -36,7 +43,9 @@ const Header = () => {
   const navLinks = [
     { href: '#processus', label: 'Comment ça marche ?' },
     { href: '#projets', label: 'Projets' },
-    { href: '#abonnements', label: 'Abonnements' },
+    { href: '#prestations', label: 'Prestations' },
+    { href: '/pack', label: 'Pack', isRoute: true },
+    { href: '/accompagnement', label: 'Accompagnement', isRoute: true },
     { href: '#faq', label: 'FAQ' },
   ];
 
@@ -49,31 +58,41 @@ const Header = () => {
       >
         <div className="container mx-auto px-6 h-full flex items-center justify-between">
           {/* Logo - Accueil */}
-          <a 
-            href="#" 
-            onClick={(e) => handleSmoothScroll(e, '#')}
+          <Link 
+            to="/"
             className="flex items-center gap-2 group flex-shrink-0"
           >
-          <img 
+            <img 
               src={Logo} 
-              alt="DesignShift" 
+              alt="MYLAN.group" 
               className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:scale-105"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation + CTA - Aligned on same row */}
           <div className="hidden md:flex items-center h-full gap-6">
             <nav className="flex items-center h-full gap-6">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => handleSmoothScroll(e, link.href)}
-                  className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
-                >
-                  {link.label}
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
+                  >
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                  </a>
+                )
               ))}
               {/* Contact opens Calendly */}
               <button
@@ -90,7 +109,7 @@ const Header = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-sm whitespace-nowrap px-5 py-2"
             >
-              Parler à un spécialiste
+              Parler avec un expert
             </button>
           </div>
 
@@ -109,14 +128,25 @@ const Header = () => {
           <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-2"
-                  onClick={(e) => handleSmoothScroll(e, link.href)}
-                >
-                  {link.label}
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-2"
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                  >
+                    {link.label}
+                  </a>
+                )
               ))}
               <button
                 onClick={() => {
@@ -134,7 +164,7 @@ const Header = () => {
                 }}
                 className="btn-liquid-primary text-center mt-4"
               >
-                Parler à un spécialiste
+                Parler avec un expert
               </button>
             </nav>
           </div>

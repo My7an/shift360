@@ -4,23 +4,23 @@ import CalendlyModal from './CalendlyModal';
 const steps = [
   {
     number: '01',
-    title: 'Choisissez l\'abonnement',
-    description: 'Nos formules s\'adaptent à votre rythme : 1 ou 2 projets en parallèle, 48h ou 72h de délai. Design illimité et sans engagement.',
+    title: 'Échange stratégique',
+    description: 'Parlez avec un spécialiste pour comprendre vos besoins. Phase d\'échange approfondie : analyse des objectifs, contraintes et attentes. Nous posons les bonnes questions pour cadrer parfaitement votre projet.',
   },
   {
     number: '02',
     title: 'Accédez à votre Design Board',
-    description: 'Une fois activé, recevez votre espace Trello personnalisé. Votre QG pour piloter briefs, priorités et livraisons.',
+    description: 'Une fois activé, recevez votre espace Trello personnalisé. Votre QG pour piloter briefs, priorités et livraisons avec une organisation professionnelle.',
   },
   {
     number: '03',
     title: 'Déposez votre brief',
-    description: 'Besoin d\'un logo ou d\'une landing ? Remplissez un brief en quelques minutes. On capte vite, on lance rapidement.',
+    description: 'Besoin d\'un logo ou d\'une landing ? Remplissez un brief en quelques minutes. On capte vite, on lance rapidement avec une qualité premium.',
   },
   {
     number: '04',
     title: 'Recevez vos designs',
-    description: 'Livraison sous 48h ou 72h. Validez, demandez des ajustements ou passez à la suite. Flexible et à votre rythme.',
+    description: 'Livraison sous 48h à 72h. Validez, demandez des ajustements illimités ou passez à la suite. Accompagnement professionnel à chaque étape.',
   },
 ];
 
@@ -38,7 +38,7 @@ const ProcessSection = () => {
               Comment ça <span className="font-playfair italic text-gradient-animated">marche ?</span>
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-              Un processus simple et efficace pour vos créations
+              Un processus simple, structuré et professionnel
             </p>
           </div>
 
@@ -63,7 +63,7 @@ const ProcessSection = () => {
                     onClick={() => setIsCalendlyOpen(true)}
                     className="btn-liquid text-sm py-3 px-5 self-start"
                   >
-                    Parler à un spécialiste
+                    Parler avec un expert
                   </button>
                 </div>
               </div>

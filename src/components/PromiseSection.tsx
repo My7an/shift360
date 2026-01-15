@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import { Infinity, RefreshCw, ShieldCheck, BadgeCheck } from 'lucide-react';
+import { Clock, Settings, RefreshCw, BadgeCheck } from 'lucide-react';
 import CalendlyModal from './CalendlyModal';
 
 const promises = [
   {
-    icon: Infinity,
-    title: 'Designs illimités',
-    description: 'Abonnez-vous et demandez autant de visuels que vous le souhaitez. Votre créativité n\'a plus de plafond.',
+    icon: Clock,
+    title: 'Design en 72 heures',
+    description: 'Délais courts et processus optimisé. Nous respectons vos deadlines avec une efficacité opérationnelle maximale.',
     highlight: false,
     showBadge: false,
   },
   {
-    icon: ShieldCheck,
-    title: 'Garantie "Test & Go"',
-    description: 'Vous n\'aimez pas après une semaine ? On vous rembourse 75%, sans poser de questions.',
+    icon: Settings,
+    title: 'Organisation aux petits oignons',
+    description: 'Organisation complète et structurée. Processus clair, gestion professionnelle des projets, suivi précis et communication fluide.',
     highlight: true,
     showBadge: true,
   },
@@ -50,7 +50,7 @@ const PromiseSection = () => {
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Yellow verified badge for Garantie card */}
+                {/* Yellow verified badge for Organisation card */}
                 {promise.showBadge && (
                   <div className="absolute top-4 right-4 animate-pulse">
                     <div className="relative">
@@ -81,7 +81,7 @@ const PromiseSection = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-lg"
             >
-              Parler à un spécialiste
+              Parler avec un expert
             </button>
           </div>
         </div>

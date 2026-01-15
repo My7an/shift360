@@ -1,12 +1,14 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import ContactForm from './ContactForm';
 
 const quickLinks = [
-  { label: 'Accueil', href: '#' },
-  { label: 'Nos Expertises', href: '#expertises' },
-  { label: 'Processus', href: '#processus' },
-  { label: 'Abonnements', href: '#abonnements' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Accueil', href: '#', isRoute: false },
+  { label: 'Nos Expertises', href: '#expertises', isRoute: false },
+  { label: 'Processus', href: '#processus', isRoute: false },
+  { label: 'Prestations', href: '#prestations', isRoute: false },
+  { label: 'Pack', href: '/pack', isRoute: true },
+  { label: 'Accompagnement', href: '/accompagnement', isRoute: true },
 ];
 
 const serviceLinks = [
@@ -42,9 +44,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* À Propos */}
           <div>
-            <span className="text-3xl font-extrabold mb-6 block tracking-tight">DesignShift</span>
+            <span className="text-3xl font-extrabold mb-6 block tracking-tight">MYLAN.group</span>
             <p className="text-sm text-foreground/60 leading-relaxed">
-              DesignShift est une équipe mondiale impliquée et réactive. Nos portes sont ouvertes pour bosser ou partager un café.
+              MYLAN.group est une équipe mondiale impliquée et réactive. Studio de design premium, structuré et orienté performance.
             </p>
           </div>
 
@@ -54,13 +56,22 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="text-sm text-foreground/60 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-                  >
-                    {link.label}
-                  </a>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-sm text-foreground/60 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleSmoothScroll(e, link.href)}
+                      className="text-sm text-foreground/60 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -112,7 +123,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <p className="text-sm text-foreground/50">
-              © 2026 DesignShift. Tous droits réservés.
+              © 2026 MYLAN.group. Tous droits réservés.
             </p>
           </div>
         </div>
