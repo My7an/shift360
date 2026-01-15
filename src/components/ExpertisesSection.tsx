@@ -1,7 +1,25 @@
 import { useState } from 'react';
-import { Palette, Monitor, FileImage, Wrench, Sparkles } from 'lucide-react';
+import { Palette, Monitor, FileImage, Wrench } from 'lucide-react';
 
 const categories = [
+  {
+    id: 'custom',
+    icon: Wrench,
+    title: 'Solutions Sur-mesure',
+    tagline: 'Des solutions créatives qui s\'adaptent à vos besoins spécifiques.',
+    services: [
+      'Menus pour restaurateurs',
+      'Optimisation Uber Eats & Deliveroo',
+      'Design de projets innovants',
+      'Supports visuels restaurant',
+      'Support créatif récurrent',
+      'Design d\'événements',
+      'Templates internes',
+      'Kits de marque',
+      'Audit UX',
+    ],
+    copy: 'On adore sortir du cadre. Un mix de design, conseil ou accompagnement long terme ? Dis-nous ce que tu as en tête, on le rend concret, beau et fonctionnel.',
+  },
   {
     id: 'branding',
     icon: Palette,
@@ -49,28 +67,10 @@ const categories = [
     ],
     copy: 'Que ce soit pour Instagram ou une présentation stratégique, on livre des visuels impactants (statiques ou animés) et des textes percutants. Pensés pour être vus et partagés.',
   },
-  {
-    id: 'custom',
-    icon: Wrench,
-    title: 'Solutions Sur-mesure',
-    tagline: 'Des solutions créatives qui s\'adaptent à vos besoins spécifiques.',
-    services: [
-      'Design d\'événements',
-      'Templates internes',
-      'Kits de marque',
-      'Audit UX',
-      'Design de produits innovants',
-      'Support créa récurrent',
-      'Supports visuels restaurant',
-      'Optimisation Uber Eats/Deliveroo',
-      'Menus digitaux',
-    ],
-    copy: 'On adore sortir du cadre. Un mix de design, conseil ou accompagnement long terme ? Dis-nous ce que tu as en tête, on le rend concret, beau et fonctionnel.',
-  },
 ];
 
 const ExpertisesSection = () => {
-  const [activeTab, setActiveTab] = useState('branding');
+  const [activeTab, setActiveTab] = useState('custom');
   const activeCategory = categories.find((cat) => cat.id === activeTab);
 
   return (
@@ -88,27 +88,15 @@ const ExpertisesSection = () => {
         {/* Tabs - Premium pill style */}
         <div className="flex flex-wrap justify-center gap-4 mb-16">
           {categories.map((category) => (
-            <button
+              <button
               key={category.id}
               onClick={() => setActiveTab(category.id)}
               className={`relative flex items-center gap-3 px-7 py-4 rounded-full font-semibold transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                 activeTab === category.id
                   ? 'bg-foreground text-background scale-105 shadow-lg'
-                  : category.id === 'custom'
-                    ? 'bg-gradient-to-r from-red-50 to-red-100 border-2 border-red-500 shadow-lg shadow-red-500/20 hover:shadow-xl hover:shadow-red-500/30 hover:scale-[1.04]'
-                    : 'bg-[hsl(0_0%_95%)] border border-[hsl(0_0%_90%)] hover:bg-[hsl(0_0%_92%)] hover:scale-[1.02]'
+                  : 'bg-[hsl(0_0%_95%)] border border-[hsl(0_0%_90%)] hover:bg-[hsl(0_0%_92%)] hover:scale-[1.02]'
               }`}
             >
-              {/* Large yellow star for Solutions Sur-mesure */}
-              {category.id === 'custom' && activeTab !== 'custom' && (
-                <div className="absolute -top-3 -right-3">
-                  <div className="relative">
-                    <Sparkles className="w-8 h-8 text-yellow-500 drop-shadow-[0_0_10px_rgba(234,179,8,0.8)] animate-pulse" />
-                    <div className="absolute inset-0 bg-yellow-400/60 rounded-full blur-lg animate-ping" style={{ animationDuration: '1.5s' }} />
-                    <div className="absolute inset-0 bg-yellow-300/40 rounded-full blur-xl" />
-                  </div>
-                </div>
-              )}
               <category.icon className="w-5 h-5" />
               <span className="hidden sm:inline">{category.title}</span>
             </button>

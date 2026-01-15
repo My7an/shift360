@@ -64,7 +64,7 @@ const Header = () => {
           >
             <img 
               src={Logo} 
-              alt="MYLAN.group" 
+              alt="mylan.group" 
               className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:scale-105"
             />
           </Link>

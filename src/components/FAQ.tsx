@@ -19,8 +19,8 @@ export const faqs = [
     answer: 'L\'offre ULTRA est notre prestation premium, entièrement sur mesure. Elle inclut : organisation complète du projet, osmose créative, qualité d\'expert, design 100% fait main, livraison en 48-72h, retouches illimitées et accompagnement professionnel.',
   },
   {
-    question: 'Pourquoi choisir MYLAN.group plutôt qu\'un graphiste freelance ?',
-    answer: 'Avec MYLAN.group, vous bénéficiez d\'une organisation professionnelle structurée, d\'un suivi précis via Trello, de délais garantis (48-72h) et de retouches illimitées. Notre approche "osmose créative" garantit une collaboration fluide et des résultats qui dépassent vos attentes.',
+    question: 'Pourquoi choisir mylan.group plutôt qu\'un graphiste freelance ?',
+    answer: 'Avec mylan.group, vous bénéficiez d\'une organisation professionnelle structurée, d\'un suivi précis via Trello, de délais garantis (48-72h) et de retouches illimitées. Notre approche "osmose créative" garantit une collaboration fluide et des résultats qui dépassent vos attentes.',
   },
   {
     question: 'À quelle vitesse vais-je recevoir mes designs ?',

@@ -29,18 +29,16 @@ const HeroSection = () => {
 
           {/* Main Title with Typography Duo */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-[1.05] mb-8 animate-fade-in tracking-tighter">
-            Vos designs professionnels
+            votre équipe de design
             <br />
             <span className="font-playfair italic text-gradient-animated">
-              livrés en 72 heures.
+              par excellence
             </span>
           </h1>
           
           {/* Subtitle - Professional & Premium */}
-          <p className="text-editorial text-xl md:text-2xl lg:text-3xl text-foreground/70 mb-14 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Rapidité d'exécution, qualité experte et organisation structurée.
-            <br className="hidden md:block" />
-            <span className="text-foreground/50">Votre équipe de design par excellence, sans abonnement.</span>
+          <p className="text-editorial text-xl md:text-2xl lg:text-3xl text-foreground/60 mb-14 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            rapidité d'exécution, livré en 72 heures
           </p>
 
           <div className="flex justify-center animate-fade-in pointer-events-auto" style={{ animationDelay: '0.4s' }}>

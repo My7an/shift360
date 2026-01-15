@@ -44,9 +44,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* À Propos */}
           <div>
-            <span className="text-3xl font-extrabold mb-6 block tracking-tight">MYLAN.group</span>
+            <span className="text-3xl font-extrabold mb-6 block tracking-tight">mylan.group</span>
             <p className="text-sm text-foreground/60 leading-relaxed">
-              MYLAN.group est une équipe mondiale impliquée et réactive. Studio de design premium, structuré et orienté performance.
+              mylan.group est une équipe mondiale impliquée et réactive. Studio de design premium, structuré et orienté performance.
             </p>
           </div>
 
@@ -123,7 +123,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <p className="text-sm text-foreground/50">
-              © 2026 MYLAN.group. Tous droits réservés.
+              © 2026 mylan.group. Tous droits réservés.
             </p>
           </div>
         </div>
