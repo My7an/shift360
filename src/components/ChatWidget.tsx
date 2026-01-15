@@ -38,7 +38,7 @@ const findBestAnswer = (userMessage: string): string | null => {
   
   // Check for greeting
   if (lowerMessage.match(/^(bonjour|salut|hello|hi|hey|coucou)/)) {
-    return "Bonjour ! 👋 Je suis ravi de vous accueillir chez MYLAN.group. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur notre offre ULTRA, nos services ou notre processus de travail.";
+    return "Bonjour ! 👋 Je suis ravi de vous accueillir chez mylan.group. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur notre offre ULTRA, nos services ou notre processus de travail.";
   }
 
   // Check for thank you
@@ -102,7 +102,7 @@ const findBestAnswer = (userMessage: string): string | null => {
 
   // Fallback for common questions we might have missed
   if (lowerMessage.match(/(qui|êtes|equipe|team|designer)/)) {
-    return "Nous sommes MYLAN.group, une équipe de designers experts dédiée à créer des visuels professionnels pour votre entreprise. Notre offre ULTRA vous garantit une prestation premium, sur mesure, avec un accompagnement professionnel et des délais rapides (48-72h).";
+    return "Nous sommes mylan.group, une équipe de designers experts dédiée à créer des visuels professionnels pour votre entreprise. Notre offre ULTRA vous garantit une prestation premium, sur mesure, avec un accompagnement professionnel et des délais rapides (48-72h).";
   }
 
   return null;
@@ -114,7 +114,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Je suis l'Expert MYLAN. Je suis là pour répondre à toutes vos questions sur nos prestations design. Comment puis-je vous aider ?",
+      text: "Bonjour ! Je suis l'Expert mylan.group. Je suis là pour répondre à toutes vos questions sur nos prestations design. Comment puis-je vous aider ?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -193,9 +193,9 @@ const ChatWidget = () => {
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 glass-strong rounded-3xl overflow-hidden animate-scale-in">
           {/* Header */}
           <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 flex items-center gap-3">
-            <img src={logo} alt="MYLAN" className="w-10 h-10 rounded-full bg-white p-1" />
+            <img src={logo} alt="mylan.group" className="w-10 h-10 rounded-full bg-white p-1" />
             <div>
-              <h3 className="text-white font-bold">Expert MYLAN</h3>
+              <h3 className="text-white font-bold">Expert mylan.group</h3>
               <p className="text-white/80 text-sm">En ligne • Répond en quelques secondes</p>
             </div>
           </div>

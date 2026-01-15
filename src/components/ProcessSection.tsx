@@ -5,7 +5,7 @@ const steps = [
   {
     number: '01',
     title: 'Échange stratégique',
-    description: 'Parlez avec un spécialiste pour comprendre vos besoins. Phase d\'échange approfondie : analyse des objectifs, contraintes et attentes. Nous posons les bonnes questions pour cadrer parfaitement votre projet.',
+    description: 'Parlez avec un spécialiste pour comprendre vos besoins. Nous posons les bonnes questions pour cadrer votre projet.',
   },
   {
     number: '02',

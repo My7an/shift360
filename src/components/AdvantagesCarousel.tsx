@@ -56,7 +56,7 @@ const AdvantagesCarousel = () => {
             Nos <span className="font-playfair italic text-gradient-animated">avantages</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Tout ce qui fait la différence avec MYLAN.group
+            Tout ce qui fait la différence avec mylan.group
           </p>
         </div>
 

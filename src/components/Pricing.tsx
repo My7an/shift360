@@ -7,7 +7,6 @@ const ultraFeatures = [
   'Osmose créative avec le client',
   'Qualité d\'experts',
   'Design 100 % fait main',
-  'Livraison en 48 à 72 heures',
   'Retouches illimitées',
   'Solutions sur mesure',
   'Accompagnement professionnel',
@@ -32,9 +31,9 @@ const Pricing = () => {
 
           {/* Single ULTRA Offer */}
           <div className="relative fade-in-up max-w-xl mx-auto">
-            {/* Popular badge */}
+            {/* Limited offer badge */}
             <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2.5 bg-gradient-to-r from-red-500 to-red-600 text-white text-sm font-semibold rounded-full whitespace-nowrap z-20 shadow-xl border-2 border-white flex items-center justify-center">
-              Offre Premium
+              Offre limitée
             </div>
 
             <div className="pricing-card bento-card relative flex flex-col p-10 ring-2 ring-red-500 glow-red">
@@ -44,8 +43,15 @@ const Pricing = () => {
                 </div>
                 <div>
                   <h3 className="text-3xl font-extrabold">ULTRA</h3>
-                  <p className="text-foreground/60">Le meilleur de MYLAN.group</p>
+                  <p className="text-foreground/60">Le meilleur de mylan.group</p>
                 </div>
+              </div>
+
+              {/* Urgency notice */}
+              <div className="mb-6 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30">
+                <p className="text-center text-base font-semibold text-amber-600">
+                  ⚡ Plus que 3 places disponibles
+                </p>
               </div>
 
               <div className="mb-8">
@@ -53,12 +59,6 @@ const Pricing = () => {
                   Une offre <span className="font-semibold text-foreground">premium</span> et <span className="font-semibold text-foreground">sur mesure</span>, 
                   conçue pour répondre parfaitement à vos besoins créatifs. 
                   Pas d'abonnement, pas de contraintes — uniquement des résultats exceptionnels.
-                </p>
-              </div>
-
-              <div className="mb-8 p-4 rounded-2xl bg-red-500/10 border border-red-500/20">
-                <p className="text-center text-lg font-semibold text-red-500">
-                  Livraison en 48 à 72 heures
                 </p>
               </div>
 
