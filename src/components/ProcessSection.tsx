@@ -30,7 +30,7 @@ const ProcessSection = () => {
   return (
     <>
       <section id="processus" className="py-32 px-6 relative">
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-red-500/8 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-foreground/5 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-20">
@@ -46,13 +46,13 @@ const ProcessSection = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="bento-card group flex flex-col relative overflow-hidden fade-in-up transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(255,0,0,0.15)]"
+                className="bento-card group flex flex-col relative overflow-hidden fade-in-up transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-red-500/0 to-red-600/0 group-hover:from-red-500/8 group-hover:to-red-600/5 transition-all duration-500 rounded-[28px]"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-foreground/0 to-foreground/0 group-hover:from-foreground/5 group-hover:to-foreground/3 transition-all duration-500 rounded-[28px]"></div>
 
                 <div className="relative z-10 flex flex-col h-full">
-                  <span className="text-7xl md:text-8xl font-extrabold text-red-500/15 mb-6 leading-none transition-all duration-200 group-hover:text-red-500 group-hover:scale-105">
+                  <span className="text-7xl md:text-8xl font-extrabold text-foreground/10 mb-6 leading-none transition-all duration-200 group-hover:text-foreground group-hover:scale-105">
                     {step.number}
                   </span>
                   <h3 className="text-xl font-extrabold mb-4">{step.title}</h3>

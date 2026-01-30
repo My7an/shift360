@@ -3,7 +3,6 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '@/assets/logo.svg';
 import CalendlyModal from './CalendlyModal';
-import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -43,9 +42,7 @@ const Header = () => {
   const navLinks = [
     { href: '#processus', label: 'Comment ça marche ?' },
     { href: '#projets', label: 'Projets' },
-    { href: '#prestations', label: 'Prestations' },
-    { href: '/pack', label: 'Pack', isRoute: true },
-    { href: '/accompagnement', label: 'Accompagnement', isRoute: true },
+    { href: '#prestations', label: 'Offres' },
     { href: '#faq', label: 'FAQ' },
   ];
 
@@ -73,26 +70,15 @@ const Header = () => {
           <div className="hidden md:flex items-center h-full gap-6">
             <nav className="flex items-center h-full gap-6">
               {navLinks.map((link) => (
-                link.isRoute ? (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
-                  >
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </Link>
-                ) : (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
-                  >
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  </a>
-                )
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
+                  className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
               ))}
               {/* Contact opens Calendly */}
               <button
@@ -100,10 +86,9 @@ const Header = () => {
                 className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
               >
                 Contact
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </button>
             </nav>
-            <ThemeToggle />
             {/* CTA Button */}
             <button
               onClick={() => setIsCalendlyOpen(true)}
@@ -128,25 +113,14 @@ const Header = () => {
           <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                link.isRoute ? (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-2"
-                    onClick={(e) => handleSmoothScroll(e, link.href)}
-                  >
-                    {link.label}
-                  </a>
-                )
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-2"
+                  onClick={(e) => handleSmoothScroll(e, link.href)}
+                >
+                  {link.label}
+                </a>
               ))}
               <button
                 onClick={() => {

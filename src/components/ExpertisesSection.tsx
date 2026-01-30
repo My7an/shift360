@@ -1,76 +1,42 @@
 import { useState } from 'react';
-import { Palette, Monitor, FileImage, Wrench } from 'lucide-react';
+import { Settings, FileImage } from 'lucide-react';
 
 const categories = [
   {
-    id: 'custom',
-    icon: Wrench,
-    title: 'Solutions Sur-mesure',
-    tagline: 'Des solutions créatives qui s\'adaptent à vos besoins spécifiques.',
+    id: 'platform',
+    icon: Settings,
+    title: 'Optimisation de plateforme',
+    tagline: 'Maximisez vos performances sur les plateformes de livraison.',
     services: [
-      'Menus pour restaurateurs',
-      'Optimisation Uber Eats & Deliveroo',
-      'Design de projets innovants',
-      'Supports visuels restaurant',
-      'Support créatif récurrent',
-      'Design d\'événements',
-      'Templates internes',
-      'Kits de marque',
-      'Audit UX',
+      'Optimisation Uber Eats',
+      'Optimisation Deliveroo',
+      'Visuels photos produit',
+      'Visuels photos bannière',
+      'Structure du menu',
+      'Plan marketing',
+      'Stratégie',
+      'Paramétrage optimisé',
     ],
-    copy: 'On adore sortir du cadre. Un mix de design, conseil ou accompagnement long terme ? Dis-nous ce que tu as en tête, on le rend concret, beau et fonctionnel.',
-  },
-  {
-    id: 'branding',
-    icon: Palette,
-    title: 'Branding & Identité',
-    tagline: 'Construisez une identité marquante qui laisse une empreinte à chaque interaction.',
-    services: [
-      'Logo et déclinaisons',
-      'Identité visuelle',
-      'Charte graphique',
-      'Iconographie',
-      'Typographies',
-      'Illustrations',
-      'Mascotte',
-      'Colorimétrie',
-    ],
-    copy: 'On crée une identité cohérente, mémorable et alignée avec votre vision. Du naming à la charte complète, on façonne une marque qui vous ressemble et qui marque les esprits.',
-  },
-  {
-    id: 'uxui',
-    icon: Monitor,
-    title: 'UX/UI Design',
-    tagline: 'Des sites élégants, des apps intuitives et conçues pour la conversion.',
-    services: [
-      'Design Systems',
-      'Maquette Figma mobile & desktop',
-      'Création de sites Webflow & Framer',
-      'Prototypes interactifs',
-    ],
-    copy: 'On conçoit votre site pour qu\'il fonctionne. Navigation fluide, structure intuitive, visuels impactants. Un site bien designé est votre meilleur commercial.',
+    copy: 'Nous optimisons vos comptes Uber Eats et Deliveroo pour maximiser votre rendement. Structure, visuels, paramétrage — chaque détail est pensé pour booster vos commandes.',
   },
   {
     id: 'content',
     icon: FileImage,
-    title: 'Création de Contenu',
-    tagline: 'Des supports print & digitaux qui captivent et engagent vos clients.',
+    title: 'Création de contenu',
+    tagline: 'Du contenu professionnel pour vos réseaux sociaux.',
     services: [
-      'Brochures',
-      'Pitch Decks & Présentations',
-      'Assets social media',
-      'Kakémonos',
-      'Packaging',
-      'Infographies',
-      'Livres blancs',
-      'Motion design',
+      'Post Instagram',
+      'Bannière Instagram',
+      'Vidéo Instagram',
+      'Vidéo TikTok',
+      'Support visuel',
     ],
-    copy: 'Que ce soit pour Instagram ou une présentation stratégique, on livre des visuels impactants (statiques ou animés) et des textes percutants. Pensés pour être vus et partagés.',
+    copy: 'Nous créons du contenu professionnel optimisé pour capter l\'attention, renforcer votre image de marque et générer des résultats concrets. Visibilité, engagement et conversion.',
   },
 ];
 
 const ExpertisesSection = () => {
-  const [activeTab, setActiveTab] = useState('custom');
+  const [activeTab, setActiveTab] = useState('platform');
   const activeCategory = categories.find((cat) => cat.id === activeTab);
 
   return (
@@ -81,7 +47,7 @@ const ExpertisesSection = () => {
             Nos <span className="font-playfair italic text-gradient-animated">expertises</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Des compétences variées pour tous vos projets créatifs
+            Des compétences spécialisées pour booster votre activité
           </p>
         </div>
 
@@ -109,8 +75,8 @@ const ExpertisesSection = () => {
             <div className="flex flex-col gap-10">
               {/* Header */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <activeCategory.icon className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 rounded-3xl bg-foreground flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <activeCategory.icon className="w-10 h-10 text-background" />
                 </div>
                 <div>
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight">{activeCategory.title}</h3>
