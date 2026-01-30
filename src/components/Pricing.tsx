@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Check, Utensils, Smartphone } from 'lucide-react';
-import CalendlyModal from './CalendlyModal';
 
 const proEatFeatures = [
   'Organisation complète du projet',
@@ -32,7 +31,6 @@ const proDigitaleFeatures = [
 ];
 
 const Pricing = () => {
-  const [isCalendlyOpen, setIsCalendlyOpen] = useState(false);
   const [activeOffer, setActiveOffer] = useState<'proeat' | 'prodigitale'>('proeat');
   const [ugcSelected, setUgcSelected] = useState(false);
   const [shootingSelected, setShootingSelected] = useState(false);
@@ -139,12 +137,14 @@ const Pricing = () => {
                   ))}
                 </ul>
 
-                <button
-                  onClick={() => setIsCalendlyOpen(true)}
-                  className="w-full py-5 rounded-full font-semibold text-lg btn-liquid-primary"
+                <a
+                  href="https://calendly.com/mylanblln/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-5 rounded-full font-semibold text-lg btn-liquid-primary text-center"
                 >
                   Parler avec un spécialiste
-                </button>
+                </a>
               </div>
             </div>
           )}
@@ -249,19 +249,19 @@ const Pricing = () => {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => setIsCalendlyOpen(true)}
-                  className="w-full py-5 rounded-full font-semibold text-lg btn-liquid-primary"
+                <a
+                  href="https://calendly.com/mylanblln/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-5 rounded-full font-semibold text-lg btn-liquid-primary text-center"
                 >
                   Parler avec un spécialiste
-                </button>
+                </a>
               </div>
             </div>
           )}
         </div>
       </section>
-
-      <CalendlyModal isOpen={isCalendlyOpen} onClose={() => setIsCalendlyOpen(false)} />
     </>
   );
 };
