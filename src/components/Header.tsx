@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import Logo from '@/assets/logo.svg';
 import CalendlyModal from './CalendlyModal';
 
 const Header = () => {
@@ -49,26 +48,22 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 h-16 md:h-20 ${
-          isScrolled ? 'glass-strong' : 'bg-transparent'
+        className={`fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-6xl z-50 transition-all duration-500 rounded-3xl ${
+          isScrolled ? 'glass-strong shadow-lg' : 'glass'
         }`}
       >
-        <div className="container mx-auto px-6 h-full flex items-center justify-between">
+        <div className="px-6 lg:px-8 py-4 flex items-center justify-between">
           {/* Logo - Accueil */}
           <Link 
             to="/"
             className="flex items-center gap-2 group flex-shrink-0"
           >
-            <img 
-              src={Logo} 
-              alt="mylan.group" 
-              className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:scale-105"
-            />
+            <span className="text-xl font-bold tracking-tight">909.agency</span>
           </Link>
 
           {/* Desktop Navigation + CTA - Aligned on same row */}
-          <div className="hidden md:flex items-center h-full gap-6">
-            <nav className="flex items-center h-full gap-6">
+          <div className="hidden md:flex items-center gap-6">
+            <nav className="flex items-center gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -77,7 +72,6 @@ const Header = () => {
                   className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 </a>
               ))}
               {/* Contact opens Calendly */}
@@ -86,15 +80,14 @@ const Header = () => {
                 className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
               >
                 Contact
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-foreground transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </button>
             </nav>
             {/* CTA Button */}
             <button
               onClick={() => setIsCalendlyOpen(true)}
-              className="btn-liquid-primary text-sm whitespace-nowrap px-5 py-2"
+              className="btn-liquid-primary text-sm whitespace-nowrap px-6 py-3"
             >
-              Parler avec un expert
+              Parler avec un spécialiste
             </button>
           </div>
 
@@ -110,13 +103,13 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl p-6 animate-fade-in">
-            <nav className="flex flex-col gap-4">
+          <div className="md:hidden px-6 pb-6 animate-fade-in">
+            <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-2"
+                  className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-3 px-4 rounded-xl hover:bg-muted"
                   onClick={(e) => handleSmoothScroll(e, link.href)}
                 >
                   {link.label}
@@ -127,7 +120,7 @@ const Header = () => {
                   setIsMobileMenuOpen(false);
                   setIsCalendlyOpen(true);
                 }}
-                className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-2 text-left"
+                className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-3 px-4 rounded-xl hover:bg-muted text-left"
               >
                 Contact
               </button>
@@ -136,9 +129,9 @@ const Header = () => {
                   setIsMobileMenuOpen(false);
                   setIsCalendlyOpen(true);
                 }}
-                className="btn-liquid-primary text-center mt-4"
+                className="btn-liquid-primary text-center mt-4 py-4"
               >
-                Parler avec un expert
+                Parler avec un spécialiste
               </button>
             </nav>
           </div>

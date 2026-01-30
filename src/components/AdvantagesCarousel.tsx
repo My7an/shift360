@@ -49,14 +49,14 @@ const AdvantagesCarousel = () => {
   const scrollNext = () => api?.scrollNext();
 
   return (
-    <section className="py-32 px-6">
+    <section className="py-32 px-6 animate-section" style={{ animationDelay: '0.35s' }}>
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter pr-4">
-            Nos <span className="font-playfair italic text-gradient-animated">avantages</span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tighter pr-4">
+            Nos <span className="font-playfair italic text-red-accent">avantages</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
-            Tout ce qui fait la différence avec mylan.group
+            Tout ce qui fait la différence avec 909.agency
           </p>
         </div>
 
