@@ -15,7 +15,7 @@ const steps = [
   {
     number: '03',
     title: 'Déposez votre brief',
-    description: 'Besoin d\'un logo ou d\'une landing ? Remplissez un brief en quelques minutes. On capte vite, on lance rapidement avec une qualité premium.',
+    description: 'Besoin de support visuels. Remplissez un brief en quelques minutes. On capte vite, on lance rapidement avec une qualité premium.',
   },
   {
     number: '04',
@@ -29,13 +29,13 @@ const ProcessSection = () => {
 
   return (
     <>
-      <section id="processus" className="py-32 px-6 relative">
+      <section id="processus" className="py-32 px-6 relative animate-section" style={{ animationDelay: '0.4s' }}>
         <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-foreground/5 rounded-full blur-[100px] pointer-events-none"></div>
 
         <div className="container mx-auto max-w-6xl relative">
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
-              Comment ça <span className="font-playfair italic text-gradient-animated">marche ?</span>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tighter">
+              Comment ça <span className="font-playfair italic text-red-accent">marche ?</span>
             </h2>
             <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
               Un processus simple, structuré et professionnel
@@ -55,7 +55,7 @@ const ProcessSection = () => {
                   <span className="text-7xl md:text-8xl font-extrabold text-foreground/10 mb-6 leading-none transition-all duration-200 group-hover:text-foreground group-hover:scale-105">
                     {step.number}
                   </span>
-                  <h3 className="text-xl font-extrabold mb-4">{step.title}</h3>
+                  <h3 className="text-xl font-bold mb-4">{step.title}</h3>
                   <p className="text-foreground/60 text-sm leading-relaxed mb-8 flex-1">
                     {step.description}
                   </p>
@@ -63,7 +63,7 @@ const ProcessSection = () => {
                     onClick={() => setIsCalendlyOpen(true)}
                     className="btn-liquid text-sm py-3 px-5 self-start"
                   >
-                    Parler avec un expert
+                    Parler avec un spécialiste
                   </button>
                 </div>
               </div>

@@ -55,6 +55,10 @@ export default {
           DEFAULT: "hsl(var(--glass-bg))",
           border: "hsl(var(--glass-border))",
         },
+        red: {
+          accent: "hsl(var(--red-accent))",
+          "accent-hover": "hsl(var(--red-accent-hover))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -97,6 +101,10 @@ export default {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "0.6" },
         },
+        "section-fade-in": {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -108,6 +116,7 @@ export default {
         "marquee-slow": "marquee 60s linear infinite",
         float: "float 6s ease-in-out infinite",
         pulse: "pulse 4s ease-in-out infinite",
+        "section-fade-in": "section-fade-in 0.8s ease-out forwards",
       },
       backdropBlur: {
         glass: "20px",

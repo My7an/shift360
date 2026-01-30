@@ -8,7 +8,7 @@ import {
 export const faqs = [
   {
     question: 'Comment fonctionne votre offre ?',
-    answer: 'Vous prenez contact avec un expert pour définir vos besoins. Ensuite, vous accédez à votre espace Trello personnalisé pour piloter vos projets. Nous livrons vos designs en 48 à 72 heures avec un accompagnement professionnel à chaque étape.',
+    answer: 'Vous prenez contact avec un spécialiste pour définir vos besoins. Ensuite, vous accédez à votre espace Trello personnalisé pour piloter vos projets. Nous livrons vos designs en 48 à 72 heures avec un accompagnement professionnel à chaque étape.',
   },
   {
     question: 'Quels sont vos délais de livraison ?',
@@ -23,8 +23,8 @@ export const faqs = [
     answer: 'L\'offre ProDigitale est notre offre de création de contenu pour les réseaux sociaux. Elle inclut : posts Instagram, bannières, stories, stratégie de contenu et accompagnement professionnel. Chaque contenu est pensé pour la visibilité, l\'engagement et la conversion.',
   },
   {
-    question: 'Pourquoi choisir mylan.group plutôt qu\'un graphiste freelance ?',
-    answer: 'Avec mylan.group, vous bénéficiez d\'une organisation professionnelle structurée, d\'un suivi précis via Trello, de délais garantis (48-72h) et de retouches illimitées. Notre approche "osmose créative" garantit une collaboration fluide et des résultats qui dépassent vos attentes.',
+    question: 'Pourquoi choisir 909.agency plutôt qu\'un graphiste freelance ?',
+    answer: 'Avec 909.agency, vous bénéficiez d\'une organisation professionnelle structurée, d\'un suivi précis via Trello, de délais garantis (48-72h) et de retouches illimitées. Notre approche "osmose créative" garantit une collaboration fluide et des résultats qui dépassent vos attentes.',
   },
   {
     question: 'À quelle vitesse vais-je recevoir mes designs ?',
@@ -40,11 +40,11 @@ export const faqs = [
   },
   {
     question: 'Comment se passe la collaboration ?',
-    answer: 'Tout est structuré et organisé. Vous avez accès à un espace Trello dédié pour vos briefs et suivis. Un expert dédié vous accompagne. Pour les échanges stratégiques, nous utilisons Calendly. Communication fluide et professionnelle garantie.',
+    answer: 'Tout est structuré et organisé. Vous avez accès à un espace Trello dédié pour vos briefs et suivis. Un spécialiste dédié vous accompagne. Pour les échanges stratégiques, nous utilisons Calendly. Communication fluide et professionnelle garantie.',
   },
   {
     question: 'Comment vous contacter ?',
-    answer: 'Utilisez notre bouton "Parler avec un expert" pour planifier un échange via Calendly. Pour toute question urgente, contactez-nous à : servicebellinepro@gmail.com. Nous répondons rapidement !',
+    answer: 'Utilisez notre bouton "Parler avec un spécialiste" pour planifier un échange via Calendly. Pour toute question urgente, contactez-nous à : servicebellinepro@gmail.com. Nous répondons rapidement !',
   },
 ];
 
@@ -54,7 +54,7 @@ const FAQ = () => {
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            Questions <span className="font-playfair italic text-gradient-animated">fréquentes</span>
+            Questions <span className="font-playfair italic text-red-accent">fréquentes</span>
           </h2>
           <p className="text-lg text-foreground/60">
             Tout ce que vous devez savoir sur nos offres

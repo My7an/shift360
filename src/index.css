@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Mylan Brandkit - Noir et Blanc Minimaliste */
+    /* 909.agency Brandkit - Black & White with Red Accents */
     --background: 0 0% 100%; /* #FFFFFF - White */
     --foreground: 0 0% 5%; /* Near black */
 
@@ -25,6 +25,10 @@
 
     --accent: 0 0% 5%;
     --accent-foreground: 0 0% 100%;
+
+    /* Red accent color */
+    --red-accent: 0 85% 50%; /* Vibrant red */
+    --red-accent-hover: 0 85% 45%;
 
     --destructive: 0 0% 30%;
     --destructive-foreground: 0 0% 100%;
@@ -68,8 +72,23 @@
     font-family: 'Poppins', sans-serif;
   }
 
+  /* Subtle halftone pattern background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.015;
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    @apply font-extrabold;
+    @apply font-bold;
     letter-spacing: -0.03em;
     font-family: 'Poppins', sans-serif;
   }
@@ -80,14 +99,19 @@
     letter-spacing: 0.01em;
   }
 
-  /* Text gradient animation for accent words - grayscale */
+  /* Text gradient animation for accent words - with red */
   .text-gradient-animated {
-    background: linear-gradient(90deg, #000000, #333333, #000000, #1a1a1a);
+    background: linear-gradient(90deg, hsl(0 85% 50%), hsl(0 85% 40%), hsl(0 85% 50%));
     background-size: 300% 100%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradient-sweep 8s ease-in-out infinite;
+  }
+
+  /* Red accent text class */
+  .text-red-accent {
+    color: hsl(var(--red-accent));
   }
 
   @keyframes gradient-sweep {
@@ -96,6 +120,20 @@
     }
     50% {
       background-position: 100% 50%;
+    }
+  }
+
+  /* Section animations */
+  .animate-section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: section-reveal 0.8s ease-out forwards;
+  }
+
+  @keyframes section-reveal {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
@@ -151,11 +189,12 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
+  /* Primary button with red accent */
   .btn-liquid-primary {
     @apply relative px-8 py-4 text-white rounded-full 
            font-semibold overflow-hidden;
-    background: hsl(0 0% 5%);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    background: linear-gradient(135deg, hsl(0 85% 50%), hsl(0 85% 40%));
+    box-shadow: 0 4px 20px hsla(0, 85%, 50%, 0.25);
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -176,7 +215,7 @@
 
   .btn-liquid-primary:hover {
     @apply scale-105;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px hsla(0, 85%, 50%, 0.35);
   }
 
   .btn-liquid-primary:active,
@@ -187,15 +226,15 @@
   @keyframes btn-click {
     0% {
       transform: scale(1.05);
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 0 0 hsla(0, 85%, 50%, 0.3);
     }
     50% {
       transform: scale(1.05) translate(2px, -2px);
-      box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 0 20px 5px hsla(0, 85%, 50%, 0.15);
     }
     100% {
       transform: scale(1.05);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 30px hsla(0, 85%, 50%, 0.35);
     }
   }
 
@@ -239,7 +278,7 @@
     gap: var(--bento-gap);
   }
 
-  /* Animated Background Gradient - Grayscale */
+  /* Animated Background Gradient with red hint */
   .animated-gradient-bg {
     position: fixed;
     inset: 0;
@@ -258,7 +297,7 @@
   .gradient-blob-1 {
     width: 600px;
     height: 600px;
-    background: linear-gradient(135deg, #888888, #cccccc);
+    background: linear-gradient(135deg, hsl(0 85% 50% / 0.3), #cccccc);
     top: -200px;
     right: -150px;
     animation-delay: 0s;
@@ -276,7 +315,7 @@
   .gradient-blob-3 {
     width: 400px;
     height: 400px;
-    background: linear-gradient(135deg, #999999, #eeeeee);
+    background: linear-gradient(135deg, hsl(0 85% 50% / 0.2), #eeeeee);
     top: 40%;
     left: 30%;
     animation-delay: -14s;
@@ -380,24 +419,30 @@
     }
   }
 
-  /* Floating badge with ping */
+  /* Floating badge with ping - green pulse */
   .badge-floating {
     @apply inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full text-sm font-medium;
   }
 
   .ping-dot {
-    @apply w-2 h-2 rounded-full bg-foreground relative;
+    @apply w-2 h-2 rounded-full relative;
+    background: hsl(142 76% 46%);
   }
 
   .ping-dot::before {
     content: '';
-    @apply absolute inset-0 rounded-full bg-foreground;
-    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    @apply absolute inset-0 rounded-full;
+    background: hsl(142 76% 46%);
+    animation: ping-green 2s cubic-bezier(0, 0, 0.2, 1) infinite;
   }
 
-  @keyframes ping {
+  @keyframes ping-green {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
     75%, 100% {
-      transform: scale(2);
+      transform: scale(2.5);
       opacity: 0;
     }
   }
@@ -419,6 +464,32 @@
       transform: scale(1) rotate(0deg);
       opacity: 1;
     }
+  }
+
+  /* Hero gradient background */
+  .hero-gradient {
+    background: linear-gradient(180deg, 
+      hsl(0 85% 50% / 0.03) 0%, 
+      hsl(0 0% 100%) 50%,
+      hsl(0 0% 100%) 100%
+    );
+  }
+
+  /* Horizontal scroll container for portfolio */
+  .horizontal-scroll {
+    @apply flex gap-6 overflow-x-auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .horizontal-scroll > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
   }
 }
 

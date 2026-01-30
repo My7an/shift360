@@ -31,11 +31,11 @@ const PromiseSection = () => {
 
   return (
     <>
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 animate-section" style={{ animationDelay: '0.1s' }}>
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold mb-6 tracking-tighter">
-            Nos <span className="font-playfair italic text-gradient-animated">engagements</span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tighter">
+            Nos <span className="font-playfair italic text-red-accent">engagements</span>
           </h2>
           </div>
 
@@ -61,13 +61,13 @@ const PromiseSection = () => {
                 )}
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                   promise.highlight 
-                    ? 'bg-foreground' 
-                    : 'bg-foreground/10 group-hover:bg-foreground'
+                    ? 'bg-gradient-to-br from-red-500 to-red-600' 
+                    : 'bg-foreground/10 group-hover:bg-gradient-to-br group-hover:from-red-500 group-hover:to-red-600'
                 }`}>
                   <promise.icon className={`w-7 h-7 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                     promise.highlight 
-                      ? 'text-background' 
-                      : 'text-foreground group-hover:text-background'
+                      ? 'text-white' 
+                      : 'text-foreground group-hover:text-white'
                   }`} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{promise.title}</h3>
@@ -81,7 +81,7 @@ const PromiseSection = () => {
               onClick={() => setIsCalendlyOpen(true)}
               className="btn-liquid-primary text-lg"
             >
-              Parler avec un expert
+              Parler avec un spécialiste
             </button>
           </div>
         </div>

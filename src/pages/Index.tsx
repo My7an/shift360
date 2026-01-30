@@ -9,12 +9,12 @@ import ProcessSection from '@/components/ProcessSection';
 import Pricing from '@/components/Pricing';
 import SocialProof from '@/components/SocialProof';
 import FAQ from '@/components/FAQ';
-import ChatWidget from '@/components/ChatWidget';
+import CEOPopup from '@/components/CEOPopup';
 import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden relative">
       <AnimatedBackground />
       <Header />
       <main>
@@ -29,7 +29,7 @@ const Index = () => {
         <FAQ />
       </main>
       <Footer />
-      <ChatWidget />
+      <CEOPopup />
     </div>
   );
 };
