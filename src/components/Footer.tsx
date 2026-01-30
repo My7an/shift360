@@ -1,21 +1,16 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import ContactForm from './ContactForm';
 
 const quickLinks = [
-  { label: 'Accueil', href: '#', isRoute: false },
-  { label: 'Nos Expertises', href: '#expertises', isRoute: false },
-  { label: 'Processus', href: '#processus', isRoute: false },
-  { label: 'Prestations', href: '#prestations', isRoute: false },
-  { label: 'Pack', href: '/pack', isRoute: true },
-  { label: 'Accompagnement', href: '/accompagnement', isRoute: true },
+  { label: 'Accueil', href: '#' },
+  { label: 'Nos Expertises', href: '#expertises' },
+  { label: 'Processus', href: '#processus' },
+  { label: 'Offres', href: '#prestations' },
 ];
 
 const serviceLinks = [
-  { label: 'Branding & Identité', href: '#expertises' },
-  { label: 'UX/UI Design', href: '#expertises' },
-  { label: 'Création de Contenu', href: '#expertises' },
-  { label: 'Solutions Sur-Mesure', href: '#expertises' },
+  { label: 'Optimisation de plateforme', href: '#expertises' },
+  { label: 'Création de contenu', href: '#expertises' },
 ];
 
 const Footer = () => {
@@ -38,7 +33,7 @@ const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="py-20 px-6 border-t border-white/10">
+    <footer id="contact" className="py-20 px-6 border-t border-border">
       <div className="container mx-auto max-w-6xl">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
@@ -56,22 +51,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  {link.isRoute ? (
-                    <Link
-                      to={link.href}
-                      className="text-sm text-foreground/60 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-                    >
-                      {link.label}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleSmoothScroll(e, link.href)}
-                      className="text-sm text-foreground/60 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-                    >
-                      {link.label}
-                    </a>
-                  )}
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
+                    className="text-sm text-foreground/60 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -103,20 +89,20 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
+        <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Contact Info */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-foreground/60">
               <a href="tel:+33650016134" className="flex items-center gap-2 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                <Phone className="w-4 h-4 text-red-500" />
+                <Phone className="w-4 h-4 text-foreground" />
                 +33 6 50 01 61 34
               </a>
               <a href="mailto:servicebellinepro@gmail.com" className="flex items-center gap-2 hover:text-foreground transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
-                <Mail className="w-4 h-4 text-red-500" />
+                <Mail className="w-4 h-4 text-foreground" />
                 servicebellinepro@gmail.com
               </a>
               <span className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-red-500" />
+                <MapPin className="w-4 h-4 text-foreground" />
                 Lille
               </span>
             </div>

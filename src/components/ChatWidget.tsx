@@ -18,10 +18,10 @@ const knowledgeBase = faqs.map(faq => ({
 
 // Comprehensive site knowledge for the chatbot
 const siteKnowledge = {
-  offer: 'ULTRA - Offre premium sur mesure',
+  offers: ['ProEat - 500€', 'ProDigitale - 500€/mois'],
   delivery: '48 à 72 heures',
   tools: 'Figma, Adobe Creative Suite (Photoshop, Illustrator, InDesign), Webflow, Framer',
-  services: ['Branding', 'Logo', 'UX/UI Design', 'Sites web', 'Print', 'Social media', 'Motion design', 'Packaging'],
+  services: ['Optimisation Uber Eats', 'Optimisation Deliveroo', 'Création de contenu Instagram', 'Création de contenu TikTok'],
   revisions: 'Retouches illimitées incluses',
   features: [
     'Organisation complète du projet',
@@ -38,7 +38,7 @@ const findBestAnswer = (userMessage: string): string | null => {
   
   // Check for greeting
   if (lowerMessage.match(/^(bonjour|salut|hello|hi|hey|coucou)/)) {
-    return "Bonjour ! 👋 Je suis ravi de vous accueillir chez mylan.group. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur notre offre ULTRA, nos services ou notre processus de travail.";
+    return "Bonjour ! 👋 Je suis ravi de vous accueillir chez mylan.group. Comment puis-je vous aider aujourd'hui ? N'hésitez pas à me poser vos questions sur nos offres ProEat et ProDigitale, nos services ou notre processus de travail.";
   }
 
   // Check for thank you
@@ -47,8 +47,8 @@ const findBestAnswer = (userMessage: string): string | null => {
   }
 
   // Check for pricing/tarif
-  if (lowerMessage.match(/(prix|tarif|coût|coute|combien|offre|pack|ultra)/)) {
-    return `Nous proposons une offre unique et premium : **ULTRA**\n\n💎 Cette prestation sur mesure inclut :\n• Organisation complète du projet\n• Osmose créative avec le client\n• Qualité d'experts\n• Design 100% fait main\n• Livraison en 48 à 72 heures\n• Retouches illimitées\n• Accompagnement professionnel\n\nPas d'abonnement, pas de contraintes. Je vous invite à parler avec un expert pour discuter de votre projet !`;
+  if (lowerMessage.match(/(prix|tarif|coût|coute|combien|offre|proeat|prodigitale)/)) {
+    return `Nous proposons deux offres :\n\n🍽️ **ProEat** - 500€\nOptimisation complète de vos plateformes Uber Eats et Deliveroo (structure, visuels, stratégie, paramétrage). Nos clients constatent en moyenne +65% d'amélioration de leur rendement.\n\n📱 **ProDigitale** - 500€/mois\nCréation de contenu professionnel pour vos réseaux sociaux (Instagram, TikTok).\n\nJe vous invite à parler avec un expert pour discuter de votre projet !`;
   }
 
   // Check for delivery/délai
@@ -58,12 +58,12 @@ const findBestAnswer = (userMessage: string): string | null => {
 
   // Check for tools/logiciels
   if (lowerMessage.match(/(logiciel|outil|figma|photoshop|adobe|webflow|framer|software)/)) {
-    return `Notre équipe travaille avec les meilleurs outils du marché :\n\n🎨 Design : ${siteKnowledge.tools}\n\nNous maîtrisons également les outils de prototypage, de motion design et de création de sites web modernes. Chaque livrable est fourni dans le format de votre choix !`;
+    return `Notre équipe travaille avec les meilleurs outils du marché :\n\n🎨 Design : ${siteKnowledge.tools}\n\nNous maîtrisons également les outils de création de contenu pour les réseaux sociaux. Chaque livrable est fourni dans le format de votre choix !`;
   }
 
   // Check for what's included
-  if (lowerMessage.match(/(inclus|comprend|contient|offre|ultra)/)) {
-    return `Notre offre ULTRA inclut tout ce dont vous avez besoin :\n\n✅ Organisation complète du projet\n✅ Osmose créative avec le client\n✅ Qualité d'experts\n✅ Design 100% fait main\n✅ Livraison en 48 à 72 heures\n✅ Retouches illimitées\n✅ Solutions sur mesure\n✅ Accompagnement professionnel\n✅ Expert dédié\n\nTout cela sans abonnement et sans contraintes !`;
+  if (lowerMessage.match(/(inclus|comprend|contient)/)) {
+    return `Nos offres incluent tout ce dont vous avez besoin :\n\n🍽️ **ProEat** inclut :\n• Organisation complète du projet\n• Visuels produit et couverture\n• Structure du menu\n• Plan marketing et stratégie\n• Paramétrage optimisé\n• Retouches illimitées\n\n📱 **ProDigitale** inclut :\n• Posts et Stories Instagram\n• Vidéos TikTok\n• Stratégie de contenu\n• Accompagnement professionnel\n• Retouches illimitées`;
   }
 
   // Check for revisions/retouches
@@ -72,8 +72,8 @@ const findBestAnswer = (userMessage: string): string | null => {
   }
 
   // Check for services
-  if (lowerMessage.match(/(service|créa|design|logo|site|brand|print|motion|social)/)) {
-    return `Nous proposons une large gamme de services créatifs :\n\n🎨 Branding & Identité : Logo, charte graphique, mascotte\n💻 UX/UI Design : Maquettes Figma, prototypes\n🌐 Sites Web : Webflow, Framer\n📱 Social Media : Posts, stories, assets\n🖨️ Print : Brochures, cartes, packaging\n🎬 Motion Design : Animations, vidéos\n\nTout cela avec notre offre ULTRA, livré en 48-72h !`;
+  if (lowerMessage.match(/(service|uber|deliveroo|instagram|tiktok|contenu|optimisation)/)) {
+    return `Nous proposons deux types de services :\n\n🍽️ **Optimisation de plateforme** :\n• Optimisation Uber Eats & Deliveroo\n• Visuels photos produit et bannière\n• Structure du menu\n• Plan marketing et stratégie\n• Paramétrage optimisé\n\n📱 **Création de contenu** :\n• Posts Instagram\n• Stories Instagram\n• Vidéos TikTok\n• Supports visuels\n\nQuelle offre vous intéresse ?`;
   }
 
   // Check for how it works/process
@@ -102,7 +102,7 @@ const findBestAnswer = (userMessage: string): string | null => {
 
   // Fallback for common questions we might have missed
   if (lowerMessage.match(/(qui|êtes|equipe|team|designer)/)) {
-    return "Nous sommes mylan.group, une équipe de designers experts dédiée à créer des visuels professionnels pour votre entreprise. Notre offre ULTRA vous garantit une prestation premium, sur mesure, avec un accompagnement professionnel et des délais rapides (48-72h).";
+    return "Nous sommes mylan.group, une équipe de designers experts dédiée à optimiser vos plateformes de livraison et créer du contenu professionnel pour vos réseaux sociaux. Nos offres ProEat et ProDigitale vous garantissent une prestation premium, avec un accompagnement professionnel et des délais rapides (48-72h).";
   }
 
   return null;
@@ -114,7 +114,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Je suis l'Expert mylan.group. Je suis là pour répondre à toutes vos questions sur nos prestations design. Comment puis-je vous aider ?",
+      text: "Bonjour ! Je suis l'Expert mylan.group. Je suis là pour répondre à toutes vos questions sur nos offres. Comment puis-je vous aider ?",
       isUser: false,
       timestamp: new Date(),
     },
@@ -182,7 +182,7 @@ const ChatWidget = () => {
         className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isOpen 
             ? 'bg-foreground text-background rotate-90' 
-            : 'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg hover:scale-110'
+            : 'bg-foreground text-background shadow-lg hover:scale-110'
         }`}
       >
         {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
@@ -192,11 +192,11 @@ const ChatWidget = () => {
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 glass-strong rounded-3xl overflow-hidden animate-scale-in">
           {/* Header */}
-          <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 flex items-center gap-3">
+          <div className="bg-foreground p-4 flex items-center gap-3">
             <img src={logo} alt="mylan.group" className="w-10 h-10 rounded-full bg-white p-1" />
             <div>
-              <h3 className="text-white font-bold">Expert mylan.group</h3>
-              <p className="text-white/80 text-sm">En ligne • Répond en quelques secondes</p>
+              <h3 className="text-background font-bold">Expert mylan.group</h3>
+              <p className="text-background/80 text-sm">En ligne • Répond en quelques secondes</p>
             </div>
           </div>
 
@@ -210,7 +210,7 @@ const ChatWidget = () => {
                 <div
                   className={`rounded-2xl p-3 max-w-[85%] ${
                     msg.isUser
-                      ? 'bg-gradient-to-r from-red-500 to-red-600 text-white'
+                      ? 'bg-foreground text-background'
                       : 'glass'
                   }`}
                 >
@@ -235,27 +235,27 @@ const ChatWidget = () => {
           {/* Quick Actions */}
           <div className="px-4 pb-2 flex gap-2 flex-wrap">
             <button
-              onClick={() => setMessage("Comment fonctionne votre offre ULTRA ?")}
-              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+              onClick={() => setMessage("Quelles sont vos offres ?")}
+              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-foreground/5 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             >
-              💎 Offre ULTRA
+              💎 Nos offres
             </button>
             <button
               onClick={() => setMessage("Quels sont vos délais de livraison ?")}
-              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-foreground/5 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
             >
               ⚡ Délais
             </button>
             <a
               href="mailto:servicebellinepro@gmail.com"
-              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-white/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] flex items-center gap-1"
+              className="text-xs glass px-3 py-1.5 rounded-full hover:bg-foreground/5 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] flex items-center gap-1"
             >
               <Mail size={12} /> Email
             </a>
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-white/10">
+          <div className="p-4 border-t border-border">
             <div className="flex gap-2">
               <input
                 type="text"
@@ -263,11 +263,11 @@ const ChatWidget = () => {
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Votre message..."
-                className="flex-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                className="flex-1 bg-muted border border-border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-foreground/20 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
               />
               <button 
                 onClick={handleSend}
-                className="w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-red-600 text-white flex items-center justify-center hover:scale-105 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                className="w-10 h-10 rounded-full bg-foreground text-background flex items-center justify-center hover:scale-105 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
               >
                 <Send size={18} />
               </button>

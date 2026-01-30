@@ -73,8 +73,8 @@ const AdvantagesCarousel = () => {
               <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <div className="bento-card h-full min-h-[320px] flex flex-col p-6">
                   {/* Image placeholder */}
-                  <div className="w-full aspect-square bg-gradient-to-br from-red-500/10 to-red-600/5 rounded-2xl mb-6 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-red-500/20 to-red-600/10" />
+                  <div className="w-full aspect-square bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-2xl mb-6 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-foreground/10" />
                   </div>
                   {/* Content */}
                   <h3 className="text-lg font-bold mb-2">{advantage.title}</h3>

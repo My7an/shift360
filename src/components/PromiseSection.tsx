@@ -45,29 +45,29 @@ const PromiseSection = () => {
                 key={index}
                 className={`bento-card group p-8 flex flex-col h-full min-h-[280px] fade-in-up transition-all duration-300 hover:scale-[1.02] relative ${
                   promise.highlight 
-                    ? 'shadow-lg shadow-red-500/10 border border-red-500/30' 
+                    ? 'shadow-lg shadow-foreground/10 border border-foreground/20' 
                     : ''
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Yellow verified badge for Organisation card */}
+                {/* Badge for highlighted card */}
                 {promise.showBadge && (
                   <div className="absolute top-4 right-4 animate-pulse">
                     <div className="relative">
-                      <BadgeCheck className="w-8 h-8 text-yellow-500 drop-shadow-lg" />
-                      <div className="absolute inset-0 bg-yellow-400/30 rounded-full blur-md animate-ping" style={{ animationDuration: '2s' }} />
+                      <BadgeCheck className="w-8 h-8 text-foreground drop-shadow-lg" />
+                      <div className="absolute inset-0 bg-foreground/20 rounded-full blur-md animate-ping" style={{ animationDuration: '2s' }} />
                     </div>
                   </div>
                 )}
                 <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                   promise.highlight 
-                    ? 'bg-gradient-to-br from-red-500 to-red-600' 
-                    : 'bg-gradient-to-br from-red-500/20 to-red-600/10 group-hover:from-red-500 group-hover:to-red-600'
+                    ? 'bg-foreground' 
+                    : 'bg-foreground/10 group-hover:bg-foreground'
                 }`}>
                   <promise.icon className={`w-7 h-7 transition-colors duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                     promise.highlight 
-                      ? 'text-white' 
-                      : 'text-red-500 group-hover:text-white'
+                      ? 'text-background' 
+                      : 'text-foreground group-hover:text-background'
                   }`} />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{promise.title}</h3>
