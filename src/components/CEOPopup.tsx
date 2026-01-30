@@ -15,15 +15,16 @@ const CEOPopup = () => {
   // Generate next 5 days dynamically
   const getNextDays = () => {
     const days = [];
-    const dayNames = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+    const dayNames = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
+    const monthNames = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
     
     for (let i = 0; i < 5; i++) {
       const date = new Date();
       date.setDate(date.getDate() + i);
       days.push({
-        name: dayNames[date.getDay()],
-        date: date.getDate().toString().padStart(2, '0'),
-        month: (date.getMonth() + 1).toString().padStart(2, '0'),
+        dayName: dayNames[date.getDay()],
+        date: date.getDate(),
+        month: monthNames[date.getMonth()],
       });
     }
     return days;
@@ -87,52 +88,53 @@ const CEOPopup = () => {
   if (isDismissed || !isVisible) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
-      <div className="glass-strong rounded-2xl p-5 max-w-sm shadow-2xl border border-border">
+    <div className="fixed bottom-4 right-4 z-50 animate-fade-in sm:bottom-6 sm:right-6">
+      <div className="bg-background/95 backdrop-blur-xl rounded-2xl p-4 sm:p-5 w-[320px] sm:w-[360px] shadow-2xl border border-border/50">
         {/* Close button */}
         <button
           onClick={handleDismiss}
-          className="absolute top-3 right-3 p-1.5 rounded-full hover:bg-muted transition-colors"
+          className="absolute top-3 right-3 p-1 rounded-full hover:bg-muted transition-colors"
           aria-label="Fermer"
         >
-          <X className="w-4 h-4 text-foreground/60" />
+          <X className="w-4 h-4 text-muted-foreground" />
         </button>
 
-        {/* Header with avatar */}
-        <div className="flex items-start gap-4 mb-4">
+        {/* Header with avatar and name */}
+        <div className="flex items-start gap-3 mb-4 pr-6">
           {/* Avatar with online indicator */}
           <div className="relative flex-shrink-0">
-            <img
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face"
-              alt="Milan"
-              className="w-14 h-14 rounded-full object-cover border-2 border-white"
-            />
-            <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-accent to-red-accent-hover flex items-center justify-center text-white font-bold text-lg">
+              M
+            </div>
+            <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background animate-pulse"></span>
           </div>
 
-          <div className="flex-1 pt-1">
-            <p className="text-lg font-bold text-foreground mb-1">Milan</p>
-            <p className="text-sm text-foreground/70 leading-relaxed">
-              Ne laissez plus l'algorithme décider de vos revenus. Une visibilité maximale et des ventes boostées, sans effort.
-            </p>
+          <div className="flex-1 min-w-0">
+            <p className="text-base font-semibold text-foreground">Milan</p>
+            <p className="text-xs text-muted-foreground">CEO de 909.agency</p>
           </div>
         </div>
 
+        {/* Message */}
+        <p className="text-sm text-foreground/80 leading-relaxed mb-4">
+          Ne laissez plus l'algorithme décider de vos revenus. Une visibilité maximale et des ventes boostées, sans effort.
+        </p>
+
         {/* Dynamic days selector */}
         <div className="mb-4">
-          <p className="text-xs font-medium text-foreground/50 mb-2 uppercase tracking-wider">Prochaines disponibilités</p>
-          <div className="flex gap-2">
+          <p className="text-xs font-medium text-muted-foreground mb-2">Prochaines disponibilités</p>
+          <div className="flex gap-1.5">
             {nextDays.map((day, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedDay(index)}
                 className={`flex-1 py-2 px-1 rounded-lg text-center transition-all duration-200 ${
                   selectedDay === index
-                    ? 'bg-gradient-to-r from-red-500 to-red-600 text-white shadow-lg'
+                    ? 'bg-red-accent text-white shadow-md'
                     : 'bg-muted hover:bg-muted/80 text-foreground/70'
                 }`}
               >
-                <div className="text-xs font-medium truncate">{day.name.slice(0, 3)}</div>
+                <div className="text-[10px] font-medium uppercase">{day.dayName}</div>
                 <div className="text-sm font-bold">{day.date}</div>
               </button>
             ))}
@@ -141,11 +143,11 @@ const CEOPopup = () => {
 
         {/* Countdown */}
         <div className="mb-4">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs text-foreground/50">Offre expire dans</span>
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-xs text-muted-foreground">Offre expire dans</span>
             <span className="text-sm font-bold text-red-accent">{formatTime(timeLeft)}</span>
           </div>
-          <Progress value={progressValue} className="h-2 bg-muted" />
+          <Progress value={progressValue} className="h-1.5 bg-muted" />
         </div>
 
         {/* CTA Button */}
@@ -153,7 +155,7 @@ const CEOPopup = () => {
           href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="block w-full btn-liquid-primary py-4 text-sm text-center font-semibold"
+          className="block w-full bg-red-accent hover:bg-red-accent-hover text-white py-3 rounded-xl text-sm text-center font-semibold transition-all duration-200 shadow-lg hover:shadow-xl"
         >
           Prenez un appel gratuit
         </a>
