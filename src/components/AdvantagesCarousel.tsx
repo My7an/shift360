@@ -13,6 +13,7 @@ import advantageOsmose from '@/assets/advantage-osmose.png';
 import advantageCustom from '@/assets/advantage-custom.png';
 import advantageUnlimited from '@/assets/advantage-unlimited.png';
 import advantageQuality from '@/assets/advantage-quality.png';
+import advantageSupport from '@/assets/advantage-support.png';
 
 const advantages = [
   {
@@ -48,7 +49,7 @@ const advantages = [
   {
     title: 'Accompagnement professionnel',
     description: 'Un expert dédié vous accompagne à chaque étape de votre projet.',
-    image: null,
+    image: advantageSupport,
   },
   {
     title: 'Solutions sur mesure',
