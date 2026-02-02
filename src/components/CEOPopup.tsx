@@ -45,8 +45,9 @@ const CEOPopup = () => {
       setIsVisible(true);
       // Play pop sound
       try {
-        audioRef.current = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2teleC8dW6bL59CyazolUrjd6dC4ezsoS7Xf6cy3fz0oRbDe6cO0hEIqPqnb6L2wiEcsNqLW57WsikwuLZnR5K+nj1IvJI/L4qmil1YwH4XE4KKdm1owGXq94p2YnV4xFG+04ZiTn2MzEGat4JOOnWY2DV2l3o+Km2o5ClOc3IqGmW08B0mS2YWBl3A/BECI1n98lXNCAT180nh3knZGADpyznJxkHpKADZqyWxuj31OADN');
-        audioRef.current.volume = 0.3;
+        // Soft, premium notification sound
+        audioRef.current = new Audio('data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAABhgC7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7//////////////////////////////////////////////////////////////////8AAAAATGF2YzU4LjEzAAAAAAAAAAAAAAAAJAAAAAAAAAAAAYYNBrVxAAAAAAD/+1DEAAAGAAGn9AAAIwiszv8wgBQAAANIAAAAAExBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//tQxCQAAADSAAAAAAAAANIAAAAATEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV');
+        audioRef.current.volume = 0.15;
         audioRef.current.play().catch(() => {});
       } catch (e) {}
     }, 5000);
@@ -110,7 +111,7 @@ const CEOPopup = () => {
           </div>
 
           <div className="flex-1 min-w-0">
-            <p className="text-base font-semibold text-foreground">Milan</p>
+            <p className="text-base font-semibold text-foreground">mylan</p>
             <p className="text-xs text-muted-foreground">CEO de 909.agency</p>
           </div>
         </div>

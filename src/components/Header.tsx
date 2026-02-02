@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '@/assets/logo.svg';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,7 +56,7 @@ const Header = () => {
           to="/"
           className="flex items-center gap-2 group flex-shrink-0"
         >
-          <span className="text-xl font-bold tracking-tight">909.agency</span>
+          <img src={logo} alt="909.agency" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Navigation + CTA - Aligned on same row */}
