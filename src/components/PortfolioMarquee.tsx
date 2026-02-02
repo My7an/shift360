@@ -4,6 +4,7 @@ import portfolioWeb from '@/assets/portfolio-web.jpg';
 import portfolioPackaging from '@/assets/portfolio-packaging.jpg';
 import portfolioDashboard from '@/assets/portfolio-dashboard.jpg';
 import portfolioEcommerce from '@/assets/portfolio-ecommerce.jpg';
+import portfolioUberEats from '@/assets/portfolio-ubereats.png';
 
 const portfolioItems = [
   { id: 1, title: 'Brand Identity', category: 'Branding', image: portfolioBranding },
@@ -12,6 +13,7 @@ const portfolioItems = [
   { id: 4, title: 'Packaging Design', category: 'Branding', image: portfolioPackaging },
   { id: 5, title: 'Dashboard', category: 'UI/UX', image: portfolioDashboard },
   { id: 6, title: 'E-commerce', category: 'Web', image: portfolioEcommerce },
+  { id: 7, title: 'Visuel Uber Eats', category: 'Food', image: portfolioUberEats },
 ];
 
 const PortfolioMarquee = () => {
