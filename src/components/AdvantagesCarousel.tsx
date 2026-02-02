@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/carousel';
 import advantageHandmade from '@/assets/advantage-handmade.png';
 import advantageDelivery from '@/assets/advantage-delivery.png';
+import advantageOrganization from '@/assets/advantage-organization.png';
 
 const advantages = [
   {
@@ -23,7 +24,7 @@ const advantages = [
   {
     title: 'Organisation aux petits oignons',
     description: 'Projets partagés, calendrier clair, suivi fluide. Tout est structuré.',
-    image: null,
+    image: advantageOrganization,
   },
   {
     title: 'Osmose créative',
