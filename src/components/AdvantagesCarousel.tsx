@@ -7,12 +7,13 @@ import {
   type CarouselApi,
 } from '@/components/ui/carousel';
 import advantageHandmade from '@/assets/advantage-handmade.png';
+import advantageDelivery from '@/assets/advantage-delivery.png';
 
 const advantages = [
   {
     title: 'Livraison en 72h',
     description: 'Rapidité garantie. Vos designs livrés en 72 heures maximum, sans compromis sur la qualité.',
-    image: null,
+    image: advantageDelivery,
   },
   {
     title: 'Retouches illimitées',
