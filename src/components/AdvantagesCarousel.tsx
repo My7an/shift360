@@ -6,39 +6,48 @@ import {
   CarouselItem,
   type CarouselApi,
 } from '@/components/ui/carousel';
+import advantageHandmade from '@/assets/advantage-handmade.png';
 
 const advantages = [
   {
     title: 'Livraison en 72h',
     description: 'Rapidité garantie. Vos designs livrés en 72 heures maximum, sans compromis sur la qualité.',
+    image: null,
   },
   {
     title: 'Retouches illimitées',
     description: 'On ajuste, on affine, on peaufine. On s\'arrête seulement quand vous adorez.',
+    image: null,
   },
   {
     title: 'Organisation aux petits oignons',
     description: 'Projets partagés, calendrier clair, suivi fluide. Tout est structuré.',
+    image: null,
   },
   {
     title: 'Osmose créative',
     description: 'On ne fait pas que produire. On réfléchit avec vous, pour vous.',
+    image: null,
   },
   {
     title: 'Design 100 % fait main',
     description: 'Zéro visuel généré par IA. Uniquement du vrai savoir-faire humain.',
+    image: advantageHandmade,
   },
   {
     title: 'Qualité d\'expert garantie',
     description: 'Exigence, précision, excellence. Chaque livraison est pensée pour performer.',
+    image: null,
   },
   {
     title: 'Accompagnement professionnel',
     description: 'Un expert dédié vous accompagne à chaque étape de votre projet.',
+    image: null,
   },
   {
     title: 'Solutions sur mesure',
     description: 'Chaque projet est unique. Nous adaptons notre approche à vos besoins spécifiques.',
+    image: null,
   },
 ];
 
@@ -72,9 +81,13 @@ const AdvantagesCarousel = () => {
             {advantages.map((advantage, index) => (
               <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <div className="bento-card h-full min-h-[320px] flex flex-col p-6">
-                  {/* Image placeholder */}
-                  <div className="w-full aspect-square bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-2xl mb-6 flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-foreground/10" />
+                  {/* Image */}
+                  <div className="w-full aspect-square bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
+                    {advantage.image ? (
+                      <img src={advantage.image} alt={advantage.title} className="w-3/4 h-3/4 object-contain" />
+                    ) : (
+                      <div className="w-16 h-16 rounded-full bg-foreground/10" />
+                    )}
                   </div>
                   {/* Content */}
                   <h3 className="text-lg font-bold mb-2">{advantage.title}</h3>
