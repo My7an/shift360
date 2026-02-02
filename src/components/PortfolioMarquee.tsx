@@ -5,6 +5,11 @@ import portfolioPackaging from '@/assets/portfolio-packaging.jpg';
 import portfolioDashboard from '@/assets/portfolio-dashboard.jpg';
 import portfolioEcommerce from '@/assets/portfolio-ecommerce.jpg';
 import portfolioUberEats from '@/assets/portfolio-ubereats.png';
+import portfolioChickenCafe from '@/assets/portfolio-chicken-cafe.png';
+import portfolioCoqCook from '@/assets/portfolio-coq-cook.png';
+import portfolioOcaliCrousty from '@/assets/portfolio-ocali-crousty.png';
+import portfolioStreetSaveur from '@/assets/portfolio-street-saveur.png';
+import portfolioSupremeGrill from '@/assets/portfolio-supreme-grill.png';
 
 const portfolioItems = [
   { id: 1, title: 'Brand Identity', category: 'Branding', image: portfolioBranding },
@@ -14,6 +19,11 @@ const portfolioItems = [
   { id: 5, title: 'Dashboard', category: 'UI/UX', image: portfolioDashboard },
   { id: 6, title: 'E-commerce', category: 'Web', image: portfolioEcommerce },
   { id: 7, title: 'Visuel Uber Eats', category: 'Food', image: portfolioUberEats },
+  { id: 8, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioChickenCafe },
+  { id: 9, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioCoqCook },
+  { id: 10, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioOcaliCrousty },
+  { id: 11, title: 'Visuels Uber Eats', category: 'Food', image: portfolioStreetSaveur },
+  { id: 12, title: 'Visuels Uber Eats', category: 'Food', image: portfolioSupremeGrill },
 ];
 
 const PortfolioMarquee = () => {
