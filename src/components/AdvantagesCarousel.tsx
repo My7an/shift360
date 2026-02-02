@@ -9,6 +9,7 @@ import {
 import advantageHandmade from '@/assets/advantage-handmade.png';
 import advantageDelivery from '@/assets/advantage-delivery.png';
 import advantageOrganization from '@/assets/advantage-organization.png';
+import advantageOsmose from '@/assets/advantage-osmose.png';
 
 const advantages = [
   {
@@ -29,7 +30,7 @@ const advantages = [
   {
     title: 'Osmose créative',
     description: 'On ne fait pas que produire. On réfléchit avec vous, pour vous.',
-    image: null,
+    image: advantageOsmose,
   },
   {
     title: 'Design 100 % fait main',
