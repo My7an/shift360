@@ -12,6 +12,7 @@ import advantageOrganization from '@/assets/advantage-organization.png';
 import advantageOsmose from '@/assets/advantage-osmose.png';
 import advantageCustom from '@/assets/advantage-custom.png';
 import advantageUnlimited from '@/assets/advantage-unlimited.png';
+import advantageQuality from '@/assets/advantage-quality.png';
 
 const advantages = [
   {
@@ -42,7 +43,7 @@ const advantages = [
   {
     title: 'Qualité d\'expert garantie',
     description: 'Exigence, précision, excellence. Chaque livraison est pensée pour performer.',
-    image: null,
+    image: advantageQuality,
   },
   {
     title: 'Accompagnement professionnel',
