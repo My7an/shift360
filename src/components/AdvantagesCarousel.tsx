@@ -11,6 +11,7 @@ import advantageDelivery from '@/assets/advantage-delivery.png';
 import advantageOrganization from '@/assets/advantage-organization.png';
 import advantageOsmose from '@/assets/advantage-osmose.png';
 import advantageCustom from '@/assets/advantage-custom.png';
+import advantageUnlimited from '@/assets/advantage-unlimited.png';
 
 const advantages = [
   {
@@ -21,7 +22,7 @@ const advantages = [
   {
     title: 'Retouches illimitées',
     description: 'On ajuste, on affine, on peaufine. On s\'arrête seulement quand vous adorez.',
-    image: null,
+    image: advantageUnlimited,
   },
   {
     title: 'Organisation aux petits oignons',
