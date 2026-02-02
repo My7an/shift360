@@ -82,11 +82,13 @@ const AdvantagesCarousel = () => {
               <CarouselItem key={index} className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                 <div className="bento-card h-full min-h-[320px] flex flex-col p-6">
                   {/* Image */}
-                  <div className="w-full aspect-square bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
+                  <div className="w-full aspect-square rounded-2xl mb-6 flex items-center justify-center overflow-hidden">
                     {advantage.image ? (
-                      <img src={advantage.image} alt={advantage.title} className="w-3/4 h-3/4 object-contain" />
+                      <img src={advantage.image} alt={advantage.title} className="w-full h-full object-contain" />
                     ) : (
-                      <div className="w-16 h-16 rounded-full bg-foreground/10" />
+                      <div className="w-full h-full bg-gradient-to-br from-foreground/5 to-foreground/10 rounded-2xl flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-foreground/10" />
+                      </div>
                     )}
                   </div>
                   {/* Content */}
