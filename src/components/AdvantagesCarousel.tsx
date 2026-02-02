@@ -10,6 +10,7 @@ import advantageHandmade from '@/assets/advantage-handmade.png';
 import advantageDelivery from '@/assets/advantage-delivery.png';
 import advantageOrganization from '@/assets/advantage-organization.png';
 import advantageOsmose from '@/assets/advantage-osmose.png';
+import advantageCustom from '@/assets/advantage-custom.png';
 
 const advantages = [
   {
@@ -50,7 +51,7 @@ const advantages = [
   {
     title: 'Solutions sur mesure',
     description: 'Chaque projet est unique. Nous adaptons notre approche à vos besoins spécifiques.',
-    image: null,
+    image: advantageCustom,
   },
 ];
 
