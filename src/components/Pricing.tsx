@@ -110,7 +110,7 @@ const Pricing = () => {
 
                 {/* Price */}
                 <div className="mb-6">
-                  <span className="text-5xl font-bold">500€</span>
+                  <span className="text-4xl font-bold">Sur devis</span>
                 </div>
 
                 {/* Urgency notice */}
