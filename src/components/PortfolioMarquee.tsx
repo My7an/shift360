@@ -13,15 +13,15 @@ import portfolioSupremeGrill from '@/assets/portfolio-supreme-grill.png';
 const portfolioItems = [
   { id: 1, title: 'Menuboards', category: 'Food', image: portfolioMenuboard1 },
   { id: 2, title: 'Flyers', category: 'Food', image: portfolioFlyers1 },
-  { id: 3, title: 'Instagram / Flyers / ProEat', category: 'Food', image: portfolioInstagramFlyers },
+  { id: 3, title: 'Instagram / Flyers / ProEats', category: 'Food', image: portfolioInstagramFlyers },
   { id: 4, title: 'Menuboards', category: 'Food', image: portfolioMenuboard2 },
   { id: 5, title: 'Instagram / Flyers', category: 'Food', image: portfolioBigUs },
-  { id: 6, title: 'Visuel Uber Eats', category: 'Food', image: portfolioUberEats },
+  { id: 6, title: 'Visuel UberEats', category: 'Food', image: portfolioUberEats },
   { id: 7, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioChickenCafe },
   { id: 8, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioCoqCook },
   { id: 9, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioOcaliCrousty },
-  { id: 10, title: 'Visuels Uber Eats', category: 'Food', image: portfolioStreetSaveur },
-  { id: 11, title: 'Visuels Uber Eats', category: 'Food', image: portfolioSupremeGrill },
+  { id: 10, title: 'Visuels UberEats', category: 'Food', image: portfolioStreetSaveur },
+  { id: 11, title: 'Visuels UberEats', category: 'Food', image: portfolioSupremeGrill },
 ];
 
 const PortfolioMarquee = () => {

@@ -60,9 +60,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* À Propos */}
           <div>
-            <span className="text-3xl font-bold mb-6 block tracking-tight">909.agency</span>
+            <span className="text-3xl font-bold mb-6 block tracking-tight">Shift360</span>
             <p className="text-sm text-foreground/60 leading-relaxed mb-6">
-              909.agency est une équipe mondiale impliquée et réactive. Studio de design premium, structuré et orienté performance.
+              Shift360 est une équipe mondiale impliquée et réactive. Studio de design premium, structuré et orienté performance.
             </p>
             {/* Social Links */}
             <div className="flex items-center gap-4">
@@ -145,7 +145,7 @@ const Footer = () => {
 
             {/* Copyright */}
             <p className="text-sm text-foreground/50">
-              © 2026 909.agency. Tous droits réservés.
+              © 2026 Shift360. Tous droits réservés.
             </p>
           </div>
         </div>

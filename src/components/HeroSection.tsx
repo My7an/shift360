@@ -6,7 +6,7 @@ const HeroSection = () => {
         <div className="flex justify-center mb-6 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-foreground to-foreground/90 text-white shadow-xl">
             <span className="text-yellow-400 text-base">🏆</span>
-            <span className="font-semibold text-xs md:text-sm">Top 1 des meilleures agences</span>
+            <span className="font-semibold text-xs md:text-sm">Top 1 des meilleures agences UberEats</span>
           </div>
         </div>
 

@@ -8,7 +8,7 @@ const categories = [
     title: 'Optimisation de plateforme',
     tagline: 'Maximisez vos performances sur les plateformes de livraison.',
     services: [
-      'Optimisation Uber Eats',
+      'Optimisation UberEats',
       'Optimisation Deliveroo',
       'Visuels photos produit',
       'Visuels photos bannière',
@@ -17,7 +17,7 @@ const categories = [
       'Stratégie',
       'Paramétrage optimisé',
     ],
-    copy: 'Nous optimisons vos comptes Uber Eats et Deliveroo pour maximiser votre rendement. Structure, visuels, paramétrage, chaque détail est pensé pour booster vos commandes.',
+    copy: 'Nous optimisons vos comptes UberEats et Deliveroo pour maximiser votre rendement. Structure, visuels, paramétrage, chaque détail est pensé pour booster vos commandes.',
   },
   {
     id: 'content',
