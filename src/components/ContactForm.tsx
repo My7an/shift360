@@ -34,7 +34,7 @@ const ContactForm = () => {
       `Nom: ${data.name}\nEmail: ${data.email}\nTéléphone: ${data.phone || 'Non renseigné'}\n\nMessage:\n${data.message}`
     );
     
-    window.location.href = `mailto:servicebellinepro@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:service@shift360.fr?subject=${subject}&body=${body}`;
     
     // Show success animation
     setShowSuccess(true);

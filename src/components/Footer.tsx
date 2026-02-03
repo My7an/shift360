@@ -133,9 +133,9 @@ const Footer = () => {
                 <Phone className="w-4 h-4 text-red-accent" />
                 +33 6 50 01 61 34
               </a>
-              <a href="mailto:servicebellinepro@gmail.com" className="flex items-center gap-2 hover:text-red-accent transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+              <a href="mailto:service@shift360.fr" className="flex items-center gap-2 hover:text-red-accent transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
                 <Mail className="w-4 h-4 text-red-accent" />
-                servicebellinepro@gmail.com
+                service@shift360.fr
               </a>
               <span className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-red-accent" />
