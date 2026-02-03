@@ -57,6 +57,7 @@ const Header = () => {
           className="flex items-center gap-2 group flex-shrink-0"
         >
           <img src={logo} alt="Shift360" className="h-8 w-auto" />
+          <span className="font-bold text-lg tracking-tight">Shift360</span>
         </Link>
 
         {/* Desktop Navigation + CTA - Aligned on same row */}
