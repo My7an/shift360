@@ -112,7 +112,7 @@ const CEOPopup = () => {
 
           <div className="flex-1 min-w-0">
             <p className="text-base font-semibold text-foreground">mylan</p>
-            <p className="text-xs text-muted-foreground">CEO de 909.agency</p>
+            <p className="text-xs text-muted-foreground">CEO de Shift360</p>
           </div>
         </div>
 

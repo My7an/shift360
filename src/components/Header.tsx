@@ -56,7 +56,7 @@ const Header = () => {
           to="/"
           className="flex items-center gap-2 group flex-shrink-0"
         >
-          <img src={logo} alt="909.agency" className="h-8 w-auto" />
+          <img src={logo} alt="Shift360" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Navigation + CTA - Aligned on same row */}

@@ -15,16 +15,16 @@ export const faqs = [
     answer: 'Nos designs sont livrés en 48 à 72 heures maximum. Ce délai garantit une qualité optimale tout en respectant vos contraintes de temps. Pour les projets plus complexes, nous découpons le travail en étapes successives.',
   },
   {
-    question: 'Qu\'est-ce que l\'offre ProEat ?',
-    answer: 'L\'offre ProEat est notre offre d\'optimisation de plateformes de livraison (Uber Eats, Deliveroo). Elle inclut : structure du menu, visuels produits, paramétrage optimisé, stratégie marketing et accompagnement professionnel. Nos clients constatent en moyenne +65% d\'amélioration de leur rendement.',
+    question: 'Qu\'est-ce que l\'offre ProEats ?',
+    answer: 'L\'offre ProEats est notre offre d\'optimisation de plateformes de livraison (UberEats, Deliveroo). Elle inclut : structure du menu, visuels produits, paramétrage optimisé, stratégie marketing et accompagnement professionnel. Nos clients constatent en moyenne +65% d\'amélioration de leur rendement.',
   },
   {
     question: 'Qu\'est-ce que l\'offre ProDigitale ?',
     answer: 'L\'offre ProDigitale est notre offre de création de contenu pour les réseaux sociaux. Elle inclut : posts Instagram, bannières, stories, stratégie de contenu et accompagnement professionnel. Chaque contenu est pensé pour la visibilité, l\'engagement et la conversion.',
   },
   {
-    question: 'Pourquoi choisir 909.agency plutôt qu\'un graphiste freelance ?',
-    answer: 'Avec 909.agency, vous bénéficiez d\'une organisation professionnelle structurée, d\'un suivi précis via Trello, de délais garantis (48-72h) et de retouches illimitées. Notre approche "osmose créative" garantit une collaboration fluide et des résultats qui dépassent vos attentes.',
+    question: 'Pourquoi choisir Shift360 plutôt qu\'un graphiste freelance ?',
+    answer: 'Avec Shift360, vous bénéficiez d\'une organisation professionnelle structurée, d\'un suivi précis via Trello, de délais garantis (48-72h) et de retouches illimitées. Notre approche "osmose créative" garantit une collaboration fluide et des résultats qui dépassent vos attentes.',
   },
   {
     question: 'À quelle vitesse vais-je recevoir mes designs ?',

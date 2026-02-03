@@ -73,7 +73,7 @@ const Pricing = () => {
                 }`}
               >
                 <Utensils className="w-5 h-5" />
-                ProEat
+                ProEats
               </button>
               <button
                 onClick={() => setActiveOffer('prodigitale')}
@@ -103,7 +103,7 @@ const Pricing = () => {
                     <Utensils className="w-8 h-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold">ProEat</h3>
+                    <h3 className="text-3xl font-bold">ProEats</h3>
                     <p className="text-foreground/60">Optimisation plateforme</p>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ const Pricing = () => {
 
                 <div className="mb-8">
                   <p className="text-base text-foreground/70 leading-relaxed">
-                    Nous optimisons les comptes Uber Eats qui perdent actuellement entre 20 et 30% de rendement par semaine. Grâce à notre méthode d'optimisation complète (structure, stratégie, paramétrage et performance), nous transformons ces comptes en leviers de croissance rentables. Nos clients constatent en moyenne une amélioration de <span className="font-semibold text-red-accent">+65% de leur rendement</span>.
+                    Nous optimisons les comptes UberEats qui perdent actuellement entre 20 et 30% de rendement par semaine. Grâce à notre méthode d'optimisation complète (structure, stratégie, paramétrage et performance), nous transformons ces comptes en leviers de croissance rentables. Nos clients constatent en moyenne une amélioration de <span className="font-semibold text-red-accent">+65% de leur rendement</span>.
                   </p>
                 </div>
 
