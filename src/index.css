@@ -498,3 +498,8 @@
     text-wrap: balance;
   }
 }
+
+/* Hide Lovable badge */
+#lovable-badge {
+  display: none !important;
+}
