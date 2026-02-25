@@ -1,23 +1,20 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 
 const CALENDLY_URL = 'https://calendly.com/mylanblln/30min';
-const COUNTDOWN_SECONDS = 120; // 2 minutes
+const COUNTDOWN_SECONDS = 120;
 
 const CEOPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
   const [timeLeft, setTimeLeft] = useState(COUNTDOWN_SECONDS);
   const [selectedDay, setSelectedDay] = useState(0);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Generate next 5 days dynamically
   const getNextDays = () => {
     const days = [];
     const dayNames = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
     const monthNames = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
-    
     for (let i = 0; i < 5; i++) {
       const date = new Date();
       date.setDate(date.getDate() + i);
@@ -33,54 +30,35 @@ const CEOPopup = () => {
   const nextDays = getNextDays();
 
   useEffect(() => {
-    // Check if already dismissed in session
     const dismissed = sessionStorage.getItem('ceo-popup-dismissed');
-    if (dismissed) {
-      setIsDismissed(true);
-      return;
-    }
-
-    // Show popup after 5 seconds
+    if (dismissed) { setIsDismissed(true); return; }
     const timer = setTimeout(() => {
       setIsVisible(true);
-      // Play pop sound
       try {
-        // Create a simple pop sound using Web Audio API
         const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
         const oscillator = audioContext.createOscillator();
         const gainNode = audioContext.createGain();
-        
         oscillator.connect(gainNode);
         gainNode.connect(audioContext.destination);
-        
         oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
         oscillator.frequency.exponentialRampToValueAtTime(400, audioContext.currentTime + 0.1);
-        
         gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
         gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.15);
-        
         oscillator.start(audioContext.currentTime);
         oscillator.stop(audioContext.currentTime + 0.15);
       } catch (e) {}
     }, 5000);
-
     return () => clearTimeout(timer);
   }, []);
 
-  // Countdown timer
   useEffect(() => {
     if (!isVisible || isDismissed) return;
-
     const interval = setInterval(() => {
       setTimeLeft((prev) => {
-        if (prev <= 1) {
-          handleDismiss();
-          return 0;
-        }
+        if (prev <= 1) { handleDismiss(); return 0; }
         return prev - 1;
       });
     }, 1000);
-
     return () => clearInterval(interval);
   }, [isVisible, isDismissed]);
 
@@ -102,8 +80,7 @@ const CEOPopup = () => {
 
   return (
     <div className="fixed bottom-4 right-4 z-50 animate-fade-in sm:bottom-6 sm:right-6">
-      <div className="bg-background/95 backdrop-blur-xl rounded-2xl p-4 sm:p-5 w-[320px] sm:w-[360px] shadow-2xl border border-border/50">
-        {/* Close button */}
+      <div className="bg-card/95 backdrop-blur-xl rounded-2xl p-4 sm:p-5 w-[320px] sm:w-[360px] shadow-2xl border border-border/50">
         <button
           onClick={handleDismiss}
           className="absolute top-3 right-3 p-1 rounded-full hover:bg-muted transition-colors"
@@ -112,28 +89,23 @@ const CEOPopup = () => {
           <X className="w-4 h-4 text-muted-foreground" />
         </button>
 
-        {/* Header with avatar and name */}
         <div className="flex items-start gap-3 mb-4 pr-6">
-          {/* Avatar with online indicator */}
           <div className="relative flex-shrink-0">
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-accent to-red-accent-hover flex items-center justify-center text-white font-bold text-lg">
               M
             </div>
-            <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-background animate-pulse"></span>
+            <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-500 rounded-full border-2 border-card animate-pulse"></span>
           </div>
-
           <div className="flex-1 min-w-0">
             <p className="text-base font-semibold text-foreground">Mylan</p>
             <p className="text-xs text-muted-foreground">CEO de Shift360</p>
           </div>
         </div>
 
-        {/* Message */}
         <p className="text-sm text-foreground/80 leading-relaxed mb-4">
           Ne laissez plus l'algorithme décider de vos revenus. Une visibilité maximale et des ventes boostées, sans effort.
         </p>
 
-        {/* Dynamic days selector */}
         <div className="mb-4">
           <p className="text-xs font-medium text-muted-foreground mb-2">Prochaines disponibilités</p>
           <div className="flex gap-1.5">
@@ -154,7 +126,6 @@ const CEOPopup = () => {
           </div>
         </div>
 
-        {/* Countdown */}
         <div className="mb-4">
           <div className="flex items-center justify-between mb-1.5">
             <span className="text-xs text-muted-foreground">Offre expire dans</span>
@@ -163,14 +134,13 @@ const CEOPopup = () => {
           <Progress value={progressValue} className="h-1.5 bg-muted" />
         </div>
 
-        {/* CTA Button */}
         <a
           href={CALENDLY_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full bg-red-accent hover:bg-red-accent-hover text-white py-3 rounded-xl text-sm text-center font-semibold transition-all duration-200 shadow-lg hover:shadow-xl"
         >
-          Prenez un appel gratuit
+          Parler avec Mylan
         </a>
       </div>
     </div>

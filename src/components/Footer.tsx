@@ -3,14 +3,9 @@ import ContactForm from './ContactForm';
 
 const quickLinks = [
   { label: 'Accueil', href: '#' },
-  { label: 'Nos Expertises', href: '#expertises' },
+  { label: 'Projets', href: '#projets' },
   { label: 'Processus', href: '#processus' },
-  { label: 'Offres', href: '#prestations' },
-];
-
-const serviceLinks = [
-  { label: 'Optimisation de plateforme', href: '#expertises' },
-  { label: 'Création de contenu', href: '#expertises' },
+  { label: 'FAQ', href: '#faq' },
 ];
 
 const socialLinks = [
@@ -56,15 +51,13 @@ const Footer = () => {
   return (
     <footer id="contact" className="py-20 px-6 border-t border-border">
       <div className="container mx-auto max-w-6xl">
-        {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
           {/* À Propos */}
           <div>
             <span className="text-3xl font-bold mb-6 block tracking-tight">Shift360</span>
             <p className="text-sm text-foreground/60 leading-relaxed mb-6">
               Shift360 est une équipe mondiale impliquée et réactive. Studio de design premium, structuré et orienté performance.
             </p>
-            {/* Social Links */}
             <div className="flex items-center gap-4">
               {socialLinks.map((social, index) => (
                 <a
@@ -72,7 +65,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-red-100 hover:text-red-600 transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-foreground/60 hover:text-white hover:bg-red-accent transition-all duration-300"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -90,25 +83,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="text-sm text-foreground/60 hover:text-red-accent transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="font-bold mb-4 text-lg">Services</h4>
-            <ul className="space-y-2">
-              {serviceLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleSmoothScroll(e, link.href)}
-                    className="text-sm text-foreground/60 hover:text-red-accent transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+                    className="text-sm text-foreground/60 hover:text-red-accent transition-all duration-300"
                   >
                     {link.label}
                   </a>
@@ -124,16 +99,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Contact Info */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-sm text-foreground/60">
-              <a href="tel:+33650016134" className="flex items-center gap-2 hover:text-red-accent transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+              <a href="tel:+33650016134" className="flex items-center gap-2 hover:text-red-accent transition-all duration-300">
                 <Phone className="w-4 h-4 text-red-accent" />
                 +33 6 50 01 61 34
               </a>
-              <a href="mailto:service@shift360.fr" className="flex items-center gap-2 hover:text-red-accent transition-all duration-[600ms] ease-[cubic-bezier(0.4,0,0.2,1)]">
+              <a href="mailto:service@shift360.fr" className="flex items-center gap-2 hover:text-red-accent transition-all duration-300">
                 <Mail className="w-4 h-4 text-red-accent" />
                 service@shift360.fr
               </a>
@@ -142,8 +115,6 @@ const Footer = () => {
                 Lille
               </span>
             </div>
-
-            {/* Copyright */}
             <p className="text-sm text-foreground/50">
               © 2026 Shift360. Tous droits réservés.
             </p>
