@@ -10,7 +10,7 @@ const AnimatedBackground = () => {
         style={{
           backgroundImage: 'radial-gradient(circle, hsl(0 85% 40%) 1.2px, transparent 1.2px)',
           backgroundSize: '20px 20px',
-          opacity: 0.08,
+          opacity: 0.18,
           animation: 'halftone-drift 60s linear infinite',
         }}
       />
@@ -21,7 +21,7 @@ const AnimatedBackground = () => {
         style={{
           backgroundImage: 'radial-gradient(circle, hsl(0 85% 50%) 0.8px, transparent 0.8px)',
           backgroundSize: '28px 28px',
-          opacity: 0.05,
+          opacity: 0.12,
           animation: 'halftone-drift-reverse 80s linear infinite',
         }}
       />

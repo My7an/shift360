@@ -24,7 +24,7 @@ const SocialProof = () => {
   return (
     <section className="py-24 overflow-hidden">
       <div className="container mx-auto px-6 mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 tracking-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 tracking-tight">
           Ils nous font confiance
         </h2>
         <p className="text-lg text-foreground/60 text-center max-w-2xl mx-auto">
