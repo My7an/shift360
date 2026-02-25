@@ -29,7 +29,7 @@ const ProcessSection = () => {
       <div className="container mx-auto max-w-6xl relative">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tighter">
-            Comment ça <span className="font-playfair italic text-red-accent">marche ?</span>
+            Comment ça <span className="italic text-red-accent">fonctionne ?</span>
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
             Un processus simple, structuré et professionnel
