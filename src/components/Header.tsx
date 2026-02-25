@@ -38,7 +38,7 @@ const Header = () => {
   };
 
   const navLinks = [
-    { href: '#processus', label: 'Comment ça fonctionne' },
+    { href: '#processus', label: 'Le processus' },
     { href: '#faq', label: 'FAQ' },
   ];
 

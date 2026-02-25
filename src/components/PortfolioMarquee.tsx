@@ -36,8 +36,8 @@ const PortfolioMarquee = () => {
         
         <div className="container mx-auto px-6 mb-16 relative">
           <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter">
-              Nos <span className="italic text-red-accent">réalisations</span>
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+              Nos réalisations
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-primary/80 mx-auto rounded-full"></div>
           </div>

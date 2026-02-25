@@ -78,6 +78,13 @@
     @apply font-bold;
     letter-spacing: -0.03em;
     font-family: 'Poppins', sans-serif;
+    font-style: normal;
+  }
+
+  .text-editorial {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.01em;
   }
 
   .text-editorial {

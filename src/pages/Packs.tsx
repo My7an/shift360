@@ -7,8 +7,8 @@ const Packs = () => {
       <AnimatedBackground />
       <Header />
       <main className="min-h-screen flex flex-col items-center justify-center px-6">
-        <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-8 tracking-tight text-center">
-          Packs en cours de <span className="italic text-red-accent">création</span>
+        <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-8 tracking-tight text-center">
+          Packs en cours de création
         </h1>
         <div className="loading-spinner mb-6"></div>
         <p className="text-muted-foreground text-sm">Bientôt disponible</p>
