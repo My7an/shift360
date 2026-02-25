@@ -13,16 +13,16 @@ import portfolioStreetSaveur from '@/assets/portfolio-street-saveur.png';
 import portfolioSupremeGrill from '@/assets/portfolio-supreme-grill.png';
 
 const portfolioItems = [
+  { id: 5, image: portfolioBigUs },
+  { id: 10, image: portfolioStreetSaveur },
   { id: 1, image: portfolioMenuboard1 },
   { id: 2, image: portfolioFlyers1 },
   { id: 3, image: portfolioInstagramFlyers },
   { id: 4, image: portfolioMenuboard2 },
-  { id: 5, image: portfolioBigUs },
   { id: 6, image: portfolioUberEats },
   { id: 7, image: portfolioChickenCafe },
   { id: 8, image: portfolioCoqCook },
   { id: 9, image: portfolioOcaliCrousty },
-  { id: 10, image: portfolioStreetSaveur },
   { id: 11, image: portfolioSupremeGrill },
 ];
 
@@ -39,7 +39,7 @@ const PortfolioMarquee = () => {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
               Nos réalisations
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary to-primary/80 mx-auto rounded-full"></div>
+            
           </div>
         </div>
         
