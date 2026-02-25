@@ -1,21 +1,21 @@
 import { Star } from 'lucide-react';
 
 const testimonials = [
-  { name: 'Souleymane.O', offer: 'ProEats', text: 'Parfait, je suis entièrement satisfait du travail, vous avez géré ça de A à Z, rapide et efficace.' },
-  { name: 'Ryan.N', offer: 'ProEats', text: 'Je suis hyper satisfait du travail, je ne m\'attendais pas à un résultat aussi propre vous avez parfaitement compris la demande et j\'espère retravailler avec vous pour d\'autres restaurants !' },
-  { name: 'Souleymane.O', offer: 'ProDigitale', text: 'Je me permet de te dire que toi et ton équipe sont booster !' },
-  { name: 'Ryan.K', offer: 'ProEats', text: 'Je suis vraiment bluffé par le résultat, je ne pensais pas que ça serait aussi réussi, vous avez tout de suite saisi la demande' },
-  { name: 'Dylan.F', offer: 'ProEats', text: 'Franchement excellent boulot, je ne m\'attendais pas à un résultat aussi quali !' },
-  { name: 'Moha.D', offer: 'ProEats', text: 'Service ultra propre, mon compte UberEats est beaucoup mieux structuré et optimisé, j\'ai vu la différence très vite sur les commandes.' },
-  { name: 'Damien.F', offer: 'ProEats', text: 'Très pro du début à la fin, optimisation Deliveroo + UberEats carrée, visuels produits nickel, je recommande.' },
-  { name: 'Karim.L', offer: 'ProEats', text: 'Résultat clair sur la performance UberEats, meilleure présentation du menu et taux de conversion en hausse.' },
-  { name: 'Nassim.R', offer: 'ProEats', text: 'Gros travail d\'optimisation de plateforme, photos, structure et paramétrage — ça a clairement boosté mon resto.' },
-  { name: 'Yanis.B', offer: 'ProEats', text: 'Je pensais pas que l\'optimisation UberEats pouvait autant jouer, super accompagnement et vraie méthode.' },
-  { name: 'Lucas.M', offer: 'ProDigitale', text: 'Super suivi sur les réseaux, contenu Instagram bien pensé et stratégie claire, ça change tout.' },
-  { name: 'Enzo.T', offer: 'ProDigitale', text: 'Accompagnement réseaux sociaux au top, posts + bannières + plan de contenu — c\'est carré.' },
-  { name: 'Mehdi.A', offer: 'ProDigitale', text: 'Très satisfait du pack digital, on sent la stratégie derrière chaque publication.' },
-  { name: 'Rayan.K', offer: 'ProDigitale', text: 'Ils gèrent vraiment la partie Instagram et TikTok, visuels propres et conseils utiles.' },
-  { name: 'Sofiane.D', offer: 'ProDigitale', text: 'Bonne organisation, bon accompagnement social media, on ne publie plus au hasard.' },
+  { name: 'Souleymane.O', text: 'Parfait, je suis entièrement satisfait du travail, vous avez géré ça de A à Z, rapide et efficace.' },
+  { name: 'Ryan.N', text: 'Je suis hyper satisfait du travail, je ne m\'attendais pas à un résultat aussi propre vous avez parfaitement compris la demande et j\'espère retravailler avec vous pour d\'autres restaurants !' },
+  { name: 'Souleymane.O', text: 'Je me permet de te dire que toi et ton équipe sont booster !' },
+  { name: 'Ryan.K', text: 'Je suis vraiment bluffé par le résultat, je ne pensais pas que ça serait aussi réussi, vous avez tout de suite saisi la demande' },
+  { name: 'Dylan.F', text: 'Franchement excellent boulot, je ne m\'attendais pas à un résultat aussi quali !' },
+  { name: 'Moha.D', text: 'Service ultra propre, mon compte UberEats est beaucoup mieux structuré et optimisé, j\'ai vu la différence très vite sur les commandes.' },
+  { name: 'Damien.F', text: 'Très pro du début à la fin, optimisation Deliveroo + UberEats carrée, visuels produits nickel, je recommande.' },
+  { name: 'Karim.L', text: 'Résultat clair sur la performance UberEats, meilleure présentation du menu et taux de conversion en hausse.' },
+  { name: 'Nassim.R', text: 'Gros travail d\'optimisation de plateforme, photos, structure et paramétrage — ça a clairement boosté mon resto.' },
+  { name: 'Yanis.B', text: 'Je pensais pas que l\'optimisation UberEats pouvait autant jouer, super accompagnement et vraie méthode.' },
+  { name: 'Lucas.M', text: 'Super suivi sur les réseaux, contenu Instagram bien pensé et stratégie claire, ça change tout.' },
+  { name: 'Enzo.T', text: 'Accompagnement réseaux sociaux au top, posts + bannières + plan de contenu — c\'est carré.' },
+  { name: 'Mehdi.A', text: 'Très satisfait du pack digital, on sent la stratégie derrière chaque publication.' },
+  { name: 'Rayan.K', text: 'Ils gèrent vraiment la partie Instagram et TikTok, visuels propres et conseils utiles.' },
+  { name: 'Sofiane.D', text: 'Bonne organisation, bon accompagnement social media, on ne publie plus au hasard.' },
 ];
 
 const SocialProof = () => {
@@ -32,7 +32,6 @@ const SocialProof = () => {
         </p>
       </div>
 
-      {/* Testimonials Marquee */}
       <div className="marquee-container">
         <div className="marquee-track" style={{ animationDuration: '80s' }}>
           {duplicatedTestimonials.map((testimonial, index) => (
@@ -42,18 +41,13 @@ const SocialProof = () => {
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
+                  <Star key={i} className="w-4 h-4 fill-red-accent text-red-accent" />
                 ))}
               </div>
               <p className="text-sm text-foreground/80 mb-4 leading-relaxed">
                 "{testimonial.text}"
               </p>
-              <div className="flex items-center justify-between">
-                <p className="font-semibold text-sm">{testimonial.name}</p>
-                <span className="text-xs px-3 py-1 rounded-full bg-foreground/10 text-foreground/70 font-medium">
-                  {testimonial.offer}
-                </span>
-              </div>
+              <p className="font-semibold text-sm">{testimonial.name}</p>
             </div>
           ))}
         </div>

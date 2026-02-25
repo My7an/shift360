@@ -7,30 +7,6 @@ import {
 
 export const faqs = [
   {
-    question: 'Comment fonctionne votre offre ?',
-    answer: 'Vous prenez contact avec un spécialiste pour définir vos besoins. Ensuite, vous accédez à votre espace Trello personnalisé pour piloter vos projets. Nous livrons vos designs en 48 à 72 heures avec un accompagnement professionnel à chaque étape.',
-  },
-  {
-    question: 'Quels sont vos délais de livraison ?',
-    answer: 'Nos designs sont livrés en 48 à 72 heures maximum. Ce délai garantit une qualité optimale tout en respectant vos contraintes de temps. Pour les projets plus complexes, nous découpons le travail en étapes successives.',
-  },
-  {
-    question: 'Qu\'est-ce que l\'offre ProEats ?',
-    answer: 'L\'offre ProEats est notre offre d\'optimisation de plateformes de livraison (UberEats, Deliveroo). Elle inclut : structure du menu, visuels produits, paramétrage optimisé, stratégie marketing et accompagnement professionnel. Nos clients constatent en moyenne +65% d\'amélioration de leur rendement.',
-  },
-  {
-    question: 'Qu\'est-ce que l\'offre ProDigitale ?',
-    answer: 'L\'offre ProDigitale est notre offre de création de contenu pour les réseaux sociaux. Elle inclut : posts Instagram, bannières, stories, stratégie de contenu et accompagnement professionnel. Chaque contenu est pensé pour la visibilité, l\'engagement et la conversion.',
-  },
-  {
-    question: 'Pourquoi choisir Shift360 plutôt qu\'un graphiste freelance ?',
-    answer: 'Avec Shift360, vous bénéficiez d\'une organisation professionnelle structurée, d\'un suivi précis via Trello, de délais garantis (48-72h) et de retouches illimitées. Notre approche "osmose créative" garantit une collaboration fluide et des résultats qui dépassent vos attentes.',
-  },
-  {
-    question: 'À quelle vitesse vais-je recevoir mes designs ?',
-    answer: 'Nos projets sont livrés en 48 à 72 heures. Nous optimisons notre processus pour garantir rapidité et qualité. Les projets plus complexes sont découpés en étapes pour maintenir ce rythme.',
-  },
-  {
     question: 'Qui réalise les designs ?',
     answer: 'Tous les designs sont réalisés "fait main" par notre équipe d\'experts, garantissant une cohérence de marque et une qualité que les agences traditionnelles n\'offrent pas. Zéro IA, uniquement du vrai savoir-faire humain.',
   },
@@ -44,7 +20,11 @@ export const faqs = [
   },
   {
     question: 'Comment vous contacter ?',
-    answer: 'Utilisez notre bouton "Parler avec un spécialiste" pour planifier un échange via Calendly. Pour toute question urgente, contactez-nous à : servicebellinepro@gmail.com. Nous répondons rapidement !',
+    answer: 'Utilisez notre bouton "Parler avec Mylan" pour planifier un échange via Calendly. Pour toute question urgente, contactez-nous à : service@shift360.fr. Nous répondons rapidement !',
+  },
+  {
+    question: 'À quelle vitesse vais-je recevoir mes designs ?',
+    answer: 'Nos designs sont livrés en 48 à 72 heures maximum. Ce délai garantit une qualité optimale tout en respectant vos contraintes de temps. Pour les projets plus complexes, nous découpons le travail en étapes successives.',
   },
 ];
 

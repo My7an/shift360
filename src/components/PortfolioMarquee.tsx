@@ -11,17 +11,17 @@ import portfolioStreetSaveur from '@/assets/portfolio-street-saveur.png';
 import portfolioSupremeGrill from '@/assets/portfolio-supreme-grill.png';
 
 const portfolioItems = [
-  { id: 1, title: 'Menuboards', category: 'Food', image: portfolioMenuboard1 },
-  { id: 2, title: 'Flyers', category: 'Food', image: portfolioFlyers1 },
-  { id: 3, title: 'Instagram / Flyers / ProEats', category: 'Food', image: portfolioInstagramFlyers },
-  { id: 4, title: 'Menuboards', category: 'Food', image: portfolioMenuboard2 },
-  { id: 5, title: 'Instagram / Flyers', category: 'Food', image: portfolioBigUs },
-  { id: 6, title: 'Visuel UberEats', category: 'Food', image: portfolioUberEats },
-  { id: 7, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioChickenCafe },
-  { id: 8, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioCoqCook },
-  { id: 9, title: 'ProDigitale', category: 'Accompagnement Instagram', image: portfolioOcaliCrousty },
-  { id: 10, title: 'Visuels UberEats', category: 'Food', image: portfolioStreetSaveur },
-  { id: 11, title: 'Visuels UberEats', category: 'Food', image: portfolioSupremeGrill },
+  { id: 1, image: portfolioMenuboard1 },
+  { id: 2, image: portfolioFlyers1 },
+  { id: 3, image: portfolioInstagramFlyers },
+  { id: 4, image: portfolioMenuboard2 },
+  { id: 5, image: portfolioBigUs },
+  { id: 6, image: portfolioUberEats },
+  { id: 7, image: portfolioChickenCafe },
+  { id: 8, image: portfolioCoqCook },
+  { id: 9, image: portfolioOcaliCrousty },
+  { id: 10, image: portfolioStreetSaveur },
+  { id: 11, image: portfolioSupremeGrill },
 ];
 
 const PortfolioMarquee = () => {
@@ -31,7 +31,6 @@ const PortfolioMarquee = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 rounded-full blur-[120px] pointer-events-none"></div>
       
       <div className="container mx-auto px-6 mb-16 relative">
-        {/* Imposing Title */}
         <div className="text-center space-y-4">
           <h2 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tighter">
             Nos <span className="font-playfair italic text-red-accent">réalisations</span>
@@ -43,7 +42,7 @@ const PortfolioMarquee = () => {
         </div>
       </div>
       
-      {/* Horizontal scrolling large frames */}
+      {/* Horizontal scrolling large frames - no text on hover */}
       <div className="px-6 relative">
         <div className="horizontal-scroll py-4">
           {portfolioItems.map((item) => (
@@ -55,13 +54,9 @@ const PortfolioMarquee = () => {
               <div className="relative w-full h-full">
                 <img 
                   src={item.image} 
-                  alt={item.title}
+                  alt="Réalisation Shift360"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                  <span className="text-white/80 text-xs font-medium">{item.category}</span>
-                  <h3 className="text-white text-lg font-bold">{item.title}</h3>
-                </div>
               </div>
             </div>
           ))}
