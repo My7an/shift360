@@ -38,7 +38,6 @@ const Header = () => {
   };
 
   const navLinks = [
-    { href: '#processus', label: 'Le processus' },
     { href: '#faq', label: 'FAQ' },
   ];
 
@@ -57,25 +56,22 @@ const Header = () => {
           <span className="font-bold text-lg tracking-tight">Shift360</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+         <div className="hidden md:flex items-center gap-6">
           <nav className="flex items-center gap-6">
-            {navLinks.slice(0, 1).map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleSmoothScroll(e, link.href)}
-                className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
-              >
-                {link.label}
-              </a>
-            ))}
             <Link
               to="/packs"
               className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
             >
               Packs
             </Link>
-            {navLinks.slice(1).map((link) => (
+            <a
+              href="#processus"
+              onClick={(e) => handleSmoothScroll(e, '#processus')}
+              className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
+            >
+              Le processus
+            </a>
+            {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -105,19 +101,9 @@ const Header = () => {
         </button>
       </div>
 
-      {isMobileMenuOpen && (
+       {isMobileMenuOpen && (
         <div className="md:hidden px-6 pb-6 animate-fade-in">
           <nav className="flex flex-col gap-2">
-            {navLinks.slice(0, 1).map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-3 px-4 rounded-xl hover:bg-muted"
-                onClick={(e) => handleSmoothScroll(e, link.href)}
-              >
-                {link.label}
-              </a>
-            ))}
             <Link
               to="/packs"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -125,7 +111,14 @@ const Header = () => {
             >
               Packs
             </Link>
-            {navLinks.slice(1).map((link) => (
+            <a
+              href="#processus"
+              className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-3 px-4 rounded-xl hover:bg-muted"
+              onClick={(e) => handleSmoothScroll(e, '#processus')}
+            >
+              Le processus
+            </a>
+            {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}

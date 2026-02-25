@@ -28,7 +28,7 @@ const ProcessSection = () => {
 
       <div className="container mx-auto max-w-6xl relative">
         <div className="text-center mb-20">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
             Le processus
           </h2>
           <p className="text-lg text-foreground/60 max-w-2xl mx-auto">
