@@ -72,20 +72,7 @@
     font-family: 'Poppins', sans-serif;
   }
 
-  /* Subtle halftone pattern background */
-  body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.03;
-    background-image: radial-gradient(circle, hsl(0 0% 30%) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
+  /* Background handled by AnimatedBackground component */
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;

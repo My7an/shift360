@@ -38,8 +38,7 @@ const Header = () => {
   };
 
   const navLinks = [
-    { href: '#processus', label: 'Comment ça marche ?' },
-    { href: '#projets', label: 'Projets' },
+    { href: '#processus', label: 'Comment ça fonctionne' },
     { href: '#faq', label: 'FAQ' },
   ];
 
@@ -60,7 +59,7 @@ const Header = () => {
 
         <div className="hidden md:flex items-center gap-6">
           <nav className="flex items-center gap-6">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 1).map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -76,6 +75,16 @@ const Header = () => {
             >
               Packs
             </Link>
+            {navLinks.slice(1).map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+                className="relative text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-300 whitespace-nowrap"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
           <a
             href="https://calendly.com/mylanblln/30min"
@@ -99,7 +108,7 @@ const Header = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden px-6 pb-6 animate-fade-in">
           <nav className="flex flex-col gap-2">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 1).map((link) => (
               <a
                 key={link.href}
                 href={link.href}
@@ -116,6 +125,16 @@ const Header = () => {
             >
               Packs
             </Link>
+            {navLinks.slice(1).map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors duration-300 py-3 px-4 rounded-xl hover:bg-muted"
+                onClick={(e) => handleSmoothScroll(e, link.href)}
+              >
+                {link.label}
+              </a>
+            ))}
             <a
               href="https://calendly.com/mylanblln/30min"
               target="_blank"

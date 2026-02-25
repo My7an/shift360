@@ -34,7 +34,7 @@ const FAQ = () => {
       <div className="container mx-auto max-w-3xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-            Questions <span className="font-playfair italic text-red-accent">fréquentes</span>
+            Questions <span className="italic text-red-accent">fréquentes</span>
           </h2>
           <p className="text-lg text-foreground/60">
             Tout ce que vous devez savoir sur nos offres
