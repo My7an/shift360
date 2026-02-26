@@ -4,8 +4,8 @@ import PortfolioMarquee from '@/components/PortfolioMarquee';
 import ProcessSection from '@/components/ProcessSection';
 import SocialProof from '@/components/SocialProof';
 import FAQ from '@/components/FAQ';
-import CEOPopup from '@/components/CEOPopup';
 import Footer from '@/components/Footer';
+import SplashScreen from '@/components/SplashScreen';
 
 const Index = () => {
   return (
@@ -19,7 +19,7 @@ const Index = () => {
         <FAQ />
       </main>
       <Footer />
-      <CEOPopup />
+      <SplashScreen />
     </div>
   );
 };
