@@ -14,7 +14,6 @@ import portfolioSupremeGrill from '@/assets/portfolio-supreme-grill.png';
 
 const row1 = [portfolioChickenCafe, portfolioStreetSaveur, portfolioBigUs, portfolioMenuboard1];
 const row2 = [portfolioFlyers1, portfolioInstagramFlyers, portfolioMenuboard2, portfolioUberEats];
-const row3 = [portfolioCoqCook, portfolioOcaliCrousty, portfolioSupremeGrill, portfolioChickenCafe];
 
 interface MarqueeRowProps {
   images: string[];
@@ -77,7 +76,7 @@ const PortfolioMarquee = () => {
         <div className="container mx-auto px-6 mb-16 relative">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Nos réalisations
+              Réalisations
             </h2>
           </div>
         </div>
@@ -85,7 +84,6 @@ const PortfolioMarquee = () => {
         <div className="space-y-4">
           <MarqueeRow images={row1} direction="right" duration={35} onImageClick={setLightboxImage} />
           <MarqueeRow images={row2} direction="left" duration={40} onImageClick={setLightboxImage} />
-          <MarqueeRow images={row3} direction="right" duration={38} onImageClick={setLightboxImage} />
         </div>
       </section>
 
