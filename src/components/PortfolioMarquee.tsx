@@ -12,56 +12,80 @@ import portfolioOcaliCrousty from '@/assets/portfolio-ocali-crousty.png';
 import portfolioStreetSaveur from '@/assets/portfolio-street-saveur.png';
 import portfolioSupremeGrill from '@/assets/portfolio-supreme-grill.png';
 
-const portfolioItems = [
-  { id: 5, image: portfolioBigUs },
-  { id: 10, image: portfolioStreetSaveur },
-  { id: 1, image: portfolioMenuboard1 },
-  { id: 2, image: portfolioFlyers1 },
-  { id: 3, image: portfolioInstagramFlyers },
-  { id: 4, image: portfolioMenuboard2 },
-  { id: 6, image: portfolioUberEats },
-  { id: 7, image: portfolioChickenCafe },
-  { id: 8, image: portfolioCoqCook },
-  { id: 9, image: portfolioOcaliCrousty },
-  { id: 11, image: portfolioSupremeGrill },
-];
+const row1 = [portfolioChickenCafe, portfolioStreetSaveur, portfolioBigUs, portfolioMenuboard1];
+const row2 = [portfolioFlyers1, portfolioInstagramFlyers, portfolioMenuboard2, portfolioUberEats];
+const row3 = [portfolioCoqCook, portfolioOcaliCrousty, portfolioSupremeGrill, portfolioChickenCafe];
+
+interface MarqueeRowProps {
+  images: string[];
+  direction: 'left' | 'right';
+  duration: number;
+  onImageClick: (src: string) => void;
+}
+
+const MarqueeRow = ({ images, direction, duration, onImageClick }: MarqueeRowProps) => {
+  // Double the images for seamless loop
+  const doubled = [...images, ...images];
+
+  return (
+    <div className="overflow-hidden group/row">
+      <div
+        className="flex gap-4 w-max group-hover/row:[animation-play-state:paused]"
+        style={{
+          animation: `marquee-${direction} ${duration}s linear infinite`,
+        }}
+      >
+        {doubled.map((img, i) => (
+          <div
+            key={i}
+            className="w-[260px] md:w-[300px] lg:w-[360px] flex-shrink-0 rounded-[6px] overflow-hidden cursor-pointer transition-transform duration-500 hover:scale-[1.03]"
+            style={{ aspectRatio: '3/4' }}
+            onClick={() => onImageClick(img)}
+          >
+            <img
+              src={img}
+              alt="Réalisation Shift360"
+              className="w-full h-full object-cover"
+              draggable={false}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const PortfolioMarquee = () => {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   return (
     <>
+      <style>{`
+        @keyframes marquee-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0%); }
+        }
+        @keyframes marquee-left {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+
       <section id="projets" className="py-24 overflow-hidden relative animate-section" style={{ animationDelay: '0.2s' }}>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-        
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+
         <div className="container mx-auto px-6 mb-16 relative">
           <div className="text-center space-y-4">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
               Nos réalisations
             </h2>
-            
           </div>
         </div>
-        
-        <div className="px-6 relative">
-          <div className="horizontal-scroll py-4">
-            {portfolioItems.map((item) => (
-              <div
-                key={item.id}
-                className="w-[280px] md:w-[320px] lg:w-[380px] flex-shrink-0 rounded-sm overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-[1.02]"
-                style={{ aspectRatio: '3/4' }}
-                onClick={() => setLightboxImage(item.image)}
-              >
-                <div className="relative w-full h-full">
-                  <img 
-                    src={item.image} 
-                    alt="Réalisation Shift360"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
+
+        <div className="space-y-4">
+          <MarqueeRow images={row1} direction="right" duration={35} onImageClick={setLightboxImage} />
+          <MarqueeRow images={row2} direction="left" duration={40} onImageClick={setLightboxImage} />
+          <MarqueeRow images={row3} direction="right" duration={38} onImageClick={setLightboxImage} />
         </div>
       </section>
 
