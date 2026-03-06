@@ -11,8 +11,9 @@ import portfolioCoqCook from '@/assets/portfolio-coq-cook.png';
 import portfolioOcaliCrousty from '@/assets/portfolio-ocali-crousty.png';
 import portfolioStreetSaveur from '@/assets/portfolio-street-saveur.png';
 import portfolioSupremeGrill from '@/assets/portfolio-supreme-grill.png';
+import portfolioPizzaVita from '@/assets/portfolio-pizza-vita.png';
 
-const row1 = [portfolioChickenCafe, portfolioStreetSaveur, portfolioBigUs, portfolioMenuboard1];
+const row1 = [portfolioChickenCafe, portfolioStreetSaveur, portfolioBigUs, portfolioMenuboard1, portfolioPizzaVita];
 const row2 = [portfolioFlyers1, portfolioInstagramFlyers, portfolioMenuboard2, portfolioUberEats];
 
 interface MarqueeRowProps {
