@@ -1,5 +1,6 @@
 import AnimatedBackground from '@/components/AnimatedBackground';
 import Header from '@/components/Header';
+import AboutSection from '@/components/AboutSection';
 import PortfolioMarquee from '@/components/PortfolioMarquee';
 import ProcessSection from '@/components/ProcessSection';
 import SocialProof from '@/components/SocialProof';
@@ -13,6 +14,7 @@ const Index = () => {
       <AnimatedBackground />
       <Header />
       <main className="pt-24">
+        <AboutSection />
         <PortfolioMarquee />
         <ProcessSection />
         <SocialProof />
